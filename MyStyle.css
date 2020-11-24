@@ -1,0 +1,31 @@
+#wrapper{
+    /*background:red;>*/
+    overflow:auto;
+}
+
+#c1{
+   float:left;
+   /*background:blue;*/
+   /*margin-left: 100px;*/
+}
+
+#c2{
+    background:rgb(160, 165, 160);
+    float:right;
+    margin-right: 100px;
+    width: 500px;
+    /*word-spacing: 100px;*/
+}​
+#c2 .Billettype{
+    text-align: left;
+}
+#c2 .Tidspunkt{
+    text-align: center;
+    line-height: 25px;
+}
+#c2 .Radiobuttons{
+    text-align: center;
+}
+#c2 .Next{
+    text-align: center;
+}
