@@ -10,9 +10,16 @@
     <!-- Bootstrap date-picker plugin -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#datePicker').datepicker({
+            format: "dd/mm/yyyy"
+        });
+    });
+</script>
 </head>
 <body>
-    <body class="bg-light">
+    <body class="bg-white">
         <div class="container">
       <div class="py-5 text-center">
         <h2>Request private city walk</h2>
@@ -77,11 +84,7 @@
                   Please choose a theme when requesting a private city tour.
                 </div>
               </div>
-            <div class="mb-3"
-                <label class="control-label" for="date">Date</label>
-            <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
-          </div>
-            <hr class="mb-4">
+            <div class="mb-4">
             <button class="btn btn-primary btn-lg btn-block" type="submit">Send request</button>
           </form>
         </div>
