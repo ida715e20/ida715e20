@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <p> This is my head </p>
+        <!--<p> This is my head </p>-->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -14,8 +14,11 @@
 
 
     <body>
-        <p> This is my body </p>
-        <button onclick="document.location='index.html'"> index</button>
+        <div>
+        <!--<p> This is my body </p>-->
+            <button class="Index" onclick="document.location='index.html'">Index</button>
+        </div>
+        
         <h1>City tour 1</h1>
             
 
@@ -34,60 +37,56 @@
                     </div>
                 </div>
                 <div id="c2">
-                    <div class="Time"> Time </div>
-                    <div class="Radiobuttons">
-                        <form>
-                            <input type="radio" id="tid1" name="tid" value="tid1">
-                            <label for="tid1">17.00-17.30</label><br>
-                            <input type="radio" id="tid2" name="tid" value="tid2">
-                            <label for="tid2">18:00-18:30</label><br>
-                            <input type="radio" id="tid2" name="tid" value="tid3">
-                            <label for="tid3">19:00-19:30</label>
-                        </form>  
+                    <h1> Calendar </h1>
+                    <div class="calendar">
+                        <p> This is where the calendar will be</p>
                     </div>
-                    <div class="Ticket"> Ticket
-                        <form>
-                            <input type="checkbox" id="children" name="children" value="ticket">
-                            <label for="børn"> Children</label>
-                                <div style="text-align: right;">
-                                    <button onclick="increment()">+</button>
-                                    <button onclick="decrement()">-</button><br>
-                                </div>
-                            <input type="checkbox" id="students" name="students" value="students">
-                            <label for="students"> Students</label>
-                                <div style="text-align: right;">
-                                    <button onclick="increment()">+</button>
-                                    <button onclick="decrement()">-</button><br>
-                                </div>
-                            <input type="checkbox" id="Adult" name="Adult" value="Adult">
-                            <label for="Adult"> Adult</label>
-                                <div style="text-align: right;">
-                                    <button onclick="increment()">+</button>
-                                    <button onclick="decrement()">-</button><br>
-                                </div>
-                        </form>
-                    </div>
-                    <div class="Next">
-                        <button onclick="document.location='index'"> Next</button>
-                    </div>    
+                </div>
             </div>
-        </div>
          
     </body>
 
 
 
     <footer>
-        <p> This is my footer </p>
-        <p class="card-text">There is currently no information about this city tour, <br> 
-        but this is where the information would go if there was any, which there isn't yet
-        </p>
+        <!--<p> This is my footer </p>-->
+        <h1>Information about this tour</h1>
+        <form action="/action_page.php">
+        <textarea>
+        There is currently no information about this city tour, but this is where the information would go if there was any, which there isn't yet
+        </textarea>
+        <br><br>
         <div id="c2">
-            <h1> Calendar </h1>
-            <div class="calendar">
-                <p> This is where the calendar will be</p>
+            <div class="Time"> Time </div>
+            <div class="Radiobuttons">
+                <form>
+                    <input type="radio" id="tid1" name="tid" value="tid1">
+                    <label for="tid1">17.00-17.30</label><br>
+                    <input type="radio" id="tid2" name="tid" value="tid2">
+                    <label for="tid2">18:00-18:30</label><br>
+                    <input type="radio" id="tid2" name="tid" value="tid3">
+                    <label for="tid3">19:00-19:30</label>
+                </form>  
+            </div>
+            <div class="Ticket"> Ticket types
+                <form>
+                    <button class="Increment" onclick="increment()">+</button>
+                    <button class="Decrement" onclick="decrement()">-</button>
+                    <label for="Children"> Children</label><br>
+                    <button class="Increment" onclick="increment()">+</button>
+                    <button class="Decrement" onclick="decrement()">-</button>
+                    <label for="students"> Students</label><br>                       
+                    <button class="Increment" onclick="increment()">+</button>
+                    <button class="Increment" onclick="decrement()">-</button>
+                    <label for="Adult"> Adult</label>
+                </form>
+            </div>
+            <div style="text-align: center;">
+                <button class="Next" onclick="document.location='index.html'">Next</button>
+            </div>    
         </div>
     </footer>
+
 
 
 
