@@ -16,7 +16,7 @@
     <body>
         <p> This is my body </p>
         <button onclick="document.location='index.html'"> index</button>
-        <h1>Byvandring 1</h1>
+        <h1>City tour 1</h1>
             
 
             <div id="wrapper">
@@ -30,12 +30,11 @@
 
                     <div class="col-md-8">
                         <div class="card-body">
-                            <p class="card-text">Der findes ikke noget information om denne byvandring</p>
                         </div>
                     </div>
                 </div>
                 <div id="c2">
-                    <div class="Tidspunkt"> Tidspunkt </div>
+                    <div class="Time"> Time </div>
                     <div class="Radiobuttons">
                         <form>
                             <input type="radio" id="tid1" name="tid" value="tid1">
@@ -46,21 +45,27 @@
                             <label for="tid3">19:00-19:30</label>
                         </form>  
                     </div>
-                    <div class="Billettype"> Billettype
+                    <div class="Ticket"> Ticket
                         <form>
-                            <input type="checkbox" id="børn" name="børn" value="Billet">
-                            <label for="børn"> Børnebillet</label><br>
-                            <input type="checkbox" id="studerende" name="studerende" value="studerende">
-                            <label for="vehicle2"> Studiebillet</label><br>
-                            <input type="checkbox" id="Voksen" name="Voksen" value="Voksen">
-                            <label for="Voksen"> Voksenbillet</label>
+                            <input type="checkbox" id="children" name="children" value="ticket">
+                            <label for="børn"> Children</label>
+                                <button onclick="increment()">+</button>
+                                <button onclick="decrement()">-</button><br>
+                            <input type="checkbox" id="students" name="students" value="students">
+                            <label for="students"> Students</label>
+                                <button onclick="increment()">+</button>
+                                <button onclick="decrement()">-</button><br>
+                            <input type="checkbox" id="Adult" name="Adult" value="Adult">
+                            <label for="Adult"> Adult</label>
+                                <button onclick="increment()">+</button>
+                                <button onclick="decrement()">-</button><br>
                         </form>
                     </div>
                     <div class="Next">
                         <button onclick="document.location='index'"> Next</button>
-                    </div>
-                </div>
+                    </div>    
             </div>
+        </div>
          
     </body>
 
@@ -68,6 +73,14 @@
 
     <footer>
         <p> This is my footer </p>
+        <p class="card-text">There is currently no information about this city tour, <br> 
+        but this is where the information would go if there was any, which there isn't yet
+        </p>
+        <div id="c2">
+            <h1> Calendar </h1>
+            <div class="calendar">
+                <p> This is where the calendar will be</p>
+        </div>
     </footer>
 
 

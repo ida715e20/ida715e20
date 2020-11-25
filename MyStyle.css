@@ -16,10 +16,16 @@
     width: 500px;
     /*word-spacing: 100px;*/
 }​
-#c2 .Billettype{
+
+#c2 .calendar{
+    text-align: right;
+    margin-right: 100px;
+    width: 500px;
+}
+#c2 .Ticket{
     text-align: left;
 }
-#c2 .Tidspunkt{
+#c2 .Time{
     text-align: center;
     line-height: 25px;
 }
@@ -29,3 +35,8 @@
 #c2 .Next{
     text-align: center;
 }
+/*#c2 .Buttons{
+    text-align: right;
+}
+*/
+
