@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="col-md-12" style='padding-top: .25cm;'>
+            <button type="button" class="btn btn-primary">Home</button>
+            <button type="button" class="btn btn-primary">Sign out</button>     
+        </div>
+
+        <!--Creates a box, where the user can input the title and/or theme of the tour-->
+        <div class="col-md-2 col-md-offset-1" style='padding-top: 0.75cm'>
+            <form>
+                <label for="ftitle">Tour title/Theme</label><br>
+                <input style='width: 300px;' type="text" id="ftitle" name='ftitle'>
+            </form>
+        </div>
+
+        <!--This code creates two boxes. One for the duration of the tour, and one for the max number og participants.-->
+        </div> 
+        <div class="col-md-12 order-md-1" style='padding-top: .5cm;'>
+            <form class="needs-validation" novalidate>
+            <div class="row">
+                <div class="col-md-2 mb-3 col-md-offset-1">
+                    <label for="fduration">Duration (in minutes)</label><br>
+                    <input style='width: 88px;' type="number" id="fduration" name='fduration'> 
+                
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="fmaxParticipants">Max number of participants</label><br>
+                    <input style='width: 88px;' type="number" id="fmaxParticipants" name='fmaxParticipants'>
+                </div>
+            </div>
+        </div>
+
+        <!--This code creates a box, where the user can input the place the tour is starting-->
+        <div class="col-md-12 col-md-offset-1" style='padding-top: 0.5cm'>
+            <form>
+                <label for="fplace">Place</label><br>
+                <input style='width: 300px;' type="text" id="fplace" name='fplace'>
+            </form>
+        </div>
+
+        <!--This code creates a box with 3 pre-defined ticket types, and allow the user to make more-->
+        <div class="col-md-12 col-md-offset-1" style='padding-top: 0.5cm'>
+            <label for="fticketTypes">Ticket Types</label>
+            <select style='width: 300px;' multiple class="form-control" id="fticketTypes">
+                <option>Adult: 80kr.</option>
+                <option>Children: 40kr.</option>
+                <option>Students: 60kr.</option>
+            </select>
+            <button type="button" class="btn btn-outline-primary">Add ticket type</button>
+        </div>
+        
+        <!--This code creates a text field, where you can describe the tour-->
+        <div class="col-md-2 col-md-offset-1" style='padding-top: 0.5cm'>
+            <form>
+                <label for="fdescription">Description</label><br>
+                <input style='width: 300px; height: 120px;' type="text" id="fdescription" name='fdescription'>
+            </form>
+        </div>
+    
+
+    </body>
+
+
+</html>
