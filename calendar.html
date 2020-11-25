@@ -25,23 +25,35 @@
     </h1>
    </header>
    <body>
-    <div class="radio leftpad" >
-       <label> <input type="radio" name="optradio" value="public" checked>
-          Public Tours
-        </label>
-    </div>
-      <div class="radio leftpad" style='padding-top: 1cm;' >
-       <label> <input type="radio" name="optradio" value="private">
-        Private Tours
-       </label>
+
+     
+      <div class="container">
+      <div class="row">
+          <div class="col">
+            <div class="radio leftpad" >
+                <label> <input type="radio" name="optradio" value="public" checked>
+                   Public Tours
+                 </label>
+             </div>
+               <div class="radio leftpad" style='padding-top: 1cm; padding-bottom: 1cm;' >
+                <label> <input type="radio" name="optradio" value="private">
+                 Private Tours
+                </label>
+               </div>
+              
+              
+            <ul class="list-group" style="width: 7cm; padding-left: 1cm;">
+                <li class="list-group-item">Overview of Tour status: </li>
+                <li class="list-group-item list-group-item-success">Tour Published</li>
+                <li class="list-group-item list-group-item-warning">Tour Pending</li>
+                <li class="list-group-item list-group-item-danger">Tour Completed</li>
+                <li class="list-group-item list-group-item-primary">Private Tour</li>
+              </ul>
+          </div>
+        
+          <div class="col"  id="calendar" style="width: 800px;  ">
+             </div>
+          </div>
       </div>
-      <ul class="list-group" style="width: 7cm; padding-left: 1cm;">
-        <li class="list-group-item">Overview of Tour status: </li>
-        <li class="list-group-item list-group-item-danger">Tour Completed</li>
-        <li class="list-group-item list-group-item-warning">Tour Pending</li>
-        <li class="list-group-item list-group-item-success">Tour Published</li>
-        <li class="list-group-item list-group-item-primary">Private Tour</li>
-      </ul>
-      <div id="calendar" style="width: 700px;" style="text-align: center;" ></div>
    </body>
-</html>
+</html> 
