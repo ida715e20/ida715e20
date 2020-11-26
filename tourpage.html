@@ -6,12 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="MyStyle.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.css">
+        <link rel="stylesheet" href="calendarTemp.js">
+        <!-- Importing the fullcalendar and javascript file-->
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.js"></script>
+        <script src="js/calendar.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <title>The Museums of Notheren Jutland| book tour</title>
     </head>
-
-
 
     <body>
         <div>
@@ -22,28 +25,25 @@
            <h1>City tour 1 </h1> 
         </div>
         
-            
-
-            <div id="wrapper">
-                <!--image og information-->
-                <div id="c1" style="max-width: 540px;">
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
-                            <img src="image/byvandring.jpg" alt="..." width="300" height="250">
-                        </div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                        </div>
+        <div id="wrapper">
+            <!--image og information-->
+            <div id="c1" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="image/byvandring.jpg" alt="..." width="300" height="250">
                     </div>
                 </div>
-                <div id="c2">
-                    <h1> Calendar </h1>
-                    <div class="calendar">
-                        <p> This is where the calendar will be</p>
+                <div class="col-md-8">
+                    <div class="card-body">
                     </div>
                 </div>
             </div>
+            <div id="c2">
+                <h1> Calendar </h1>
+                <div class="col-7"  id="calendar" >
+                </div>
+            </div>
+        </div>
          
     </body>
 
