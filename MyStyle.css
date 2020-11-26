@@ -6,7 +6,7 @@
 #c1{
    float:left;
    /*background:blue;*/
-   /*margin-left: 100px;*/
+   margin-left: 100px;
 }
 
 #c2{
@@ -14,6 +14,7 @@
     float:right;
     margin-right: 100px;
     width: 500px;
+    margin-right: 100px;
     /*word-spacing: 100px;*/
 }​
 
