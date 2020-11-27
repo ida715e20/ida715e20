@@ -12,46 +12,43 @@
      <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.js"></script>
      <script src="js/calendar.js"></script>
 
+
    </header>
 
    <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand">Adminstration </a>
+        <a class="navbar-brand">Guide </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="admin_homepage.html">Home </a>
+              <a class="nav-link" href="guide_homepage.html">Home </a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="calenderAdmin.html">Calendar</a>
+              <a class="nav-link" href="calenderGuide.html">Calendar</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="admin_booking.html">Set tour</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="statistics.html">Statistics</a>
+              <a class="nav-link" href="guide_report.html">Report</a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="/">Sign out</a>
             </li>
           </ul>
           <span class="navbar-text">
-            Welcome Firstname Lastname | Adminstration | Nordjyllands Historiske Museum 
+            Welcome Firstname Lastname | Guide | Nordjyllands Historiske Museum 
           </span>
         </div>
       </nav>
-
       <div class="row">
             <div class="col-3" style="padding-left: 2cm;">
                 <!-- creating the radiobuttons for privat/Public tour -->
                 <div class="radio" style="padding-top: 2cm;" >
-                    <label> <input type="radio" name="optradio" value="public" checked> Public Tours </label>
+                    <label> <input type="radio" name="optradio" value="allTours" checked> All tours </label>
                 </div>
                 <div class="radio " style='padding-top: 1cm; padding-bottom: 1cm;'>
-                    <label> <input type="radio" name="optradio" value="private"> Private Tours</label>
+                    <label> <input type="radio" name="optradio" value="mySchedule"> My schedule</label>
                 </div>
                 
                 <!-- Labels indicating the tours status  -->

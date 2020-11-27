@@ -1,21 +1,48 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang=en>
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.css">
+        <link rel="stylesheet" href="calendarTemp.js">
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.js"></script>
+        <script src="js/calendar.js"></script>
     </head>
     <body>
-        <div class="col-md-12" style='padding-top: .25cm;'>
-            <button type="button" class="btn btn-primary" onclick="document.location='index.html'">Home </button>
-            <button type="button" class="btn btn-primary" onclick="document.location='index.html'">Sign out</button>     
-        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand">Adminstration </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="admin_homepage.html">Home </a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="calenderAdmin.html">Calendar</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="admin_booking.html">Set tour</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="statistics.html">Statistics</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/">Sign out</a>
+                </li>
+              </ul>
+              <span class="navbar-text">
+                Welcome Firstname Lastname | Adminstration | Nordjyllands Historiske Museum 
+              </span>
+            </div>
+          </nav>
 
         <!--Creates a box, where the user can input the title and/or theme of the tour-->
-        <div class="col-md-11 col-md-offset-1" style='padding-top: 0.75cm'>
+        <div class="col-md-12" style='padding-top: 0.75cm'>
             <form>
                 <label for="ftitle">Tour title/Theme</label><br>
                 <input style='width: 300px;' type="text" id="ftitle" name='ftitle'>
@@ -23,18 +50,24 @@
         </div>
 
         <!--This code creates two boxes. One for the duration of the tour, and one for the max number og participants.-->
-        <div class="col-md-11 col-md-offset-1" style="padding-top: 0.5cm;">
-            <label for="fduration">Duration (in minutes)</label><br>
+        <div class="container-fluid">
+        <div class="row">
+        <div class="col " style="padding-top: 0.5cm;">
+            <label for="fduration">Duration (in minutes) </label><br>
             <input style="width: 88px;" type="number" id="fduration" name='fduration'>
         </div>
-        
-        <div class="col-md-11 col-md-offset-1" style="padding-top: 0.5cm;">
+        </div>
+        </div>
+
+
+        <div class="col-12" style="padding-top: 0.5cm;">
             <label for="fmaxParticipants">Max number of participants</label><br>
             <input style='width: 88px;' type="number" id="fmaxParticipants" name='fmaxParticipants'>
         </div>
+        </div>
 
         <!--This code creates a box, where the user can input the place the tour is starting-->
-        <div class="col-md-11 col-md-offset-1" style='padding-top: 0.5cm'>
+        <div class="col-12" style='padding-top: 0.5cm'>
             <form>
                 <label for="fplace">Place</label><br>
                 <input style='width: 300px;' type="text" id="fplace" name='fplace'>
@@ -42,7 +75,7 @@
         </div>
 
         <!--This code creates a box with 3 pre-defined ticket types, and allow the user to make more-->
-        <div class="col-md-11 col-md-offset-1" style='padding-top: 0.5cm'>
+        <div class="col-12" style='padding-top: 0.5cm'>
             <label for="fticketTypes">Ticket Types</label>
             <select style='width: 300px;' multiple class="form-control" id="fticketTypes">
                 <option>Adult: 80kr.</option>
@@ -53,7 +86,7 @@
         </div>
         
         <!--This code creates a text field, where you can describe the tour-->
-        <div class="col-md-2 col-md-offset-1" style='padding-top: 0.5cm'>
+        <div class="col-2" style='padding-top: 0.5cm'>
             <form>
                 <label for="fdescription">Description</label><br>
                 <input style='width: 300px; height: 120px;' type="text" id="fdescription" name='fdescription'>
@@ -61,11 +94,21 @@
         </div>
 
         <!--This code creates a text field, where you can confirm and publish the tour internally-->
-        <div class="col-md-2 col-md-offset-5">
-            <button type="button" class="btn btn-primary" onclick="document.location='index.html'">Confirm </button>
+        <div class="col-md-2 offset-5">
+            <button type="button" class="btn btn-primary" onclick="document.location='calenderAdmin.html'">Confirm </button>
         </div>
 
+        
+
+        <!--Initialises jQuery-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <!--Initialises Popper.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <!-- Bootstrap js-->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        
     </body>
+
 
 
 </html>
