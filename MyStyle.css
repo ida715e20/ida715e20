@@ -10,7 +10,6 @@
 }
 
 #c2{
-    background:rgb(160, 165, 160);
     float:right;
     margin-right: 100px;
     width: 500px;
@@ -18,12 +17,6 @@
     /*word-spacing: 100px;*/
 }​
 
-#c2 .calendar{
-    float:right;
-    text-align: right;
-    margin-right: 100px;
-    width: 500px;
-}
 #c2 .Ticket{
     text-align: left;
     font-size: 16px
