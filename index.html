@@ -7,9 +7,24 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-      <title>The Museums of Notheren Jutland| Start Page</title>
+      <title> Start Page</title>
     </head>
+
+<!--Overskrift-->
     <body>
+<!-- startpage -->
+      <div style="text-align: center;">
+        <h1>Nordjyllands Historiske Museum</h1>
+        <h2>Select a tour below</h2>
+      </div>
+<!--City tour 1 image og information-->    
+      <div>
+        <h2 class="card-title" style="margin-left: 100px;">City tour 1</h2>
+      </div>
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="image/byvandring.jpg" class="card-img" alt="..." width="250" height="250" style="margin-left: 100px;">
       <h1>The Museum of Northern Jutland</h1>
       <h2>Select a tour below</h2>
       <button onclick="document.location='assets/template/template.html'"> template</button>
@@ -20,25 +35,54 @@
         <div class="row no-gutters">
           <div class="col-md-4">
             <img src="img/byvandring.jpg" class="card-img" alt="..." width="250" height="250">
-          </div>
+<!--- main -->
+        </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title">byvandring nr. 1</h5>
-              <p class="card-text">Her skal man læse information om byvandringen</p>
-              <button type="button" class="btn btn-primary">tryk for byvandring</button>
-      <div class="card mb-3" style="max-width: 540px;">
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <img src="img/byvandring.jpg" class="card-img" alt="..." width="250" height="250">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">byvandring nr. 2</h5>
-              <p class="card-text">Her skal man læse information om byvandringen</p>
-              <button type="button" class="btn btn-primary">tryk for byvandring</button>
+              <div style="text-align: right;">
+                <form action="/action_page.php">
+                  <label for="text">Information about the tour:</label>
+                  <textarea id="text" name="text" rows="4" cols="50" style="margin-left: 170px;">
+                    This is where you can read about the tour
+                    </textarea>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      </div>
     </body>
+<!--City tour 2 image og information-->
+    <footer>
+      <div>
+        <h2 class="card-title" style="margin-left: 100px;">City tour 2</h2>
+      </div>
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+<!-- startpage -->
+            <img src="image/byvandring.jpg" class="card-img" alt="..." width="250" height="250" style="margin-left: 100px;">
+            <img src="img/byvandring.jpg" class="card-img" alt="..." width="250" height="250">
+<!-- main -->
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <div style="text-align: right;">
+                <form action="/action_page.php">
+                  <label for="text">Information about the tour:</label>
+                    <textarea id="text" name="text" rows="4" cols="50" style="margin-left: 170px;">
+                      This is where you can read about the tour
+                    </textarea>
+                </form>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+<!--request tour knap-->
+    <div style="text-align: center;">
+      <button type="button" class="btn btn-primary" onclick="document.location='template.html'">Request private tour</button>
+    </div>
+  </footer>
+
 </html>
