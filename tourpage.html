@@ -8,92 +8,94 @@
         <link rel="stylesheet" href="MyStyle.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.css">
         <link rel="stylesheet" href="calendarTemp.js">
-        <!-- Importing the fullcalendar and javascript file-->
-        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.js"></script>
-        <script src="js/calendar.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <title>The Museums of Notheren Jutland| book tour</title>
     </head>
 
     <body>
-        <div>
-        <!--<p> This is my body </p>-->
-            <button class="Index" onclick="document.location='index.html'" style="margin-left: 100px;">Index</button>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Index</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Press</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Sponsors</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">News letter</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+            </ul>
+            <span class="navbar-text">
+            Welcome to the City tour page - Aalborg | Nordjyllands Historiske Museum
+            </span>
         </div>
-        <div style="margin-left: 100px;">
-           <h1>City tour 1 </h1> 
-        </div>
+    </nav>
+
  <!--Opretter kolonne 1 og indsætter billede-->       
-        <div id="wrapper">
-            <!--image og information-->
-            <div id="c1" style="max-width: 540px;">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="img/byvandring.jpg" alt="..." width="500" height="350">
-                    </div>
-                </div>
-                <div class="col-md-8">
+        <div class="row">
+            <div class="col-sm" style="margin-left: 25px;">
+                <div class="card text-white bg-info mb-3" style="width: 50rem;">
+                    <img src="img/byvandring.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
+                        <h2 class="card-title">City tour 1</h2>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
                 </div>
             </div>
-<!--opretter kolonne 2 og indsætter kalender-->
-            <div id="c2" style="max-width: 540px;">
+<!--kolonne 2 med kalender-->
+            <div class="col-sm">
                 <h1> Calendar </h1>
                 <div class="col-7"  id="calendar">
                 </div>
-            </div>
-        </div>  
-    </body>
-<!--indsætter text box med information om tour-->
-    <footer>
-        <!--<p> This is my footer </p>-->
-        <div id="c1">
-            <h1>Information about this tour</h1><br>
-            <form action="/action_page.php">
-                <textarea rows="10" cols="80">
-                There is currently no information about this city tour, but this is where the information would go if there was any, which there isn't yet
-                </textarea>
-            </form>
-        </div>
-<!--indsætter radiobuttons for tidspunkt af tour-->
-        <div id="c2">
-            <div class="Time"> Time </div>
-            <div class="Radiobuttons">
-                <form>
-                    <input type="radio" id="tid1" name="tid" value="tid1">
-                    <label for="tid1">17.00-17.30</label><br>
-                    <input type="radio" id="tid2" name="tid" value="tid2">
-                    <label for="tid2">18:00-18:30</label><br>
-                    <input type="radio" id="tid2" name="tid" value="tid3">
-                    <label for="tid3">19:00-19:30</label>
-                </form>  
+<!--indsætter dropdown tidspunkt af tour-->
+            <div class="dropdown">
+                <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Time of tour
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">17:00-17:30</a>
+                <a class="dropdown-item" href="#">18:00-18:30</a>
+                <a class="dropdown-item" href="#">19:00-19:30</a>
+                </div>
             </div>
 <!--indsætter checkboxes for billettype-->
-            <div class="Ticket"> Ticket types
-                <form>
-                    <button class="Increment" onclick="increment()">+</button>
-                    <button class="Decrement" onclick="decrement()">-</button>
-                    <label for="Children"> Children</label><br>
-                    <button class="Increment" onclick="increment()">+</button>
-                    <button class="Decrement" onclick="decrement()">-</button>
-                    <label for="students"> Students</label><br>                       
-                    <button class="Increment" onclick="increment()">+</button>
-                    <button class="Increment" onclick="decrement()">-</button>
-                    <label for="Adult"> Adult</label>
-                </form>
+            <div class="btn-group-vertical">
+                <h5> Ticket type </h5>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-success">Children</button>
+                    <button type="button" class="btn btn-info">Students</button>
+                    <button type="button" class="btn btn-secondary">Adults</button>
+                  </div>
             </div>
-<!--opretter en "next" knap-->
-            <div style="text-align: center;">
-                <button class="Next" onclick="document.location='purchase-page.html'">Next</button>
-            </div>    
-        </div>
-    </footer>
+<!--opretter en "next" knap-->                   
+                    <div style="text-align: center;">
+                        <button type="button" class="btn btn-primary btn-lg" onclick="document.location='purchase-page.html'">Next</button>
+                    </div>
+                </div>  
+            </div>
+        
 
+    </body>
 
+    <!-- Importing the fullcalendar and javascript file-->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</html>
 
 
           
