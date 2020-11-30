@@ -79,7 +79,6 @@
     cursor: pointer;
     border-radius: 12px;
 }
-/*body{
-   transform: scale(1.1,1.1);*/
-
-
+body{
+   transform: scale(1,1);
+}
