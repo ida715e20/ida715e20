@@ -13,38 +13,35 @@
     </head>
 
     <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">Index</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Press</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Sponsors</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="#">News letter</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Contact</a>
-            </li>
-            </ul>
-            <span class="navbar-text">
-            Welcome to the City tour page - Aalborg | Nordjyllands Historiske Museum
-            </span>
-        </div>
-    </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Nordjyllands Historiske Museum</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">City Tours</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Private City Tours</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                </ul>
+            </div>
+        </nav>
 
  <!--Opretter kolonne 1 og indsætter billede-->       
         <div class="row">
             <div class="col-sm" style="margin-left: 25px;">
-                <div class="card text-white bg-info mb-3" style="width: 75rem;">
+                <div class="card" style="width: 75rem;">
                     <img src="img/byvandring.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h2 class="card-title">City tour 1</h2>
@@ -54,80 +51,14 @@
             </div>
 <!--kolonne 2 med kalender-->
             <div class="col-sm">
-                <h1> Calendar </h1>
+                <h1> Available dates </h1>
                 <div class="col-7"  id="calendar">
                 </div>
 <!--indsætter dropdown tidspunkt af tour-->
-<div class="card border-primary mb-3" style="max-width: 50rem;">
-    <div class="card-header">Time of tour</div>
-    <div class="card-body text-primary">
-        <form>
-            <div class="form-row align-items-center">
-              <div class="col-auto my-1">
-                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                  <option selected>Choose time</option>
-                  <option value="1">17:00-17:30</option>
-                  <option value="2">18:00-18:30</option>
-                  <option value="3">19:00-19:30</option>
-                </select>
-              </div>
-              <div class="col-auto my-1">
-                <div class="custom-control custom-checkbox mr-sm-2">
-                  <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-                  <label class="custom-control-label" for="customControlAutosizing">Remember my preference</label>
-                </div>
-              </div>
-            </div>
-          </form>
-    </div>
-  </div>
-
-<!--indsætter checkboxes for billettype-->
-<div class="card border-secondary mb-3" style="max-width: 50rem;">
-    <div class="card-header">Ticket type</div>
-    <div class="card-body text-secondary">
-      <div class="btn-group-vertical">
-        <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-success">Children</button>
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                <label class="custom-control-label" for="customCheck1">Check this ticket type</label>
-            </div>
-            <form action="/action_page.php">
-                <label for="quantity">Select number of tickets:</label>
-                <input type="number" id="quantity" name="quantity" min="1" max="30">
-            </form>
-        <button type="button" class="btn btn-info">Students</button>
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="customCheck2">
-                <label class="custom-control-label" for="customCheck2">Check this ticket type</label>
-            </div>
-            <form action="/action_page.php">
-                <label for="quantity">Select number of tickets:</label>
-                <input type="number" id="quantity" name="quantity" min="1" max="30">
-            </form>
-        <button type="button" class="btn btn-secondary">Adults</button>
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="customCheck3">
-                <label class="custom-control-label" for="customCheck3">Check this ticket type</label>
-            </div>
-            <form action="/action_page.php">
-                <label for="quantity">Select number of tickets:</label>
-                <input type="number" id="quantity" name="quantity" min="1" max="30">
-            </form>
-        </div>
-    </div>
-</div>
-</div>
-
-<!--opretter en "next" knap-->                   
-                    <div style="text-align: center;">
-                        <button type="button" class="btn btn-primary btn-lg" onclick="document.location='purchase-page.html'">Next</button>
-                    </div>
-                </div>  
-            </div>
-        
+                <div>
+                    <button type="button" class="btn btn-success btn-lg">Tickets available</button><br>
+                    <button type="button" class="btn btn-danger btn-lg">No tickets available</button> 
+                </div>   
 
     </body>
 
