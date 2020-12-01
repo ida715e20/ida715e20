@@ -11,37 +11,69 @@
 
 
     <body>
+<!-- Navigations bar-->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Nordjyllands Historiske Museum</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="tourpage.html">City Tours</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="request-private-tour.html">Private City Tours</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Contact</a>
+            </li>
+          </ul>
+          <span class="nav-item-active">
+            <a class="nav-link" href="index.html">Cancel payment</a>
+            </span>  
+        </div>
+      </nav>
+<!-- Overskrift -->
       <div class="py-5 text-center">
         <h2>Purchase a city tour</h2>
         <p class="lead"> Fill out the checkout form below please</p>
       </div>
-      <div class="container">
-      <form class="needs-validation" novalidate>
+
+      <!-- Opretter Grid-->
+    <div class="container">
+      <form>
        <div class="row">
-          <div class="col-sm">
-            <div class="row">
-              <div class="col-md-6 mb-6">
-                <label for="validationCustom01">First name*</label>
+<!-- kolonne 1 med informationer-->
+          <div class="col-7">
+            <div class="form-row">
+              <div class="form-group col-md-6 mb-3">
+                <label for="validationCustom01">First name</label>
                 <input type="text" class="form-control" id="validationCustom01" value="" required>
               </div>
-            <div class="col-md-6 mb-6">
-              <label for="validationCustom02">Last name*</label>
+            <div class=" form-group col-md-6 mb-3">
+              <label for="validationCustom02">Last name</label>
               <input type="text" class="form-control" id="validationCustom02" value="" required>
             </div>
           </div>
           <div>
-            <div class="col-md-10 mb-6">
-              <label for="validationCustom03">E-mail*</label>
+            <div class="form-group">
+              <label for="validationCustom03">E-mail</label>
               <input type="text" class="form-control" id="validationCustom03" value="" required>
             </div>
           </div>
           <div>
-            <div class="col-md-10 mb-6">
-              <label for="validationCustom04">Adress*</label>
+            <div class="form-group">
+              <label for="validationCustom04">Adress</label>
               <input type="text" class="form-control" id="validationCustom04" value="" required>
             </div>
           </div>
-          <div class="row">
+          <div class="form-row">
             <div class="col-md-3 mb-3">
               <label for="validationCustom05">City</label>
               <input type="text" class="form-control" id="validationCustom05" required>
@@ -51,13 +83,13 @@
               <input type="text" class="form-control" id="validationCustom06" required>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-1.5">
-              <label for="validationCustom07">Country code*</label>
+          <div class="form-row">
+            <div class="col-md-1.5 mb-3">
+              <label for="validationCustom07">Country code</label>
               <input type="number" class="form-control" id="validationCustom07" value="+45" required style="width: 75px;">   
             </div>
-            <div class="col-md-3">
-              <label for="validationCustom08">Phone number*</label>
+            <div class="col-md-3 mb-3">
+              <label for="validationCustom08">Phone number</label>
               <input type="text" class="form-control" id="validationCustom08" value="" required>
             </div>
           </div>
@@ -76,35 +108,35 @@
               </label>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-3 mb-3">
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
               <label for="validationCustom09">Card Name</label>
               <input type="text" class="form-control" id="validationCustom09" value="" required>
             </div>
-            <div class="col-md-3 mb-3">
+            <div class="col-md-6 mb-3">
               <label for="validationCustom10">Card Number</label>
               <input type="number" class="form-control" id="validationCustom10" value="" required>
             </div>
           </div>
-          <div class="row">
+          <div class="form-row">
             <div class="col-md-2 mb-3">
-              <label for="validationCustom09">Expiration</label>
-              <input type="number" class="form-control" id="validationCustom09" value="" required>
+              <label for="validationCustom11">Expiration</label>
+              <input type="number" class="form-control" id="validationCustom11" value="" required>
             </div>
             <div class="col-md-2 mb-3">
-              <label for="validationCustom10">CCV</label>
-              <input type="number" class="form-control" id="validationCustom10" value="" required>
+              <label for="validationCustom12">CCV</label>
+              <input type="number" class="form-control" id="validationCustom12" value="" required>
             </div>
           </div>
+<!-- Opretter checkout knap-->
           <div>
             <button type="button" class="btn btn-primary btn-lg btn-block">Continue to checkout</button>
           </div>
         </div>
-        
-        <div class="col-sm">
-          <div class="col-md-3 mb-3">
-            <h2> Your Cart </h2>
-            <div class="card" style="width: 18rem;">
+<!-- Opretter kolonne 2 med cart -->
+          <div class="col-sm">
+            <div class="col-md-3 mb-3">
+              <h2> Cart </h2>
               <div class="card" style="width: 18rem;">
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">Cras justo odio</li>
@@ -114,10 +146,10 @@
               </div>
             </div>
           </div>
-        </div>
-          
     </div>
-  </div>
+  </form>
+  
+</div>
           
 
     
