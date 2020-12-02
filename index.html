@@ -14,7 +14,7 @@
       <div id="guestNavbar"></div>
       <!-- $.get henter indholdet af filen hvor vores navigationsbar ligger i og replaceWith(data) erstatter vores tomme <div> med indholdet af denne -->
       <script>
-        $.get("/components/navigation/guestNavbar.html", function(data){
+        $.get("components/navigation/guestNavbar.html", function(data){
           $("#guestNavbar").replaceWith(data);
         });
       </script> 
