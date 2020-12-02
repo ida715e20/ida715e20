@@ -1,73 +1,41 @@
-calendarMain(); 
-addListner(); 
 
-function calendarMain(){
+initCalender();  
+getTourData();
 
-  var calendar, tourList=[]; 
+var calendar; 
 
-  initCalender();
-  createTour(); 
+function initCalender() {
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+    calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
 
-  function addListner(){
-    lort.addEventListener("click", createTour()); 
-  }
-
-  function initCalender() {
-    document.addEventListener('DOMContentLoaded', function() {
-      var calendarEl = document.getElementById('calendar');
-      calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
-        firstDay: 1,
-        events:[  {title: 'My Event',
-        start: '2020-12-01',
-        description: 'This is a cool event'}],
       
-      });
-
+    });
+  
     calendar.render();
-   });
+  });
 }
 
-  function createTour(){
-    //  let tourDate = document.getElementById('fdate'); 
-    //  let tourTitle = document.getElementById('ftour'); 
-    document.getElementById("ftitle").innerHTML = date();
+function getTourData(){
 
-    //   var date = 2020-12-03; 
-    //   var titel = 'test';
-    //  calendar.addEvent(date, title);
-    //  alert("Hello! I am an alert box!!");
-    
+  var tourTitle = document.getElementById('formTitle').value;
+  var tourDate =  document.getElementById('fdate').value;
 
-    //  let date = tourDate.value;
-    //  tourDate.value = "";
-    //  let title = tourTitle.value; 
-    //  tourTitle.value = " "; 
+  document.getElementById('fd').value = tourTitle + " " + tourDate;
 
+  var tdate = new Date(tourDate + 'T00:00:00' );
+
+    var date = new Date(tourDate + 'T00:00:00'); // will be in local time
+
+    // valid?
+      calendar.addEvent({
+        title: tourTitle,
+        start: date,
+        allDay: true
+      });
       
-    //  let tour = {
-    //    tdate: date, 
-    //    ttitle: title,
-
-    //  }; 
-
-     
-    //  tourList.push(tour);
-
+  
   }
-
- 
- function addTour(event){
-  calendar.addEvent({
-     title: tourList.ttitle,
-     start: tourList.tdate,
-
-   });
-
-
- }
-
-
-}
 
 
