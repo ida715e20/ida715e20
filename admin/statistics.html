@@ -5,6 +5,7 @@
     <title>Title | Nordjyllands Historiske Museum</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/MyStyle.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- Henter den senest version af jQuery -->
@@ -20,9 +21,48 @@
       $("#adminNavbar").replaceWith(data);
     });
   </script>
-    <h1>
-      Hello, statistics page
-    </h1>
+    <div class="container-fluid">
+      <div class="py-5 text-center">
+        <h2>Statistics</h2>
+        <!--Lead paragraph: https://getbootstrap.com/docs/4.0/content/typography/#lead-->
+      </div>
+      <div class="col-md-12 order-md-1">
+        <div class="row">
+          <div class="col-md-3 pad-top">
+            <label for="sPending">Tours pending</label><br>
+            <input  type="number" class="form-control" value="50" id="sPending" name='sPending'>
+          </div>
+          <div class="col-md-3 pad-top">
+            <label for="sPublished">Tours published</label><br>
+            <input type="number" class="form-control" value="10" id="sPublished" name='sPublished'>
+          </div>
+          <div class="col-md-3 pad-top">
+            <label for="sComplete">Tours completed</label><br>
+            <input type="number" class="form-control" value="30" id="sComplete" name="sComplete">
+          </div>
+          <div class="col-md-3 pad-top">
+            <label for="sPrivate">Private tours</label><br>
+            <input type="number" class="form-control" value="5" id="sPrivate" name="sPrivate">
+          </div>
+          <div class="col-md-3 pad-top">
+            <label for="sAverage">Average number of participants</label><br>
+            <input type="number" class="form-control" value="26" id="sAverage" name="sAverage">
+          </div>
+          <div class="col-md-3 pad-top">
+            <label for="sAverageAdults">Average number of adults</label><br>
+            <input type="number" class="form-control" value="12" id="sAverageAdults" name="sAverageAdults">
+          </div>
+          <div class="col-md-3 pad-top">
+            <label for="sAverageChild">Average number of children</label><br>
+            <input type="number" class="form-control" value="6" id="sAverageChild" name="sAverageChild">
+          </div>
+          <div class="col-md-3 pad-top">
+            <label for="sAverageStudent">Average number of students</label><br>
+            <input type="number" class="form-control" value="8" id="sAverageStudent" name="sAverageStudent">
+          </div>
+        </div>
+      </div>
+    </div>
 
  <!--Initialises jQuery-->
  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
