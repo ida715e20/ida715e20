@@ -7,34 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Henter den senest version af jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand">Guide </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="guide_homepage.html">Home </a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="calenderGuide.html">Calendar</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="guide_report.html">Report</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Sign out</a>
-          </li>
-        </ul>
-        <span class="navbar-text">
-          Welcome Firstname Lastname | Guide | Nordjyllands Historiske Museum 
-        </span>
-      </div>
-    </nav>
+    <!-- Opretter en tom <div> med et ID som udfyldes af JavaScript funktionen nedenunder -->
+    <div id="guideNavbar"></div>
+    <!-- $.get henter indholdet af filen hvor vores navigationsbar ligger i og replaceWith(data) erstatter vores tomme <div> med indholdet af denne -->
+    <script>
+      $.get("components/navigation/guideNavbar.html", function(data){
+        $("#guideNavbar").replaceWith(data);
+      });
+    </script> 
 
     <h1>Hello, report page!</h1>
 

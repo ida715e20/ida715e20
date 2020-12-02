@@ -16,37 +16,18 @@
             padding-top: 0.5cm;
           }
         </style>
+        <!-- Henter den senest version af jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand">Adminstration </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="admin_homepage.html">Home </a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="calenderAdmin.html">Calendar</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="admin_booking.html">Set tour</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="statistics.html">Statistics</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="/">Sign out</a>
-                </li>
-              </ul>
-              <span class="navbar-text">
-                Welcome Firstname Lastname | Adminstration | Nordjyllands Historiske Museum 
-              </span>
-            </div>
-          </nav>
-          
+      <!-- Opretter en tom <div> med et ID som udfyldes af JavaScript funktionen nedenunder -->
+      <div id="adminNavbar"></div>
+      <!-- $.get henter indholdet af filen hvor vores navigationsbar ligger i og replaceWith(data) erstatter vores tomme <div> med indholdet af denne -->
+      <script>
+        $.get("components/navigation/adminNavbar.html", function(data){
+            $("#adminNavbar").replaceWith(data);
+          });
+      </script>
           <div class="container-fluid">
             <div class="row">
           
