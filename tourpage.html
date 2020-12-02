@@ -30,20 +30,25 @@
  <!--Opretter kolonne 1 og indsætter billede-->       
       <div class="container-fluid">  
         <div class="row">
-            <div class="col-5">
+            <div class="col-4">
                 <div class="card">
                     <img src="img/byvandring.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h2 class="card-title">City tour 1</h2>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h2 class="card-title">Aalborg in the Middle Ages</h2>
+                        <p class="text-justify">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
+                        <p class="text-justify">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
                     </div>
                 </div>
+                <div class="alert alert-primary" role="alert" id="theme1tour">
+                    City tour 1
+                  </div>
             </div>
+            
 
 <!--kolonne 2 med kalender-->
-            <div class="col-7">
+            <div class="col-6">
                 <h1> Available dates </h1>
-                <div class="col-7"  id="calendar">
+                <div class="col-6"  id="calendar">
                 </div>
 
 <!--indsætter ticket avalability-->
@@ -56,17 +61,35 @@
                 <div>
                     <h3> Ticket types </h3>
                 </div>
-                <div>
-                    <label for="ticket01">Children</label>
-                    <input type="number" class="form-control" id="childticket" style="width: 170px" min="1" max="10" placeholder="Number of tickets">
+                <div class="form-row">
+                    <div class="col-md-2 mb-3">
+                        <label for="ticket01">Children</label>
+                        <input type="number" class="form-control" id="childticket" style="width: 3cm" min="1" max="10">
+                    </div>
+                    <div class="col-md-2 mb-3">
+                       <label for="ticketcost1">Cost</label>
+                        <input type="number" class="form-control" id="" style="width: 3cm" min="1" max="10">
+                    </div>
                 </div>
-                <div>
-                    <label for="ticket02">Students</label>
-                    <input type="number" class="form-control" id="studentticket" style="width: 170px" min="1" max="10" placeholder="Number of tickets">
+                <div class="form-row">
+                    <div class="col-md-2 mb-3">
+                        <label for="ticket02">Students</label>
+                        <input type="number" class="form-control" id="studentticket" style="width: 3cm" min="1" max="10"> 
+                    </div>
+                    <div class="col-md-2 mb-3">
+                        <label for="ticketcost2">Cost</label>
+                        <input type="number" class="form-control" id="" style="width: 3cm" min="1" max="10">
+                    </div>
                 </div>
-                <div>
-                    <label for="ticket03">Adults</label>
-                    <input type="number" class="form-control" id="adultticket" style="width: 170px" min="1" max="10" placeholder="Number tickets">
+                <div class="form-row">
+                    <div class="col-md-2 mb-3">
+                        <label for="ticket03">Adults</label>
+                        <input type="number" class="form-control" id="adultticket" style="width: 3cm" min="1" max="10">
+                    </div>
+                    <div class="col-md-2 mb-3">
+                        <label for="ticketcost3">Cost</label>
+                        <input type="number" class="form-control" id="" style="width: 3cm" min="1" max="10">
+                    </div>
                 </div>
 
 <!--opretter en "next" knap-->                                   
