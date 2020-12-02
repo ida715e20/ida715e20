@@ -47,7 +47,7 @@
                   </form>
                 </div>
                 <!--This code creates a box, where the user can input the place the tour is starting-->
-                  <div class="pad-top">
+                <div class="pad-top">
                   <form>
                     <label for="fplace">Place</label><br>
                     <input style='width: 300px;' type="text" id="fplace" name='fplace'>
@@ -65,13 +65,11 @@
                 </div>
                 <!--This code creates a text field, where you can describe the tour-->
                 <div class="pad-top">
-                  <form>
-                    <label for="fdescription">Description</label><br>
-                    <input style='width: 300px; height: 120px;' type="text" id="fdescription" name='fdescription'>
-                  </form>
+                  <label for="fDescription">Description</label>
+                    <textarea class="form-control" aria-label="With textarea" style="height: 3cm; width: 300px; resize: none;"></textarea>
                 </div>
                 <!--This code creates a text field, where you can confirm and publish the tour internally-->
-                <div class="pad-top">
+                <div class="pad-top" style="padding-bottom: 0.25cm;">
                  <button type="button" class="btn btn-primary" onclick="document.location='calenderAdmin.html'">Confirm </button>
                 </div>
               </div>
