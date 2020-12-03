@@ -69,9 +69,32 @@
                     <textarea class="form-control" aria-label="With textarea" style="height: 3cm; width: 300px; resize: none;"></textarea>
                 </div>
                 <!--This code creates a text field, where you can confirm and publish the tour internally-->
+                <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                Confirm
+                </button>
+                <!-- Modal -->
                 <div class="pad-top" style="padding-bottom: 0.25cm;">
-                 <button type="button" class="btn btn-primary" onclick="document.location='calenderAdmin.html'">Confirm </button>
+                <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Confirmation</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        Are you sure you wish to confirm?
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                        <button type="button" class="btn btn-primary" onclick="document.location='/ida715e20/admin/calendar.html'">Yes</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
               </div>
               <!--This is the calendar-->
               <div class="col-md-5" id="calendar"></div>
