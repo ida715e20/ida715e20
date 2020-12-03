@@ -8,7 +8,7 @@ function initCalender() {
   document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar'); 
     calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth', 
+ 
       firstDay: 1,
       events: []
    
@@ -25,13 +25,17 @@ function getTourData(){
 
   var tourTitle = document.getElementById('fticketTheme').value;
   var tourDate =  document.getElementById('fdate').value;
-  var date = new Date(tourDate + 'T00:00:00'); 
+  var date = new Date(tourDate + 'T00:00:00');
+  var maxP = document.getElementById('fmaxParticipants').value; 
 
-  calendar.addEvent({
+  calendar.addEvent({  
+    
     title: tourTitle,
     start: date,
-   
+    participants: maxP,
+  
   });
+  
 }
 
 
