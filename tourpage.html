@@ -30,7 +30,7 @@
  <!--Opretter kolonne 1 og indsætter billede-->       
       <div class="container-fluid">  
         <div class="row">
-            <div class="col-4">
+            <div class="col-md-6">
                 <div class="card">
                     <img src="img/byvandring.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -46,9 +46,9 @@
             
 
 <!--kolonne 2 med kalender-->
-            <div class="col-6">
+            <div class="col-md-5">
                 <h1> Available dates </h1>
-                <div class="col-6"  id="calendar">
+                <div id="calendar">
                 </div>
 
 <!--indsætter ticket avalability-->
@@ -58,33 +58,48 @@
                 </div>
 
 <!-- Ticket types -->
+                <div class="form-row">
+                    <div class="card-header">
+                        Ticket cost
+                    </div>
+                    <div class="card"> 
+                        <div class="card-body">
+                        Child = 40 kr<br>
+                        Student = 60 kr<br>
+                        Adult = 80 kr
+                        </div>
+                    </div>
+                </div>
                 <div>
                     <h4> Ticket types </h4>
                 </div>
                 <div class="form-row">
-                    <div class="col-md-2 mb-3">
+                    <div class="col-md-2 mb-2">
                         <label for="ticket01">Children</label>
-                        <input type="number" class="form-control" id="childticket" style="width: 3cm" min="1" max="10">
+                        <input type="number" class="form-control" id="childticket" style="width: 2cm" min="1" max="10">
                     </div>
-
                 </div>
                 <div class="form-row">
-                    <div class="col-md-2 mb-3">
+                    <div class="col-md-2 mb-2">
                         <label for="ticket02">Students</label>
-                        <input type="number" class="form-control" id="studentticket" style="width: 3cm" min="1" max="10"> 
+                        <input type="number" class="form-control" id="studentticket" style="width: 2cm" min="1" max="10"> 
                     </div>
-
                 </div>
                 <div class="form-row">
-                    <div class="col-md-2 mb-3">
+                    <div class="col-md-2 mb-2">
                         <label for="ticket03">Adults</label>
-                        <input type="number" class="form-control" id="adultticket" style="width: 3cm" min="1" max="10">
+                        <input type="number" class="form-control" id="adultticket" style="width: 2cm" min="1" max="10">
                     </div>
-
                 </div>
+               
+                
+                
+                        
+                
+               
 
 <!--opretter en "next" knap-->                                   
-                <div style="text-align: center;">
+                <div style="text-align: right;">
                     <button type="button" class="btn btn-dark btn-lg" onclick="document.location='purchase-page.html';getdata();">Next</button>
                 </div>
             </div>  
