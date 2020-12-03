@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.css">
-        <link rel="stylesheet" href="calendarTemp.js">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <!--<link rel="stylesheet" href="MyStyle.css">-->
         <!-- Henter den senest version af jQuery -->
@@ -30,20 +29,25 @@
  <!--Opretter kolonne 1 og indsætter billede-->       
       <div class="container-fluid">  
         <div class="row">
-            <div class="col-5">
+            <div class="col-md-6">
                 <div class="card">
                     <img src="img/byvandring.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h2 class="card-title">City tour 1</h2>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h2 class="card-title">Aalborg in the Middle Ages</h2>
+                        <p class="text-justify">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
+                        <p class="text-justify">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
                     </div>
                 </div>
+                <div class="alert alert-primary" role="alert" id="theme1tour">
+                    City tour 1
+                  </div>
             </div>
+            
 
 <!--kolonne 2 med kalender-->
-            <div class="col-7">
+            <div class="col-md-5">
                 <h1> Available dates </h1>
-                <div class="col-7"  id="calendar">
+                <div id="calendar">
                 </div>
 
 <!--indsætter ticket avalability-->
@@ -53,25 +57,49 @@
                 </div>
 
 <!-- Ticket types -->
-                <div>
-                    <h3> Ticket types </h3>
+                <div class="form-row">
+                    <div class="card-header">
+                        Ticket cost
+                    </div>
+                    <div class="card"> 
+                        <div class="card-body">
+                        Child = 40 kr<br>
+                        Student = 60 kr<br>
+                        Adult = 80 kr
+                        </div>
+                    </div>
                 </div>
                 <div>
-                    <label for="ticket01">Children</label>
-                    <input type="number" class="form-control" id="ticket01" value="" required style="width: 170px" min="1" max="10" placeholder="Number of tickets">
+                    <h4> Ticket types </h4>
                 </div>
-                <div>
-                    <label for="ticket02">Students</label>
-                    <input type="number" class="form-control" id="ticket02" value="" required style="width: 170px" min="1" max="10" placeholder="Number of tickets">
+                <div class="form-row">
+                    <div class="col-md-2 mb-2">
+                        <label for="ticket01">Children</label>
+                        <input type="number" class="form-control" id="childticket" style="width: 2cm" min="1" max="10">
+                    </div>
                 </div>
-                <div>
-                    <label for="ticket03">Adults</label>
-                    <input type="number" class="form-control" id="ticket03" value="" required style="width: 170px" min="1" max="10" placeholder="Number tickets">
-                </div>  
+                <div class="form-row">
+                    <div class="col-md-2 mb-2">
+                        <label for="ticket02">Students</label>
+                        <input type="number" class="form-control" id="studentticket" style="width: 2cm" min="1" max="10"> 
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-2 mb-2">
+                        <label for="ticket03">Adults</label>
+                        <input type="number" class="form-control" id="adultticket" style="width: 2cm" min="1" max="10">
+                    </div>
+                </div>
+               
+                
+                
+                        
+                
+               
 
 <!--opretter en "next" knap-->                                   
-                <div style="text-align: center;">
-                    <button type="button" class="btn btn-dark btn-lg" onclick="document.location='purchase-page.html'">Next</button>
+                <div style="text-align: right;">
+                    <button type="button" class="btn btn-dark btn-lg" onclick="document.location='purchase-page.html';getdata();">Next</button>
                 </div>
             </div>  
         </div>
@@ -86,7 +114,8 @@
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
  <!-- Bootstrap js-->
  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> 
-    </body>
+ <script src="js/cart.js"></script> 
+</body>
 
     
    
