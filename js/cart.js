@@ -29,7 +29,3 @@ function getdata(){
     localStorage.setItem("adultscount", adult);
     localStorage.setItem("ticketscount", count);
     localStorage.setItem("themetour", theme1);
-    
-
-
-}
