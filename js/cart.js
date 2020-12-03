@@ -1,35 +1,45 @@
-let children=localStorage.getItem("childrencount");
-let students=localStorage.getItem("studentscount");
-let adults=localStorage.getItem("adultscount");
-let tickets=localStorage.getItem("ticketscount");
-let theme=localStorage.getItem("themetour");
+
+// Retrieving data:
+text = localStorage.getItem("testJSON");
+myJSON = JSON.parse(text);
 
 
-if(children==null) children=0;
-if(students==null) students=0;
-if(adults==null) adults=0;
+let c=document.getElementById("childrencount_id");
+if (c) c.innerHTML = myJSON.children;
 
-document.getElementById("childrencount_id").innerHTML = children;
-document.getElementById("studentscount_id").innerHTML = students;
-document.getElementById("adultscount_id").innerHTML = adults;
-document.getElementById("ticketscount_id").innerHTML = tickets;
-document.getElementById("theme_id").innerHTML = theme;
+let s=document.getElementById("studentscount_id");
+if (s) s.innerHTML = myJSON.students;
+
+let a=document.getElementById("adultscount_id");
+if (a) a.innerHTML = myJSON.adults;
+
+
+
+// fix den her - laves som de andre //
+document.getElementById("ticketscount_id").innerHTML = parseInt(myJSON.children) + parseInt(myJSON.students) + parseInt(myJSON.adults);
+
+// fix den her - laves som de andre //
+document.getElementById("theme_id").innerHTML = myJSON.theme;
+
+
+
+
 
 
 function getdata(){
     let child=document.getElementById('childticket').value;
     let student=document.getElementById('studentticket').value;
     let adult=document.getElementById('adultticket').value;
-    let count=parseInt(child) + parseInt(student) + parseInt(adult);
-    let theme1=document.getElementById('theme1tour').value;
+    let theme=document.getElementById('themetour').innerHTML;
  
-    
-    localStorage.setItem("childrencount", child);
-    localStorage.setItem("studentscount", student);
-    localStorage.setItem("adultscount", adult);
-    localStorage.setItem("ticketscount", count);
-    localStorage.setItem("themetour", theme1);
-    
-
+    // Storing data:
+    cart = {children: child, students: student, adults: adult, theme: theme};
+    myJSON = JSON.stringify(cart);
+    localStorage.setItem("testJSON", myJSON);
 
 }
+
+
+
+
+
