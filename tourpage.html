@@ -56,37 +56,25 @@
                     <span class="badge badge-danger" height="25px" width="50px">No tickets avalable</span>
                 </div>
 
-<!-- Ticket types -->
-                <div class="form-row">
-                    <div class="card-header">
-                        Ticket cost
-                    </div>
-                    <div class="card"> 
-                        <div class="card-body">
-                        Child = 40 kr<br>
-                        Student = 60 kr<br>
-                        Adult = 80 kr
-                        </div>
-                    </div>
-                </div>
+<!-- Ticket types  OBS de skal have default value 0 ellers virker ticket tælleren ikke-->
                 <div>
                     <h4> Ticket types </h4>
                 </div>
                 <div class="form-row">
-                    <div class="col-md-2 mb-2">
-                        <label for="ticket01">Children</label>
+                    <div class="col-md-3 mb-2">
+                        <label for="ticket01">Children (40 kr. per ticket)</label>
                         <input type="number" class="form-control" id="childticket" style="width: 2cm" min="1" max="10">
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="col-md-2 mb-2">
-                        <label for="ticket02">Students</label>
+                    <div class="col-md-4 mb-2">
+                        <label for="ticket02">Students (60 kr. per ticket)</label>
                         <input type="number" class="form-control" id="studentticket" style="width: 2cm" min="1" max="10"> 
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="col-md-2 mb-2">
-                        <label for="ticket03">Adults</label>
+                    <div class="col-md-3 mb-2">
+                        <label for="ticket03">Adults (80 kr. per ticket)</label>
                         <input type="number" class="form-control" id="adultticket" style="width: 2cm" min="1" max="10">
                     </div>
                 </div>
