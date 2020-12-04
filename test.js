@@ -1,6 +1,4 @@
-
-
-
+getdata()
 
 var dict = {"one" : [15, 4.5],
     "two" : [34, 3.3],
@@ -21,13 +19,12 @@ fs.writeFile("thing.json", dictstring, function(err, result) {
 
 function getdata(){
     
-    var child = ("childrencount_id")
-
-    var children = JSON.stringify(child);
-
+    
+    let child = document.getElementById("childticket").value;
+    myJSON = JSON.stringify(child);
+    
     var fs = require('fs');
-    fs.writeFile("thing.json", children, function(err, result) {
-    if(err) console.log('error', err);
-});
-}
+    fs.writeFile("thing.json", myJSON, function(err, result) {
+    if(err) console.log('error', err);}
+)}
 

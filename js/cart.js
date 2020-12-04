@@ -1,4 +1,5 @@
 
+
 // Retrieving data:
 text = localStorage.getItem("testJSON");
 myJSON = JSON.parse(text);
