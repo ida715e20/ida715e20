@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <!--<link rel="stylesheet" href="MyStyle.css">-->
+        <!-- Henter den senest version af jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>Tour page</title>
+    </head> 
+    <body>
+    <!-- Opretter en tom <div> med et ID som udfyldes af JavaScript funktionen nedenunder -->
+    <div id="guestNavbar"></div>
+    <!-- $.get henter indholdet af filen hvor vores navigationsbar ligger i og replaceWith(data) erstatter vores tomme <div> med indholdet af denne -->
+    <script>
+      $.get("components/navigation/guestNavbar.html", function(data){
+        $("#guestNavbar").replaceWith(data);
+      });
+    </script> 
+        <!-- Breadcrumbs -->
+          <nav aria-label="breadcrumb">
+           <ol class="breadcrumb">
+           <li class="breadcrumb-item"><a href="index.html"> Start page </a></li>
+           <li class="breadcrumb-item active" aria-current="page"> Tour page</li>
+           </ol>
+        </nav>
+ <!--Opretter kolonne 1 og indsætter billede-->       
+      <div class="container-fluid">  
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="img/Aalborg_slot.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h2 class="card-title">City tour 2</h2>
+                        <p class="text-justify">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
+                        <p class="text-justify">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
+                    </div>
+                </div>
+                <div class="alert alert-primary" role="alert" id="themetour">
+                    City tour 2
+                  </div>
+            </div>
+            
+
+<!--kolonne 2 med kalender-->
+            <div class="col-md-5">
+                <h1> Available dates </h1>
+                <div id="calendar">
+                </div>
+
+<!--indsætter ticket avalability-->
+                <div>
+                    <span class="badge badge-success">Tickets available</span>
+                    <span class="badge badge-danger" height="25px" width="50px">No tickets avalable</span>
+                </div>
+
+<!-- Ticket types  OBS de skal have default value 0 ellers virker ticket tælleren ikke-->
+                <div>
+                    <h4> Ticket types </h4>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-3 mb-2">
+                        <label for="ticket01">Children (40 kr. per ticket)</label>
+                        <input type="number" class="form-control" id="childticket" style="width: 2cm" min="1" max="10">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-2">
+                        <label for="ticket02">Students (60 kr. per ticket)</label>
+                        <input type="number" class="form-control" id="studentticket" style="width: 2cm" min="1" max="10"> 
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-3 mb-2">
+                        <label for="ticket03">Adults (80 kr. per ticket)</label>
+                        <input type="number" class="form-control" id="adultticket" style="width: 2cm" min="1" max="10">
+                    </div>
+                </div>
+               
+                
+                
+                        
+                
+               
+
+<!--opretter en "next" knap-->                                   
+                <div style="text-align: right;">
+                    <button type="button" class="btn btn-dark btn-lg" onclick="document.location='purchase-page.html';getdata();">Next</button>
+                </div>
+            </div>  
+        </div>
+      </div>
+
+<!-- Importing the fullcalendar and javascript file-->
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.js"></script>
+<script src="js/calendar.js"></script>
+ <!--Initialises jQuery-->
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+ <!--Initialises Popper.js-->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+ <!-- Bootstrap js-->
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> 
+ <script src="js/cart.js"></script> 
+</body>
+
+    
+   
+</html>
