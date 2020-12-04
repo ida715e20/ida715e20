@@ -1,12 +1,16 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang=en>
     <head>
         <meta charset="utf-8">
+
+        <link rel="stylesheet" href="/MyStyle.css">
+
         <link rel="stylesheet" href="/ida715e20/MyStyle.css">
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-      
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.css">
      
         <!-- Henter den senest version af jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -21,10 +25,10 @@
           });
       </script>
           <div class="container-fluid">
-            <div class="row">
+            <div class="form-row">
           
               <!--This class puts all the text boxes in the same Bootstrap element, which allows it to be places next to the calendar-->
-              <div class="col-md-6" style='padding-top: 0.75cm'>
+              <div class="col-md-6 mb-3" style='padding-top: 0.75cm'>
                 <!--Creates a box, where the user can input the title and/or theme of the tour-->
                 <label for="ftitle">Tour title/Theme</label>
                   <select style='width: 300px;' multiple class="form-control" id="fticketTheme">
@@ -46,7 +50,7 @@
                 <div class="pad-top">
                   <form>
                     <label for="fmaxParticipants">Max number of participants</label><br>
-                    <input style='width: 88px;' type="number" id="fmaxParticipants" name='fmaxParticipants'>
+                    <input style='width: 88px;' type="number" id="fmaxParticipants" name='Participants'>
                   </form>
                 </div>
                 <!--This code creates a box, where the user can input the place the tour is starting-->
@@ -92,7 +96,7 @@
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                        <button type="button" class="btn btn-primary" onclick="document.location='/ida715e20/admin/calendar.html'">Yes</button>
+                        <button type="button" class="btn btn-primary" onclick="document.location='/admin/calendar.html'">Yes</button>
                       </div>
                     </div>
                   </div>
@@ -100,7 +104,7 @@
               </div>
               </div>
               <!--This is the calendar-->
-              <div class="col-md-5" id="calendar"></div>
+              <div class="col" id="calendar"></div>
             </div>
           </div>
 
@@ -112,9 +116,13 @@
         <!-- Bootstrap js-->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         
+
+          <script src="/js/calendar.js"></script>
+
           <script src="/ida715e20/js/calendar.js"></script>
+
           <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.js"></script>
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.css">
+          
           
     </body>
 

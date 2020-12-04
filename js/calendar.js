@@ -1,37 +1,64 @@
 
-initCalender();  
-getTourData();
-
 var calendar; 
 
+initCalender();
+
 function initCalender() {
+  console.log("hej");
   document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar'); 
     calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth', 
+ 
       firstDay: 1,
       events: []
    
     });
-  
+    
     calendar.render();
+
+    // retrieving data //
+    tourtext = localStorage.getItem("tourJSON");
+    tourJSON = JSON.parse(tourtext);
+    
+
+    calendar.addEvent({  
+    
+      title: tourJSON.title,
+      date: tourJSON.date,
+      start: tourJSON.start,
+      participants: tourJSON.participants,
+
+    });
+
   });
-
-
 }
+
+
 
 
 function getTourData(){
 
   var tourTitle = document.getElementById('fticketTheme').value;
   var tourDate =  document.getElementById('fdate').value;
-  var date = new Date(tourDate + 'T00:00:00'); 
+  var date = new Date(tourDate + 'T00:00:00');
+  var maxP = document.getElementById('fmaxParticipants').value; 
 
-  calendar.addEvent({
+
+  // Storing data:
+  tour = {title: tourTitle, date: tourDate, start: date, participants: maxP};
+  tourJSON = JSON.stringify(tour);
+  localStorage.setItem("tourJSON", tourJSON);
+
+
+
+  calendar.addEvent({  
+    
     title: tourTitle,
+    date: tourDate,
     start: date,
-   
+    participants: maxP,
   });
+  
 }
 
 

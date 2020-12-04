@@ -1,25 +1,67 @@
-let children=localStorage.getItem("childrencount");
-let students=localStorage.getItem("studentscount");
-let adults=localStorage.getItem("adultscount");
-let tickets=localStorage.getItem("ticketscount");
-let theme=localStorage.getItem("themetour");
+
+// Retrieving data:
+text = localStorage.getItem("testJSON");
+myJSON = JSON.parse(text);
 
 
-if(children==null) children=0;
-if(students==null) students=0;
-if(adults==null) adults=0;
+let c=document.getElementById("childrencount_id");
+if (c) c.innerHTML = myJSON.children;
 
-document.getElementById("childrencount_id").innerHTML = children;
-document.getElementById("studentscount_id").innerHTML = students;
-document.getElementById("adultscount_id").innerHTML = adults;
-document.getElementById("ticketscount_id").innerHTML = tickets;
-document.getElementById("theme_id").innerHTML = theme;
+let s=document.getElementById("studentscount_id");
+if (s) s.innerHTML = myJSON.students;
+
+let a=document.getElementById("adultscount_id");
+if (a) a.innerHTML = myJSON.adults;
+
+let tc=document.getElementById("ticketscount_id");
+if (tc) tc.innerHTML = parseInt(myJSON.children) + parseInt(myJSON.students) + parseInt(myJSON.adults);
+
+
+let th=document.getElementById("theme_id");
+if (th) th.innerHTML = myJSON.theme;
+
+let childticket_price = 40
+let studentticket_price = 60
+let adultticket_price = 80
+
+let t=document.getElementById("totalcost_id");
+if (t) t.innerHTML = parseInt(myJSON.children * childticket_price) + parseInt(myJSON.students * studentticket_price) + parseInt(myJSON.adults * adultticket_price);
+/*
+// fix den her - laves som de andre //
+document.getElementById("ticketscount_id").innerHTML = parseInt(myJSON.children) + parseInt(myJSON.students) + parseInt(myJSON.adults);
+
+// fix den her - laves som de andre //
+document.getElementById("theme_id").innerHTML = myJSON.theme;
+*/
+
+/*
+<script type="number1">
+document.getElementById("childticket").value = 40;
+</script>
+*/
 
 
 function getdata(){
+    
     let child=document.getElementById('childticket').value;
     let student=document.getElementById('studentticket').value;
     let adult=document.getElementById('adultticket').value;
+
+    let theme=document.getElementById('themetour').innerHTML;
+    
+ 
+    // Storing data:
+    cart = {children: child, students: student, adults: adult, theme: theme};
+    myJSON = JSON.stringify(cart);
+    localStorage.setItem("testJSON", myJSON);
+
+}
+
+
+
+
+
+
     let count=parseInt(child) + parseInt(student) + parseInt(adult);
     let theme1=document.getElementById('theme1tour').value;
  
@@ -29,3 +71,4 @@ function getdata(){
     localStorage.setItem("adultscount", adult);
     localStorage.setItem("ticketscount", count);
     localStorage.setItem("themetour", theme1);
+
