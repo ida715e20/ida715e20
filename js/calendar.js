@@ -4,15 +4,28 @@ var calendar;
 initCalender();
 
 function initCalender() {
-  console.log("hej");
   document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar'); 
     calendar = new FullCalendar.Calendar(calendarEl, {
  
+      /*
       firstDay: 1,
       events: []
+      */
    
+      eventClick: function(event) {
+        
+        
+        /*
+        $("#successModal").modal("show");
+        $("#successModal .modal-body p").text(event.title);
+        */
+        
+        /*alert('Event: ' + info.event.title);*/
+    }
     });
+
+    
     
     calendar.render();
 
