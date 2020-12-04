@@ -2,3 +2,7 @@
           {
             padding-top: 0.5cm;
           }
+
+          #popup {
+            display: none;
+        }

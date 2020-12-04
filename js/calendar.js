@@ -3,29 +3,23 @@ var calendar;
 
 initCalender();
 
-function initCalender() {
+  function initCalender() {
   document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar'); 
     calendar = new FullCalendar.Calendar(calendarEl, {
  
       /*
       firstDay: 1,
-      events: []
-      */
-   
-      eventClick: function(event) {
-        
-        
-        /*
-        $("#successModal").modal("show");
-        $("#successModal .modal-body p").text(event.title);
-        */
-        
-        /*alert('Event: ' + info.event.title);*/
+      events: []*/
+      
+      eventClick: function(info) {
+      alert('Event: ' + info.event.title);
     }
-    });
-
     
+    });
+/*
+    $("#successModal").modal("show");
+    $("#successModal .modal-body p").text(event.title); */
     
     calendar.render();
 
@@ -46,9 +40,6 @@ function initCalender() {
   });
 }
 
-
-
-
 function getTourData(){
 
   var tourTitle = document.getElementById('fticketTheme').value;
@@ -62,8 +53,7 @@ function getTourData(){
   tourJSON = JSON.stringify(tour);
   localStorage.setItem("tourJSON", tourJSON);
 
-
-
+/*
   calendar.addEvent({  
     
     title: tourTitle,
@@ -71,19 +61,19 @@ function getTourData(){
     start: date,
     participants: maxP,
   });
-  
+  */
 }
 
 
 
 
-  
-  // var obj = {
-  //   title: tourTitle,
-  //   start: date
+  /*
+   var obj = {
+     title: tourTitle,
+     start: date
 
-  // }; 
+   }; 
 
-  // tours.push(obj); 
+  tours.push(obj); */
 
  
