@@ -46,6 +46,7 @@ function getdata(){
     let child=document.getElementById('childticket').value;
     let student=document.getElementById('studentticket').value;
     let adult=document.getElementById('adultticket').value;
+
     let theme=document.getElementById('themetour').innerHTML;
     
  
@@ -59,4 +60,15 @@ function getdata(){
 
 
 
+
+
+    let count=parseInt(child) + parseInt(student) + parseInt(adult);
+    let theme1=document.getElementById('theme1tour').value;
+ 
+    
+    localStorage.setItem("childrencount", child);
+    localStorage.setItem("studentscount", student);
+    localStorage.setItem("adultscount", adult);
+    localStorage.setItem("ticketscount", count);
+    localStorage.setItem("themetour", theme1);
 
