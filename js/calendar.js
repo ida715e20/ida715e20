@@ -10,9 +10,12 @@ function initCalender()
     var calendarEl = document.getElementById('calendar'); 
     calendar = new FullCalendar.Calendar(calendarEl, 
     { 
-      firstDay: 1,
+
+      firstDay: 1,  
       events: []
+          
     });
+    
     
     calendar.render();
     
