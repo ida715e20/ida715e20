@@ -28,3 +28,4 @@ function getdata(){
     if(err) console.log('error', err);}
 )}
 
+console.log('Node is installed!');

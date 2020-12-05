@@ -17,7 +17,7 @@ initCalender();
     }
     
     });
-/*
+/* modal box test
     $("#successModal").modal("show");
     $("#successModal .modal-body p").text(event.title); */
     
