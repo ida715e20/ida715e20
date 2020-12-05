@@ -1,7 +1,7 @@
 
 
 // Retrieving data:
-text = localStorage.getItem("testJSON");
+text = localStorage.getItem("cartJSON");
 myJSON = JSON.parse(text);
 
 
@@ -42,7 +42,7 @@ function getdata(){
     // Storing data:
     cart = {children: child, students: student, adults: adult, theme: theme};
     myJSON = JSON.stringify(cart);
-    localStorage.setItem("testJSON", myJSON);
+    localStorage.setItem("cartJSON", myJSON);
 
 }
 

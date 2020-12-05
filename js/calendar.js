@@ -3,23 +3,19 @@ var calendar;
 
 initCalender();
 
-  function initCalender() {
-  document.addEventListener('DOMContentLoaded', function() {
+function initCalender() 
+{
+  document.addEventListener('DOMContentLoaded', function() 
+  {
     var calendarEl = document.getElementById('calendar'); 
-    calendar = new FullCalendar.Calendar(calendarEl, {
+    calendar = new FullCalendar.Calendar(calendarEl, 
+    {
  
-      /*
-      firstDay: 1,
-      events: []*/
       
-      eventClick: function(info) {
-      alert('Event: ' + info.event.title);
-    }
+      firstDay: 1,
+      events: []
     
     });
-/* modal box test
-    $("#successModal").modal("show");
-    $("#successModal .modal-body p").text(event.title); */
     
     calendar.render();
 
@@ -27,15 +23,6 @@ initCalender();
     tourtext = localStorage.getItem("tourJSON");
     tourJSON = JSON.parse(tourtext);
     
-
-    calendar.addEvent({  
-    
-      title: tourJSON.title,
-      date: tourJSON.date,
-      start: tourJSON.start,
-      participants: tourJSON.participants,
-
-    });
 
   });
 }
@@ -53,15 +40,14 @@ function getTourData(){
   tourJSON = JSON.stringify(tour);
   localStorage.setItem("tourJSON", tourJSON);
 
-/*
   calendar.addEvent({  
     
-    title: tourTitle,
-    date: tourDate,
-    start: date,
-    participants: maxP,
+    title: tourJSON.title,
+    date: tourJSON.date,
+    start: tourJSON.start,
+    participants: tourJSON.participants,
+
   });
-  */
 }
 
 
