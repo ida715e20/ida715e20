@@ -1,7 +1,22 @@
 
 
-var calendar; 
+var calendar;
+/*
+, tours = [{
 
+  title: "Test1", 
+  start: '2020-12-12', 
+  description: "Hej med dig .. blablabla"
+ },
+
+  {
+
+    title: "Test 2", 
+    start: '2020-12-21',
+    description: "Blablalbalba"
+
+  }] 
+*/
 initCalender();
 
 function initCalender() 
@@ -12,15 +27,16 @@ function initCalender()
     calendar = new FullCalendar.Calendar(calendarEl, 
     { 
       
-/*
-      firstDay: 1,  
-      events: []*/
-      eventClick: function(event, jsEvent, view) {
-        alert("in event click");
-        $('#modalTitle').html(calEvent.title);
-        $('#modalBody').html(calEvent.title);
-        $('#calendarModal').modal();
 
+      firstDay: 1,  
+      events: [],
+
+      eventClick: function(event,){
+      
+        $('#eventModal').modal('show'); 
+        $('.modal-title').html(event.event.title); 
+        $('.modal-body').html(event.event.start);
+        
     }
           
     });
@@ -57,6 +73,8 @@ function getTourData(){
   var tourDuration = document.getElementById('fduration').value;
   var tourPlace = document.getElementById('fplace').value;
 
+
+
   // Storing data:
   tour = {title: tourTitle, date: tourDate, start: time, participants: maxP, duration: tourDuration, place: tourPlace};
   tourJSON = JSON.stringify(tour);
@@ -92,5 +110,18 @@ function getTourData(){
    }; 
 
   tours.push(obj); */
-
- 
+/*
+ function removeEvent()
+ {
+   console.log("removing event");
+   console.log(chosenevent)
+   console.log(chosenevent.event.time)
+   console.log(chosenevent.event.start)
+   console.log(chosenevent.event.title)
+   console.log(chosenevent.event.participants)
+   console.log(chosenevent.event.duration)
+   console.log(chosenevent.event.place)
+   console.log(chosenevent.event.tourDate)
+   console.log(chosenevent.event.tourTitle)
+ }
+ */

@@ -39,12 +39,12 @@
                   <button type="button" class="btn btn-outline-primary">Add tour type</button>
                 <!--This code creates a form that takes numbers as input. The box is used for inputting the duration a city walk will take in minutes-->
                 <div class="pad-top">
-                  <label for="fduration">Duration (in minutes)  </label><br>
-                  <input style="width: 88px;" type="number" id="fduration" name='fduration'>
+                  <label for="duration">Duration (in minutes)  </label><br>
+                  <input style="width: 88px;" type="number" id="fduration" name='duration'>
                 </div>
                <div class="pad-top">
-                <label for="fduration"> Date </label>
-                  <input id='fdate'style="width: 150px;" type="date" ><br>
+                <label for="date"> Date </label>
+                  <input id='fdate'style="width: 150px;" type="date"><br>
                </div>
                 <!--This code creates a form that takes numbers as input. The box is used for inputting the maximum number of participants for a given city tour-->
                 <div class="pad-top">
@@ -80,7 +80,8 @@
               <button type="button" onclick="getTourData();" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
                 Confirm
                 </button>
-                <!-- Modal -->
+<!-- Modal 
+         
                 <div class="pad-top" style="padding-bottom: 0.25cm;">
                 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                   <div class="modal-dialog">
@@ -101,29 +102,35 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div>-->
+
               </div>
               <!--This is the calendar-->
               <div class="col" id="calendar"></div>
-              <div class='col-md-11'>
-                <div id='calendar' class='mcoCal' style="padding: 15px;"></div>
-            </div> 
-            <div id="calendarModal" class="modal fade">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span> <span>close</span></button>
-                            <h4 id="modalTitle" class="modal-title"></h4>
-                        </div>
-                        <div id="modalBody" class="modal-body"> </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
+             <!-- Modal -->
+          <div class="modal fade" id="eventModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="eventT"> </h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
-            </div>
+                <div class="modal-body">
+                  <div class=label>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" onclick="document.location='index.html'">Confirm</button>
+                  <button type="button" class="btn btn-dark" onclick="removeEvent();">Remove event</button>
+                </div>
+              </div>
+              </div>
             </div>
           </div>
+        </div>
 
           
         <!--Initialises jQuery-->

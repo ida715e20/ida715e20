@@ -6,3 +6,6 @@
           #popup {
             display: none;
         }
+.scroll {
+  position: relative;
+}
