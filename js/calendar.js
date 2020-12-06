@@ -1,60 +1,33 @@
+$(function() {
 
+  $('#calendar').fullCalendar({
+    defaultView: 'month',
 
+    header: {
+      center: 'addEventButton'
+    },
 
-var calendar, tours=[{
+    customButtons: {
+      addEventButton: {
+        text: 'add event...',
+        click: function() {
+          var dateStr = prompt('Enter a date in YYYY-MM-DD format');
+          var date = moment(dateStr);
 
-  "allDay": "true",
-  "title": "Test event",
-  "id": "821",
-  "start": "2020-12-06"
-}]; 
+          if (date.isValid()) {
+            $('#calendar').fullCalendar('renderEvent', {
+              title: 'dynamic event',
+              start: date,
+              allDay: true
+            });
+            alert('Great. Now, update your database...');
+          } else {
+            alert('Invalid date.');
+          }
+        }
+      }
+    }
+  });
 
-initCalender();
+});
 
-function initCalender() {
-  console.log("hej");
-  document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar'); 
-    calendar = new FullCalendar.Calendar(calendarEl, {
- 
-      firstDay: 1,
-      events: tours,
-   
-    });
-
- 
-  }
-    calendar.render();
-
-   
-}
-
-  
-  
-
-
-
-
-function getTourData(){
-
-  var tourTitle = document.getElementById('fticketTheme').value;
-  var tourDate =  document.getElementById('fdate').value;
-  var date = new Date(tourDate + 'T00:00:00');
-  var maxP = document.getElementById('fmaxParticipants').value; 
- 
-  // var t = {title: tourTitle, date: tourDate, start: date, participants: maxP};
-  // tours.push(t); 
-
-    var eventObject = {
-    title: tourTitle,
-    start: tourDate,
- 
-    };
-
-
-}
-
-
-
-
- 
