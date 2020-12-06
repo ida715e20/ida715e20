@@ -1,14 +1,13 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang=en>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="/ida715e20/MyStyle.css">
+        <link rel="stylesheet" href="/MyStyle.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.css">
-        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.js"></script>
-        <script src="/ida715e20/js/calendar.js"></script>
+     
         <!-- Henter den senest version af jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
@@ -17,18 +16,18 @@
       <div id="adminNavbar"></div>
       <!-- $.get henter indholdet af filen hvor vores navigationsbar ligger i og replaceWith(data) erstatter vores tomme <div> med indholdet af denne -->
       <script>
-        $.get("/ida715e20//components/navigation/adminNavbar.html", function(data){
+        $.get("/components/navigation/adminNavbar.html", function(data){
             $("#adminNavbar").replaceWith(data);
           });
       </script>
           <div class="container-fluid">
-            <div class="row">
+            <div class="form-row">
           
               <!--This class puts all the text boxes in the same Bootstrap element, which allows it to be places next to the calendar-->
-              <div class="col-md-6" style='padding-top: 0.75cm'>
+              <div class="col-md-6 mb-3" style='padding-top: 0.75cm'>
                 <!--Creates a box, where the user can input the title and/or theme of the tour-->
                 <label for="ftitle">Tour title/Theme</label>
-                  <select style='width: 300px;' multiple class="form-control" id="fticketTypes">
+                  <select style='width: 300px;' multiple class="form-control" id="fticketTheme">
                     <option>Option 1</option>
                     <option>Option 2</option>
                     <option>Option 3</option>
@@ -39,11 +38,13 @@
                   <label for="fduration">Duration (in minutes)  </label><br>
                   <input style="width: 88px;" type="number" id="fduration" name='fduration'>
                 </div>
+                <label for="fduration"> Date </label>
+                  <input id='fdate'style="width: 150px;" type="date" ><br>
                 <!--This code creates a form that takes numbers as input. The box is used for inputting the maximum number of participants for a given city tour-->
                 <div class="pad-top">
                   <form>
                     <label for="fmaxParticipants">Max number of participants</label><br>
-                    <input style='width: 88px;' type="number" id="fmaxParticipants" name='fmaxParticipants'>
+                    <input style='width: 88px;' type="number" id="fmaxParticipants" name='Participants'>
                   </form>
                 </div>
                 <!--This code creates a box, where the user can input the place the tour is starting-->
@@ -70,7 +71,7 @@
                 </div>
                 <!--This code creates a text field, where you can confirm and publish the tour internally-->
                 <!-- Button trigger modal -->
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+              <button type="button" onclick="getTourData();" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
                 Confirm
                 </button>
                 <!-- Modal -->
@@ -89,7 +90,7 @@
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                        <button type="button" class="btn btn-primary" onclick="document.location='/ida715e20/admin/calendar.html'">Yes</button>
+                        <button type="button" class="btn btn-primary" onclick="document.location='/admin/calendar.html'">Yes</button>
                       </div>
                     </div>
                   </div>
@@ -97,11 +98,38 @@
               </div>
               </div>
               <!--This is the calendar-->
-              <div class="col-md-5" id="calendar"></div>
+              <div class="col" id="calendar"></div>
             </div>
           </div>
-        
 
+          <!-- Modal -->
+          <div class="modal fade" id="eventModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="eventT"> </h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class=label>
+
+                  </div>
+                  
+                   
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" onclick="document.location='index.html'">Confirm</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+
+          
         <!--Initialises jQuery-->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <!--Initialises Popper.js-->
@@ -109,6 +137,10 @@
         <!-- Bootstrap js-->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         
+          <script src="/js/calendar.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.js"></script>
+          
+          
     </body>
 
 
