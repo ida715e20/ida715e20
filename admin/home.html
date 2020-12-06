@@ -15,10 +15,34 @@
   <div id="adminNavbar"></div>
   <!-- $.get henter indholdet af filen hvor vores navigationsbar ligger i og replaceWith(data) erstatter vores tomme <div> med indholdet af denne -->
   <script>
-    $.get("/ida715e20//components/navigation/adminNavbar.html", function(data){
+    $.get("/components/navigation/adminNavbar.html", function(data){
       $("#adminNavbar").replaceWith(data);
     });
   </script>
+   <h2> Active tours </h2>
+   <div class="form-row">
+       <div class="col">
+           <div class="card" style="width: 20rem;">
+           <img src="/img/middleages.jpg" class="card-img-top" alt="...">
+               <div class="card-body">
+               <p class="card-text">Aalborg in the middle ages.</p>
+               </div>
+           </div>
+        <div class="card" style="width: 20rem;">
+            <img src="/img/witches and ghosts.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+            <p class="card-text">Aalborg in the middle ages.</p>
+            </div>
+        </div>
+          <div class="card" style="width: 20rem;">
+              <img src="/img/occupation aalborg.png" class="card-img-top" alt="...">
+              <div class="card-body">
+              <p class="card-text">Aalborg in the middle ages.</p>
+              </div>
+          </div>
+       </div>
+   </div>
+
  <!--Initialises jQuery-->
  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
  <!--Initialises Popper.js-->
