@@ -1,5 +1,18 @@
 
-var calendar, tours = [ {id: 1, title: "lort", start: '2020-12-12'}, {id: 2, title: "haha", start: '2020-12-21'}]
+var calendar, tours = [{
+
+  title: "Test1", 
+  start: '2020-12-12', 
+  description: "Hej med dig .. blablabla"
+ },
+
+  {
+
+    title: "Test 2", 
+    start: '2020-12-21',
+    description: "Blablalbalba"
+
+  }]
 
 initCalender();
 
@@ -12,11 +25,12 @@ function initCalender() {
       firstDay: 1,
       events: tours,      
    
-      eventClick: function(event){
-        $('#eventModal').modal('show'); 
-        $('.modal-title').html(event.event.title); 
-        $('.modal-body').html(event.event.start); 
-       
+      eventClick: function(event,){
+      
+          $('#eventModal').modal('show'); 
+          $('.modal-title').html(event.event.title); 
+          $('.modal-body').html(event.event.start); 
+
       }
 
     });
@@ -32,11 +46,4 @@ function initCalender() {
 
   });
 }
-
-function modalTest (){
-
-
-}
-
-
 
