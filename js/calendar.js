@@ -1,5 +1,7 @@
 
 
+let choseneventid = null;
+
 var calendar;
 /*
 , tours = [{
@@ -32,16 +34,20 @@ function initCalender()
       events: [],
 
       eventClick: function(event,){
-      
+       
         $('#eventModal').modal('show'); 
         $('.modal-title').html(event.event.title); 
         $('.modal-body').html(event.event.start);
-        
+        choseneventid = event.event.id;
     }
+    
           
     });
-    
-    
+    /*
+    calendar.on('eventClick', function (info) {
+    chosenevent = info.event.id;
+    }); 
+    */
     calendar.render();
     
 
@@ -92,14 +98,17 @@ function getTourData(){
     start: time,
     participants: maxP,
     duration: tourDuration,
-    place: tourPlace
+    place: tourPlace,
   });
 /*
   console.log(calendar.getEventById("noget"))
 */
 }
 
-
+function removeEvent()
+{
+  calendar.getEventById(choseneventid).remove();
+}
 
 
   /*
@@ -111,8 +120,10 @@ function getTourData(){
 
   tours.push(obj); */
 /*
- function removeEvent()
+ function event.remove()
  {
+  $('#calendar').fullCalendar('removeEvents', calEvent._id);
+   
    console.log("removing event");
    console.log(chosenevent)
    console.log(chosenevent.event.time)
@@ -123,5 +134,6 @@ function getTourData(){
    console.log(chosenevent.event.place)
    console.log(chosenevent.event.tourDate)
    console.log(chosenevent.event.tourTitle)
+   
  }
  */
