@@ -10,7 +10,6 @@ function getlogin(){
         window.location.href = "/admin/home.html";
     
     if (username == "guide" && password == "guide")
-        window.location.href = "/guide/home.html";
-    
+        window.location.href = "/guide/home.html";     
 
 }
