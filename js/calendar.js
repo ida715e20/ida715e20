@@ -1,4 +1,5 @@
 
+
 var calendar; 
 
 initCalender();
@@ -10,9 +11,17 @@ function initCalender()
     var calendarEl = document.getElementById('calendar'); 
     calendar = new FullCalendar.Calendar(calendarEl, 
     { 
-
+      
+/*
       firstDay: 1,  
-      events: []
+      events: []*/
+      eventClick: function(event, jsEvent, view) {
+        alert("in event click");
+        $('#modalTitle').html(calEvent.title);
+        $('#modalBody').html(calEvent.title);
+        $('#calendarModal').modal();
+
+    }
           
     });
     
@@ -32,7 +41,8 @@ function initCalender()
         date: tourJSON.date,
         start: tourJSON.start,
         participants: tourJSON.participants,
-
+        duration: tourJSON.duration,
+        place: tourJSON.place
       });
     }
   });
@@ -42,11 +52,13 @@ function getTourData(){
 
   var tourTitle = document.getElementById('fticketTheme').value;
   var tourDate =  document.getElementById('fdate').value;
-  var date = new Date(tourDate + 'T00:00:00');
-  var maxP = document.getElementById('fmaxParticipants').value; 
+  var time = new Date(tourDate + 'T00:00:00');
+  var maxP = document.getElementById('fmaxParticipants').value;
+  var tourDuration = document.getElementById('fduration').value;
+  var tourPlace = document.getElementById('fplace').value;
 
   // Storing data:
-  tour = {title: tourTitle, date: tourDate, start: date, participants: maxP};
+  tour = {title: tourTitle, date: tourDate, start: time, participants: maxP, duration: tourDuration, place: tourPlace};
   tourJSON = JSON.stringify(tour);
 
   let numberevents = localStorage.length + 1;
@@ -59,9 +71,10 @@ function getTourData(){
     
     title: tourTitle,
     date: tourDate,
-    start: date,
+    start: time,
     participants: maxP,
-
+    duration: tourDuration,
+    place: tourPlace
   });
 /*
   console.log(calendar.getEventById("noget"))

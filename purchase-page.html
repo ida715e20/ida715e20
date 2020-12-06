@@ -146,37 +146,73 @@
           </div>
         </div>
 <!-- Opretter kolonne 2 med cart -->
-          <div class="col-sm">
-            <div class="col-md-3 mb-3">
-              <h2> Cart </h2>
-              <div class="card" style="width: 18rem;">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Theme of tour:
-                    <span id="theme_id"></span>
-                  </li>
-                  <li class="list-group-item">Number of tickets:
-                      <span id="ticketscount_id"></span>
-                    <div>
-                    <p> Children:
-                      x <span id="childrencount_id"></span></p>
-                    </div>
-                    <div>
-                      <p> Students:
-                      x <span id="studentscount_id"></span></p>
-                    </div>
-                    <div>
-                      <p> Adults: 
-                      x <span id="adultscount_id"></span></p>
-                    </div>
-                  </li>
-                  <li class="list-group-item"><p>Total cost: 
-                    <span id="totalcost_id"></span> kr </p> 
-                  </li>
-                </ul>
+            <div class="col">
+              <div class="form-row">
+                <div class="card" style="width: 25rem;">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item list-group-item-dark">
+                      <div class="form-row">
+                        <h3>My cart:</h3>
+                          <div class="col-md-7" style="text-align: right;">
+                             <svg width="2em" height="3em" viewBox="0 0 16 16" class="bi bi-cart-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="text-align: right;">
+                              <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                              </svg>
+                              <span id="ticketscount_id" class="badge badge-dark"></span>
+                              tickets
+                          </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item list-group-item-dark">
+                      <div class="form-row">
+                        <h5>Theme of tour:</h5>
+                          <div class="col-md-7" style="text-align: right;">
+                          <span id="theme_id"></span>
+                          </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item list-group-item-dark">
+                      <div class="form-row">
+                      <h5>Children:</h5>
+                      <div class="col-md-7">
+                        <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                        <span id="childrencount_id" class="badge badge-dark"></span>
+                      </div>
+                      </div>
+                      <div class="form-row">
+                      <h5>Students:</h5>
+                      <div class="col-md-7">
+                        <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                        <span id="studentscount_id" class="badge badge-dark"></span>
+                      </div>
+                      </div>
+                      <div class="form-row">
+                      <h5>Adults:</h5>
+                      <div class="col-md-7"> 
+                        <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                        </svg> 
+                        <span id="adultscount_id" class="badge badge-dark"></span>
+                      </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item list-group-item-dark">
+                      <div class="form-row">
+                        <h5>Total cost:</h5>
+                        <div class="col-md-7">
+                          <span id="totalcost_id"></span> kr
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-    </div>
+        </div>  
+       </div>
   </form>
   
 </div>

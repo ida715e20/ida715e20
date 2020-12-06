@@ -50,7 +50,7 @@
                 <div class="pad-top">
                   <form>
                     <label for="fmaxParticipants">Max number of participants</label><br>
-                    <input style='width: 88px;' type="number" id="fmaxParticipants" name='Participants'>
+                    <input style='width: 88px;' type="number" id="fmaxParticipants" name='Participants' min="1" max="30">
                   </form>
                 </div>
                 <!--This code creates a box, where the user can input the place the tour is starting-->
@@ -105,6 +105,23 @@
               </div>
               <!--This is the calendar-->
               <div class="col" id="calendar"></div>
+              <div class='col-md-11'>
+                <div id='calendar' class='mcoCal' style="padding: 15px;"></div>
+            </div> 
+            <div id="calendarModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span> <span>close</span></button>
+                            <h4 id="modalTitle" class="modal-title"></h4>
+                        </div>
+                        <div id="modalBody" class="modal-body"> </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             </div>
           </div>
 
