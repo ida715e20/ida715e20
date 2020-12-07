@@ -20,7 +20,7 @@
             $("#adminNavbar").replaceWith(data);
           });
       </script>
-          <div class="container-fluid">
+          <div class="container-fluid" style="padding-left: 2cm;">
             <div class="form-row">
           
               <!--This class puts all the text boxes in the same Bootstrap element, which allows it to be places next to the calendar-->
@@ -107,21 +107,38 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="eventT"> </h5>
+                  <h5 class="modal-title" id="eventTitle"> </h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body">
-                  <div class=label>
-
+                <div class="modal-body" >
+                <label for="">Description: </label>
+                <label for="" id="eventInfo"></label> <br>
+                <label for="" >Place: </label>
+                <label for="" id="eventPlace"></label><br>
+                <label for="" >Participants: </label>
+                <label for="" id =eventTickets></label> <br>
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Choose Tour-Status: 
+                  </button>
+                  <div class="dropdown-menu" >
+                    <a class="dropdown-item active" >Private</a>
+                    <a class="dropdown-item" >Public</a>
+                    <a class="dropdown-item" >Pending</a>
+                    <a class="dropdown-item" >Completed</a>
                   </div>
-                  
+                </div>
+                
+                 
                    
                 </div>
                 <div class="modal-footer">
+                  <input type="text">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   <button type="button" class="btn btn-primary" onclick="document.location='index.html'">Confirm</button>
+                  <button type="button" class="btn btn-dark" data-dismiss="modal" onclick="removeEvent();">Remove event</button>
                 </div>
               </div>
             </div>
