@@ -21,7 +21,7 @@ function initCalender()
 
         $('#eventTitle').html(event.event.title); 
         $('#eventInfo').html(event.event.extendedProps.description);
-        $('#eventTickets').html(event.event.extendedProps.numberOfParticipants);
+        $('#eventPart').html(event.event.extendedProps.participants);
         $('#eventPlace').html(event.event.extendedProps.place);
         $('#eventPlace').html(event.event.id);
 
