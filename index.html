@@ -6,7 +6,7 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
       <!-- Henter den senest version af jQuery -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <!--<link rel="stylesheet" href="MyStyle.css">-->
+      <link rel="stylesheet" href="MyStyle.css">
       <title>Start Page</title>
     </head>
     <body>
@@ -25,38 +25,67 @@
         </ol>
       </nav>
  <!--City tour image og information-->
-      <!-- City tour 1-->
-      <div class="container">
-        <div class="row">
-          <div class="col-sm">
-            <div class="card">
-              <img src="img/byvandring.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h2 class="card-title">Tour 1</h2>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="tourpage.html" class="btn btn-primary">Read more</a>
+      <div class="container-fluid">
+        <div class="form-row">
+          <div class="col-md-6">
+              <h2>
+                Current tours</h2>
+                <div class="form-row">
+                  <div id="list-example" class="list-group">
+                    <a class="list-group-item list-group-item-action" href="#list-item-1">Aalborg in the middle ages</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-2">Witches, ghosts and blood dripping stories</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-3">Aalborg during the occupation</a>
+                  </div>
+                  <div class="col">
+                    <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
+                    </div>
+                    <script>
+                      $('scroll').scrollspy({ target: '#list-example' })
+                    </script>
+                  <!-- City tour 1-->
+                      <div class="card">
+                        <img src="img/middleages.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h2 class="card-title" id="list-item-1">Aalborg in the middle ages</h2>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="tourpage.html" class="btn btn-primary">Read more</a>
+                      </div>
+                    </div>
+                   <!-- City tour 2-->
+                    <div class="card">
+                      <img src="img/witches and ghosts.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h2 class="card-title" id="list-item-2">Witches, ghosts and blood dripping stories</h2>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="tourpage2.html" class="btn btn-primary">Read more</a>
+                      </div>
+                    </div>
+                    <!-- City tour 3-->
+                    <div class="card">
+                      <img src="img/occupation aalborg.png" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h2 class="card-title" id="list-item-3">Aalborg during the occupation</h2>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="tourpage3.html" class="btn btn-primary">Read more</a>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
               </div>
-            </div>
-            <!-- City tour 2-->
-            <div class="card">
-              <img src="img/Aalborg_slot.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h2 class="card-title">Tour 2</h2>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="tourpage.html" class="btn btn-primary">Read more</a>
-              </div>
-            </div>
-          </div>
+            
+              
 <!--opretter tekst og knap til private tour-->
-          <div class="col-sm" style="text-align: center;">
+            <div class="col-md-6" style="text-align: center;">
             <h2>
               Interested in a private city tour?<br>
-              <small class="text-muted">Some text about private city tours</small>
+            <small class="text-muted">Some text about private city tours</small>
             </h2>
             <a href="/ida715e20/private-city-tours.html" class="btn btn-primary">Request private tour</a>
+            </div>
           </div>
         </div>
       </div>
+    
    <!-- Indlæsning af scripts -->
         <!--Initialises jQuery-->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

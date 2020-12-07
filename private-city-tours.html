@@ -86,11 +86,40 @@
             <div class="mb-3">
               Insert datepicker
               </div>
+ <!-- opretter send request knap, der ryger videre til en modal box -->             
+          <div>
+            <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#staticBackdrop">
+            Send request
+            </button>
+          </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">Confirmation</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Thank you for purchasing a private city tour, a confirmation will be sent to your email shortly! You will be sent back to index if confirmed.
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" onclick="document.location='/ida715e20/index.html'">Confirm</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+ <!-- gamle knap        
             <div class="mb-3">
             <button class="btn btn-primary btn-lg btn-block" type="submit" onclick="document.location='index.html'">Send request</button>
           </form>
-        </div>
-      </div>
+        </div> -->
+      
     <!--Initialises jQuery-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
    <!--Initialises Popper.js-->

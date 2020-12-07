@@ -2,7 +2,11 @@
 <html lang=en>
     <head>
         <meta charset="utf-8">
+
         <link rel="stylesheet" href="/MyStyle.css">
+
+        <link rel="stylesheet" href="/ida715e20/MyStyle.css">
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -20,7 +24,9 @@
             $("#adminNavbar").replaceWith(data);
           });
       </script>
-          <div class="container-fluid" style="padding-left: 2cm;">
+
+          <div class="container-fluid">
+
             <div class="form-row">
           
               <!--This class puts all the text boxes in the same Bootstrap element, which allows it to be places next to the calendar-->
@@ -28,23 +34,27 @@
                 <!--Creates a box, where the user can input the title and/or theme of the tour-->
                 <label for="ftitle">Tour title/Theme</label>
                   <select style='width: 300px;' multiple class="form-control" id="fticketTheme">
-                    <option>Option 1</option>
-                    <option>Option 2</option>
-                    <option>Option 3</option>
+                    <option>Aalborg in the middle ages</option>
+                    <option>Witches, ghosts and blood dripping stories</option>
+                    <option>Aalborg during the occupation</option>
                   </select>
                   <button type="button" class="btn btn-outline-primary">Add tour type</button>
                 <!--This code creates a form that takes numbers as input. The box is used for inputting the duration a city walk will take in minutes-->
                 <div class="pad-top">
-                  <label for="fduration">Duration (in minutes)  </label><br>
-                  <input style="width: 88px;" type="number" id="fduration" name='fduration'>
+                  <label for="duration">Duration (in minutes)  </label><br>
+                  <input style="width: 88px;" type="number" id="fduration" name='duration'>
                 </div>
-                <label for="fduration"> Date </label>
-                  <input id='fdate'style="width: 150px;" type="date" ><br>
+               <div class="pad-top">
+                <label for="date"> Date </label>
+                  <input id='fdate'style="width: 150px;" type="date"><br>
+               </div>
                 <!--This code creates a form that takes numbers as input. The box is used for inputting the maximum number of participants for a given city tour-->
                 <div class="pad-top">
                   <form>
                     <label for="fmaxParticipants">Max number of participants</label><br>
-                    <input style='width: 88px;' type="number" id="fmaxParticipants" name='Participants'>
+
+                    <input style='width: 88px;' type="number" id="fmaxParticipants" name='Participants' min="1" max="30">
+
                   </form>
                 </div>
                 <!--This code creates a box, where the user can input the place the tour is starting-->
@@ -74,7 +84,8 @@
               <button type="button" onclick="getTourData();" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
                 Confirm
                 </button>
-                <!-- Modal -->
+<!-- Modal 
+         
                 <div class="pad-top" style="padding-bottom: 0.25cm;">
                 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                   <div class="modal-dialog">
@@ -95,12 +106,14 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div>-->
+
               </div>
               <!--This is the calendar-->
               <div class="col" id="calendar"></div>
             </div>
           </div>
+        </div>
 
           <!-- Modal -->
           <div class="modal fade" id="eventModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -154,7 +167,12 @@
         <!-- Bootstrap js-->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         
+
+
           <script src="/js/calendar.js"></script>
+
+          <script src="/ida715e20/js/calendar.js"></script>
+
           <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.js"></script>
           
           
