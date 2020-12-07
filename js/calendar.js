@@ -1,5 +1,3 @@
-
-
 var calendar, choseneventid;
 
 initCalender();
@@ -31,9 +29,6 @@ function initCalender()
 
         $('#eventModal').modal('show'); 
 
-
-        
-
     }
     
           
@@ -56,7 +51,6 @@ function initCalender()
 
         
         id : tourJSON.id,
-
         title: tourJSON.title,
         date: tourJSON.date,
         start: tourJSON.start,
@@ -94,6 +88,7 @@ function getTourData(){
 
   calendar.addEvent({  
     
+    id: uniqueID, 
     title: tourTitle,
     date: tourDate,
     start: time,
@@ -101,42 +96,7 @@ function getTourData(){
     duration: tourDuration,
     place: tourPlace,
   });
-/*
-  console.log(calendar.getEventById("noget"))
-*/
-}
 
-
-function removeEvent()
-{
-  calendar.getEventById(choseneventid).remove();
-}
-
-
-
-  // Storing data:
-  tour = { id: uniqueID, title: tourTitle, date: tourDate, start: time, participants: maxP, duration: tourDuration, place: tourPlace};
-  tourJSON = JSON.stringify(tour);
-
-  let numberevents = localStorage.length + 1;
-  
-  localStorage.setItem("tourJSON" + numberevents.toString(), tourJSON);
-        
-
-
-  calendar.addEvent({  
-    
-    id: uniqueID,
-    title: tourTitle,
-    date: tourDate,
-    start: time,
-    participants: maxP,
-    duration: tourDuration,
-    place: tourPlace,
-  });
-/*
-  console.log(calendar.getEventById("noget"))
-*/
 }
 
 function removeEvent()
@@ -148,30 +108,5 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-  /*
-   var obj = {
-     title: tourTitle,
-     start: date
 
-   }; 
-
-  tours.push(obj); */
-/*
- function event.remove()
- {
-  $('#calendar').fullCalendar('removeEvents', calEvent._id);
-   
-   console.log("removing event");
-   console.log(chosenevent)
-   console.log(chosenevent.event.time)
-   console.log(chosenevent.event.start)
-   console.log(chosenevent.event.title)
-   console.log(chosenevent.event.participants)
-   console.log(chosenevent.event.duration)
-   console.log(chosenevent.event.place)
-   console.log(chosenevent.event.tourDate)
-   console.log(chosenevent.event.tourTitle)
-   
- }
- */
 

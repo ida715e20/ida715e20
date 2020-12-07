@@ -5,8 +5,6 @@
 
         <link rel="stylesheet" href="/MyStyle.css">
 
-        <link rel="stylesheet" href="/ida715e20/MyStyle.css">
-
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -26,7 +24,6 @@
       </script>
 
           <div class="container-fluid">
-
             <div class="form-row">
           
               <!--This class puts all the text boxes in the same Bootstrap element, which allows it to be places next to the calendar-->
@@ -84,8 +81,9 @@
               <button type="button" onclick="getTourData();" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
                 Confirm
                 </button>
-<!-- Modal 
-         
+                </div> 
+
+         <!-- Modal for when confirming -->
                 <div class="pad-top" style="padding-bottom: 0.25cm;">
                 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                   <div class="modal-dialog">
@@ -106,14 +104,11 @@
                     </div>
                   </div>
                 </div>
-              </div>-->
-
               </div>
-              <!--This is the calendar-->
-              <div class="col" id="calendar"></div>
-            </div>
-          </div>
-        </div>
+
+               <!--This is the calendar-->
+               <div class="col" id="calendar"></div>
+        
 
           <!-- Modal -->
           <div class="modal fade" id="eventModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -142,10 +137,7 @@
                     <a class="dropdown-item" >Pending</a>
                     <a class="dropdown-item" >Completed</a>
                   </div>
-                </div>
-                
-                 
-                   
+                </div>  
                 </div>
                 <div class="modal-footer">
                   <input type="text">
@@ -156,8 +148,9 @@
               </div>
             </div>
           </div>
-        </div>
-        </div>
+          
+      </div>
+      </div>
 
           
         <!--Initialises jQuery-->
@@ -171,7 +164,6 @@
 
           <script src="/js/calendar.js"></script>
 
-          <script src="/ida715e20/js/calendar.js"></script>
 
           <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.js"></script>
           
