@@ -30,14 +30,16 @@ app.use('/tourpage', express.static(__dirname + '/tourpage.html'));
 
 app.get('/website/add/:theme/:duration?/:date/:participants/:place/:ticket/:description', addWord);
 
-app.get('/website/addpurchase/:child', addticket);
+app.get('/website/addpurchase/:child/:student/:adult', addticket);
 
 function addticket(request, response) {
     var data = request.params;
     var child = data.child;
+    var student = data.student;
+    var adult = data.adult;
     response.send('ok');
     
-    tourTicket[child] = {child}
+    tourTicket = {child, student, adult}
     var tourdata = JSON.stringify(tourTicket, null, 2)
 
     //skriver til json filen med en callback function finished

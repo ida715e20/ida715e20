@@ -32,9 +32,11 @@ function setup() {
 
       function tourData(){
       var child = select('#childticket').value();
-      console.log(child)
+      var student = select('#studentticket').value();
+      var adult = select('#adultticket').value();
+      /*console.log(child, student, adult)*/
 
-      loadJSON('addpurchase/' +  child), finished;
+      loadJSON('website/addpurchase/' +  child + '/' + student + '/' + adult), finished;
       
       function finished(data) {
         console.log(data)
