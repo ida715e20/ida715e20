@@ -1,7 +1,7 @@
 function setup() {
     loadJSON('all', gotData);
     console.log('running');
-
+    
     var button = select('#fconfirm');
     button.mousePressed(submitWord);
 
@@ -35,9 +35,15 @@ function setup() {
       var student = select('#studentticket').value();
       var adult = select('#adultticket').value();
       var tourtheme = select('#themetour').value();
+      var ticketcount = parseInt(child) + parseInt(student) + parseInt(adult);
+      var childticket_price = 40
+      var studentticket_price = 60
+      var adultticket_price = 80
+      var totalcost = parseInt(child * childticket_price) + parseInt(student * studentticket_price) + parseInt(adult * adultticket_price);
+     
       console.log(tourtheme);
 
-      loadJSON('website/addpurchase/' +  child + '/' + student + '/' + adult + '/' + tourtheme), finished;
+      loadJSON('website/addpurchase/' +  child + '/' + student + '/' + adult + '/' + tourtheme + '/' + ticketcount + '/' + totalcost), finished;
       
       function finished(data) {
         console.log(data)

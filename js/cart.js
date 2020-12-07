@@ -1,4 +1,4 @@
-
+/*
 
 
 // Retrieving data:
@@ -46,7 +46,7 @@ function getdata(){
     localStorage.setItem("cartJSON", myJSON);
 
 }
-
+*/
 
 
 

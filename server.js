@@ -30,7 +30,7 @@ app.use('/tourpage', express.static(__dirname + '/tourpage.html'));
 
 app.get('/website/add/:theme/:duration?/:date/:participants/:place/:ticket/:description', addWord);
 
-app.get('/website/addpurchase/:child/:student/:adult/:tourtheme', addticket);
+app.get('/website/addpurchase/:child/:student/:adult/:tourtheme/:ticketcount/:totalcost', addticket);
 
 function addticket(request, response) {
     var data = request.params;
@@ -38,9 +38,11 @@ function addticket(request, response) {
     var student = data.student;
     var adult = data.adult;
     var tourtheme = data.tourtheme;
+    var ticketcount = data.ticketcount;
+    var totalcost = data.totalcost;
     response.send('ok');
     
-    tourTicket[tourtheme] = {tourtheme, child, student, adult}
+    tourTicket[tourtheme] = {tourtheme, child, student, adult, ticketcount, totalcost}
     var tourdata = JSON.stringify(tourTicket, null, 2)
 
     //skriver til json filen med en callback function finished
