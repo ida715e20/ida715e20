@@ -37,7 +37,7 @@ function addWord(request, response) {
     //her tager den nummeret 5 Number() gør, at den ikke tager den som string i data
     var duration = Number(data.duration);
     var date = data.date;
-    var participants = Number(data.participants);
+    var participants = data.participants;
     var place = data.place;
     var ticket = data.ticket;
     var description = data.description

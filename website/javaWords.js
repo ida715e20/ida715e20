@@ -9,10 +9,10 @@ function setup() {
       var theme = select('#fticketTheme').value();
       var duration = select('#fduration').value(); 
       var date = select('#fdate').value();
-      var participants = select('fmaxParticipants')
-      var place = select('fplace')
-      var ticket = select('fticketTypes')
-      var description = select('fDescription')
+      var participants = select('#fmaxParticipants').value();
+      var place = select('#fplace').value();
+      var ticket = select('#fticketTypes').value();
+      var description = select('#fDescription').value();
       console.log(theme, duration);
 
       loadJSON('add/' + theme + '/' + duration + '/' + date + '/' + participants + '/' + place + '/' + ticket
