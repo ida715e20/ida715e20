@@ -14,16 +14,13 @@ function initCalender()
 
       firstDay: 1,  
       events: [],
-
-
-
       eventClick: function(event,){
 
         $('#eventTitle').html(event.event.title); 
         $('#eventInfo').html(event.event.extendedProps.description);
         $('#eventPart').html(event.event.extendedProps.participants);
         $('#eventPlace').html(event.event.extendedProps.place);
-        $('#eventPlace').html(event.event.id);
+    
 
         choseneventid = event.event.id; 
 
@@ -108,5 +105,14 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
+function setStatus(){
+
+  calendar.updateEvent()¨
+  {
+
+  }
+
+
+}
 
 
