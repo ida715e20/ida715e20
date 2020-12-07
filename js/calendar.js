@@ -107,7 +107,7 @@ function getRandomInt(max) {
 
 function setStatus(){
 
-  calendar.updateEvent()¨
+  calendar.updateEvent()
   {
 
   }

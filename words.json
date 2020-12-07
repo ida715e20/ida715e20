@@ -1,0 +1,26 @@
+{
+  "rainbow": 5,
+  "unicorn": 3,
+  "doom": -3,
+  "gloom": -2,
+  "gamer": 3,
+  "Aalborg in the middle ages": {
+    "title": "Aalborg in the middle ages",
+    "duration": 21,
+    "date": "2020-12-08",
+    "maxParticipants": null,
+    "place": "null",
+    "ticket": "null",
+    "description": "null"
+  },
+  "Aalborg during the occupation": 15,
+  "Witches, ghosts and blood dripping stories": {
+    "title": "Witches, ghosts and blood dripping stories",
+    "duration": 21,
+    "date": "2020-12-17",
+    "participants": null,
+    "place": "null",
+    "ticket": "null",
+    "description": "null"
+  }
+}
