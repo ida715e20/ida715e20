@@ -34,9 +34,10 @@ function setup() {
       var child = select('#childticket').value();
       var student = select('#studentticket').value();
       var adult = select('#adultticket').value();
-      /*console.log(child, student, adult)*/
+      var tourtheme = select('#themetour').value();
+      console.log(tourtheme);
 
-      loadJSON('website/addpurchase/' +  child + '/' + student + '/' + adult), finished;
+      loadJSON('website/addpurchase/' +  child + '/' + student + '/' + adult + '/' + tourtheme), finished;
       
       function finished(data) {
         console.log(data)
