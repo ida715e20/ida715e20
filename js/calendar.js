@@ -1,25 +1,9 @@
 
 
-let choseneventid = null;
+var calendar, choseneventid;
 
-var calendar;
-/*
-, tours = [{
-
-  title: "Test1", 
-  start: '2020-12-12', 
-  description: "Hej med dig .. blablabla"
- },
-
-  {
-
-    title: "Test 2", 
-    start: '2020-12-21',
-    description: "Blablalbalba"
-
-  }] 
-*/
 initCalender();
+
 
 function initCalender() 
 {
@@ -33,12 +17,23 @@ function initCalender()
       firstDay: 1,  
       events: [],
 
+
+
       eventClick: function(event,){
-       
+
+        $('#eventTitle').html(event.event.title); 
+        $('#eventInfo').html(event.event.extendedProps.description);
+        $('#eventTickets').html(event.event.extendedProps.numberOfParticipants);
+        $('#eventPlace').html(event.event.extendedProps.place);
+        $('#eventPlace').html(event.event.id);
+
+        choseneventid = event.event.id; 
+
         $('#eventModal').modal('show'); 
-        $('.modal-title').html(event.event.title); 
-        $('.modal-body').html(event.event.start);
-        choseneventid = event.event.id;
+
+
+        
+
     }
     
           
@@ -58,13 +53,17 @@ function initCalender()
       tourJSON = JSON.parse(tourtext);
 
       calendar.addEvent({  
+
         
+        id : tourJSON.id,
+
         title: tourJSON.title,
         date: tourJSON.date,
         start: tourJSON.start,
         participants: tourJSON.participants,
         duration: tourJSON.duration,
         place: tourJSON.place
+
       });
     }
   });
@@ -78,6 +77,8 @@ function getTourData(){
   var maxP = document.getElementById('fmaxParticipants').value;
   var tourDuration = document.getElementById('fduration').value;
   var tourPlace = document.getElementById('fplace').value;
+
+  var uniqueID = getRandomInt(5000);
 
 
 
@@ -105,11 +106,47 @@ function getTourData(){
 */
 }
 
+
 function removeEvent()
 {
   calendar.getEventById(choseneventid).remove();
 }
 
+
+
+  // Storing data:
+  tour = { id: uniqueID, title: tourTitle, date: tourDate, start: time, participants: maxP, duration: tourDuration, place: tourPlace};
+  tourJSON = JSON.stringify(tour);
+
+  let numberevents = localStorage.length + 1;
+  
+  localStorage.setItem("tourJSON" + numberevents.toString(), tourJSON);
+        
+
+
+  calendar.addEvent({  
+    
+    id: uniqueID,
+    title: tourTitle,
+    date: tourDate,
+    start: time,
+    participants: maxP,
+    duration: tourDuration,
+    place: tourPlace,
+  });
+/*
+  console.log(calendar.getEventById("noget"))
+*/
+}
+
+function removeEvent()
+{
+  calendar.getEventById(choseneventid).remove();
+}
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
 
   /*
    var obj = {
@@ -137,3 +174,4 @@ function removeEvent()
    
  }
  */
+

@@ -20,11 +20,13 @@
       <div id="adminNavbar"></div>
       <!-- $.get henter indholdet af filen hvor vores navigationsbar ligger i og replaceWith(data) erstatter vores tomme <div> med indholdet af denne -->
       <script>
-        $.get("/ida715e20/components/navigation/adminNavbar.html", function(data){
+        $.get("/components/navigation/adminNavbar.html", function(data){
             $("#adminNavbar").replaceWith(data);
           });
       </script>
+
           <div class="container-fluid">
+
             <div class="form-row">
           
               <!--This class puts all the text boxes in the same Bootstrap element, which allows it to be places next to the calendar-->
@@ -50,7 +52,9 @@
                 <div class="pad-top">
                   <form>
                     <label for="fmaxParticipants">Max number of participants</label><br>
+
                     <input style='width: 88px;' type="number" id="fmaxParticipants" name='Participants' min="1" max="30">
+
                   </form>
                 </div>
                 <!--This code creates a box, where the user can input the place the tour is starting-->
@@ -107,29 +111,52 @@
               </div>
               <!--This is the calendar-->
               <div class="col" id="calendar"></div>
-             <!-- Modal -->
+            </div>
+          </div>
+        </div>
+
+          <!-- Modal -->
           <div class="modal fade" id="eventModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="eventT"> </h5>
+                  <h5 class="modal-title" id="eventTitle"> </h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body">
-                  <div class=label>
+                <div class="modal-body" >
+                <label for="">Description: </label>
+                <label for="" id="eventInfo"></label> <br>
+                <label for="" >Place: </label>
+                <label for="" id="eventPlace"></label><br>
+                <label for="" >Participants: </label>
+                <label for="" id =eventTickets></label> <br>
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Choose Tour-Status: 
+                  </button>
+                  <div class="dropdown-menu" >
+                    <a class="dropdown-item active" >Private</a>
+                    <a class="dropdown-item" >Public</a>
+                    <a class="dropdown-item" >Pending</a>
+                    <a class="dropdown-item" >Completed</a>
                   </div>
                 </div>
+                
+                 
+                   
+                </div>
                 <div class="modal-footer">
+                  <input type="text">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   <button type="button" class="btn btn-primary" onclick="document.location='index.html'">Confirm</button>
                   <button type="button" class="btn btn-dark" data-dismiss="modal" onclick="removeEvent();">Remove event</button>
                 </div>
               </div>
-              </div>
             </div>
           </div>
+        </div>
         </div>
 
           
@@ -140,6 +167,7 @@
         <!-- Bootstrap js-->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         
+
 
           <script src="/js/calendar.js"></script>
 
