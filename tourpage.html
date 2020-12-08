@@ -43,7 +43,8 @@
 
 <!--kolonne 2 med kalender-->
             <div class="col-md-5">
-                <h1> Available dates </h1>
+                <h1> Click on a tour below:  </h1>
+               
                 <div id="middleagesCalendar">
                 </div>
 
@@ -54,19 +55,26 @@
                 </div>
 
 <!-- Ticket types  OBS de skal have default value 0 ellers virker ticket tælleren ikke-->
+            
+                    <div>
+                        <h4>Your tour:</h4>
+                    </div>
+            
+            <div class="col"> 
+                
+                <label for="" style="font-weight: bold;">Tour: </label> <label for="" id="detailsTitle" ></label> <br>
+                <label for="" style="font-weight: bold;">Time of tour: </label> <label for="" id="detailsTime" ></label> <br>
+                <label for="" style="font-weight: bold;">Place to meet: </label> <label for="" id="detailsPlace" ></label> <br>
+                <label for="" style="font-weight: bold;">Tickets left: </label> <label for="" id="ticketsLeft"></label>
+            </div>              
                 <div>
-                    <h4> Ticket types </h4>
-                </div>
-                <!-- for sjov -->
-                <div class="col"> 
-                    <label for=""> TourDetails: </label>
-                    <label for="" id="details"></label>
-
-
+                
+                <h4> Ticket types: </h4>
                 </div>
 
-
-                <div class="row"></div> 
+                
+                
+                <div class="row" "></div> 
                 <div class="form-row">
                     <div class="col-md-3 mb-2">
                         <label for="ticket01">Children (40 kr. per ticket)</label>
@@ -89,7 +97,7 @@
 
 <!--opretter en "next" knap-->                                   
                 <div style="text-align: right;">
-                    <button type="button" class="btn btn-dark btn-lg" onclick="document.location='purchase-page.html';getdata();">Continue to purchase page</button>
+                    <button type="button" class="btn btn-dark btn-lg" onclick="document.location='purchase-page.html';getdata()">Continue to purchase page</button>
                 </div>
             </div>  
         </div>
@@ -106,6 +114,7 @@
  <!-- Bootstrap js-->
  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> 
  <script src="js/cart.js"></script>
+
 
  <!--<script type="module" src="test.js"></script>-->
 </body>

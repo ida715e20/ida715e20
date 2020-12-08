@@ -3,18 +3,20 @@
 var witchCalendar, middleagesCalendar, occupationCalendar,
 tour1 = [{ 
   id: "821",
-  title: "Aalborg in the middleages",
+  title: "Aalborg in the Middleages",
   start: "2020-12-06T11:30:00",
   color: 'green',
-  tickets: 30, 
+  participants: 30, 
+  place: "Aalborg Historiske Museum",
 },
 
 { 
   id: "999",
-  title: "Aalborg in the middleages",
+  title: "Aalborg in the Middleages",
   start: "2020-12-24T19:30:00",
   color: 'green',
-  tickets: 30,
+  participants: 30,
+  place: "Algade 19 at The Museum of the Graybrothers convent"
 
 }]
 ; 
@@ -36,11 +38,22 @@ function tour1Calendar()
       firstDay: 1,  
       events: tour1,  
       
-      // eventclick: function(event,){
-      //   $('#details').html(event.tour1[1]);
-      //   console.log(event.tour1[1]);
+      eventClick: function(event,){
+       
+        $('#detailsTitle').html(event.event.title); 
+        $('#ticketsLeft').html(event.event.extendedProps.participants);
+        datek = event.event.start; 
+        detw = datek.toDateString(); 
+        datt = datek.getHours() + ":" + datek.getMinutes(); 
 
-      // }
+        $('#detailsTime').html(datt + " " + detw);
+        $('#detailsPlace').html(event.event.extendedProps.place); 
+
+
+        if(event.event.extendedProps.participants == 0){
+          event.event.setProp('color', "red"); 
+        }
+      }
           
     });
 
@@ -48,15 +61,6 @@ function tour1Calendar()
   });
 
 }
-
-
-
-function getTourdata(){
-
-
-
-}
-
 
 
 
@@ -73,7 +77,7 @@ function tour2Calendar()
       events: [ {
 
         id: "821",
-        title: "witchs, ghosts and blood dripping stories",
+        title: "witches, ghosts and blood dripping stories",
         start: "2020-12-30T11:30:00",
         color: 'green'
 
@@ -111,7 +115,7 @@ function tour3Calendar()
         title: "Aalborg during the occupation",
         start: "2020-12-30T11:30:00",
         color: 'green'
-
+ 
       },
       {
 

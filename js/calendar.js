@@ -26,6 +26,7 @@ function initCalender()
         console.log(choseneventid); 
       
         $('#eventModal').modal('show'); 
+        
         $('#guideInfo').html(event.event.extendedProps.description);
         $('#guidePart').html(event.event.extendedProps.participants);
         $('#guidePlace').html(event.event.extendedProps.place);
