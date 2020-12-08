@@ -1,4 +1,4 @@
-var calendar, choseneventid;
+var calendar, choseneventid, witch;
 
 initCalender();
 
@@ -11,7 +11,6 @@ function initCalender()
     calendar = new FullCalendar.Calendar(calendarEl, 
     { 
       
-
       firstDay: 1,  
       events: [],
       eventClick: function(event,){
@@ -21,14 +20,16 @@ function initCalender()
         $('#eventPart').html(event.event.extendedProps.participants);
         $('#eventPlace').html(event.event.extendedProps.place);
     
-
         choseneventid = event.event.id; 
 
-        $('#eventModal').modal('show'); 
+        $('#eventModal').modal('show');
+        $('#guideInfo').html(event.event.extendedProps.description);
+        $('#guidePart').html(event.event.extendedProps.participants);
+        $('#guidePlace').html(event.event.extendedProps.place);
 
+      $('#assGuide').modal('show');
     }
-    
-          
+         
     });
     /*
     calendar.on('eventClick', function (info) {
@@ -57,6 +58,9 @@ function initCalender()
 
       });
     }
+    // Retrieving data:
+    guidetext = localStorage.getItem("guideJSON");
+    guideJSON = JSON.parse(guidetext);
   });
 }
 
@@ -68,10 +72,8 @@ function getTourData(){
   var maxP = document.getElementById('fmaxParticipants').value;
   var tourDuration = document.getElementById('fduration').value;
   var tourPlace = document.getElementById('fplace').value;
-
+  var tourGuide = document.getElementById('guideAccept').value;
   var uniqueID = getRandomInt(5000);
-
-
 
   // Storing data:
   tour = {title: tourTitle, date: tourDate, start: time, participants: maxP, duration: tourDuration, place: tourPlace};
@@ -92,8 +94,17 @@ function getTourData(){
     participants: maxP,
     duration: tourDuration,
     place: tourPlace,
+    guide: tourGuide
+
   });
 
+}
+function setGuide(){
+// storing data
+guides = {guide: tourGuide};
+guideJSON = JSON.stringify(guides);
+
+localStorage.setItem("guideJSON", guideJSON);
 }
 
 function removeEvent()
@@ -105,14 +116,10 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-function setStatus(){
+function setStatus(color){
 
-  calendar.updateEvent()
-  {
-
+  calendar.getEventById(choseneventid).setProp('color', color);
+  
   }
-
-
-}
 
 
