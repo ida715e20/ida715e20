@@ -64,6 +64,8 @@ function initCalender()
         duration: tourJSON.duration,
         place: tourJSON.place,
         guide: tourJSON.guide,
+        description: tourJSON.description,
+        tickets: tourJSON.tickets
 
       });
     }
@@ -73,9 +75,9 @@ function initCalender()
       guidetext = localStorage.getItem("guideJSON" + i.toString());
       guideJSON = JSON.parse(guidetext);
 /*
-      calendar.addEvent({
+     
         guide: guideJSON.guide
-      });*/
+      */
     }
   
   });
@@ -109,11 +111,13 @@ function getTourData(){
   var maxP = document.getElementById('fmaxParticipants').value;
   var tourDuration = document.getElementById('fduration').value;
   var tourPlace = document.getElementById('fplace').value;
+  var tourDescription = document.getElementById('fDescription').value;
+  var ticketTypes = document.getElementById('fticketTypes').value;
   /*var tourGuide = document.getElementById('guideAccepts').value;*/
-  var uniqueID = getRandomInt(5000).value;
+  var uniqueID = getRandomInt(5000)
 
   // Storing data:
-  tour = {title: tourTitle, date: tourDate, start: time, participants: maxP, duration: tourDuration, place: tourPlace}; /*, guide: tourGuide};*/
+  tour = {title: tourTitle, date: tourDate, start: time, participants: maxP, duration: tourDuration, place: tourPlace, id: uniqueID, description: tourDescription, tickets: ticketTypes}; /*, guide: tourGuide};*/
   tourJSON = JSON.stringify(tour);
 
   let numberevents = localStorage.length + 1;
@@ -131,6 +135,8 @@ function getTourData(){
     participants: maxP,
     duration: tourDuration,
     place: tourPlace,
+    description: tourDescription,
+    tickets: ticketTypes 
     /*guide: tourGuide,*/
 
   });
