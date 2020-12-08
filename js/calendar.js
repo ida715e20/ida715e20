@@ -1,4 +1,4 @@
-var calendar, choseneventid;
+var calendar, choseneventid, witch ;
 
 initCalender();
 
@@ -65,6 +65,10 @@ function initCalender()
   });
 }
 
+
+
+
+
 function getTourData(){
 
   var tourTitle = document.getElementById('fticketTheme').value;
@@ -112,18 +116,16 @@ function getRandomInt(max) {
 
 function setStatus(color){
 
+
+
 calendar.getEventById(choseneventid).setProp('color', color);
 
-}
-
-function setGuide(){
 
 
 }
 
-function showTour(){
 
-  
-}
+
+
 
 
