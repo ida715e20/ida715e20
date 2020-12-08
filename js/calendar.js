@@ -19,6 +19,7 @@ function initCalender()
         $('#eventInfo').html(event.event.extendedProps.description);
         $('#eventPart').html(event.event.extendedProps.participants);
         $('#eventPlace').html(event.event.extendedProps.place);
+        $('#guideAccept').html(event.event.extendedProps.guide);
     
         choseneventid = event.event.id; 
 
@@ -45,6 +46,9 @@ function initCalender()
       tourtext = localStorage.getItem("tourJSON" + i.toString()); //håber der står tourjSON1, tourJSON2 osv
       tourJSON = JSON.parse(tourtext);
 
+      guidetext = localStorage.getItem("guideJSON");
+      guideJSON = JSON.parse(guidetext);
+
       calendar.addEvent({  
 
         
@@ -54,14 +58,22 @@ function initCalender()
         start: tourJSON.start,
         participants: tourJSON.participants,
         duration: tourJSON.duration,
-        place: tourJSON.place
+        place: tourJSON.place,
+        
 
       });
     }
-    // Retrieving data:
-    guidetext = localStorage.getItem("guideJSON");
-    guideJSON = JSON.parse(guidetext);
   });
+}
+function setGuide(){
+var tourGuide = document.getElementById('guideAccept').value;
+
+// storing data
+guides = {guide: tourGuide};
+guideJSON = JSON.stringify(guides);
+
+let numberguide = localStorage.length + 1;
+localStorage.setItem("guideJSON" + numberguide.toString(), guideJSON);
 }
 
 function getTourData(){
@@ -72,7 +84,6 @@ function getTourData(){
   var maxP = document.getElementById('fmaxParticipants').value;
   var tourDuration = document.getElementById('fduration').value;
   var tourPlace = document.getElementById('fplace').value;
-  var tourGuide = document.getElementById('guideAccept').value;
   var uniqueID = getRandomInt(5000);
 
   // Storing data:
@@ -98,13 +109,6 @@ function getTourData(){
 
   });
 
-}
-function setGuide(){
-// storing data
-guides = {guide: tourGuide};
-guideJSON = JSON.stringify(guides);
-
-localStorage.setItem("guideJSON", guideJSON);
 }
 
 function removeEvent()
