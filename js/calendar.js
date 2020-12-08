@@ -1,4 +1,4 @@
-var calendar, choseneventid, witch ;
+var calendar, choseneventid ;
 
 initCalender();
 
@@ -23,15 +23,15 @@ function initCalender()
         $('#eventPart').html(event.event.extendedProps.participants);
         $('#eventPlace').html(event.event.extendedProps.place);
         choseneventid = event.event.id; 
-        console.log(choseneventid); 
-      
         $('#eventModal').modal('show'); 
+
+        
         
         $('#guideInfo').html(event.event.extendedProps.description);
         $('#guidePart').html(event.event.extendedProps.participants);
         $('#guidePlace').html(event.event.extendedProps.place);
 
-      $('#assGuide').modal('show');
+        $('#assGuide').modal('show');
 
     },
 
@@ -117,11 +117,7 @@ function getRandomInt(max) {
 
 function setStatus(color){
 
-
-
 calendar.getEventById(choseneventid).setProp('color', color);
-
-
 
 }
 
