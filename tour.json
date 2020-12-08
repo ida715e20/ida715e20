@@ -1,20 +1,10 @@
 {
-  "tourtheme": "undefined",
-  "child": "1",
-  "student": "1",
-  "adult": "1",
-  "undefined": {
-    "tourtheme": "undefined",
-    "child": "4",
-    "student": "2",
-    "adult": "4"
-  },
   "Aalborg in the middle ages": {
     "tourtheme": "Aalborg in the middle ages",
-    "child": "4",
-    "student": "4",
-    "adult": "4",
-    "ticketcount": "12",
-    "totalcost": "720"
+    "child": "3",
+    "student": "3",
+    "adult": "3",
+    "ticketcount": "9",
+    "totalcost": "540"
   }
 }

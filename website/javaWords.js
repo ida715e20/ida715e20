@@ -1,7 +1,11 @@
 function setup() {
-    loadJSON('all', gotData);
+    loadJSON('words.json', gotData);
     console.log('running');
     
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * Math.floor(max));
+    }
+
     var button = select('#fconfirm');
     button.mousePressed(submitWord);
 
@@ -13,17 +17,19 @@ function setup() {
       var place = select('#fplace').value();
       var ticket = select('#fticketTypes').value();
       var description = select('#fDescription').value();
+      var uniqueID = getRandomInt(5000);
       console.log(theme, duration);
     
 
       loadJSON('add/' + theme + '/' + duration + '/' + date + '/' + participants + '/' + place + '/' + ticket
-      + '/' + description), finished;
+      + '/' + description + '/' + uniqueID), finished;
     
       function finished(data) {
         console.log(data)
       }
     }
   }
+ 
   function setup() {
     loadJSON('tour.json')
 
@@ -50,6 +56,7 @@ function setup() {
       }
     }
   }
+
 function gotData(data) {
   console.log(data);
   var keys = Object.keys(data);
