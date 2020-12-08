@@ -3,6 +3,10 @@ var data = fs.readFileSync('words.json');
 var words = JSON.parse(data);
 console.log(words);
 
+var tourData = fs.readFileSync('tour.json');
+var tourTicket = JSON.parse(tourData);
+
+
 console.log('Server is running');
 
 const path = require('path');
@@ -24,7 +28,34 @@ app.use('/', express.static(__dirname + '/'));
 
 app.use('/tourpage', express.static(__dirname + '/tourpage.html'));
 
-app.get('/website/add/:theme/:duration?/:date/:participants/:place/:ticket/:description', addWord);
+app.get('/website/add/:theme/:duration?/:date/:participants/:place/:ticket/:description/:uniqueID', addWord);
+
+app.get('/website/addpurchase/:child/:student/:adult/:tourtheme/:ticketcount/:totalcost', addticket);
+
+function addticket(request, response) {
+    var data = request.params;
+    var child = data.child;
+    var student = data.student;
+    var adult = data.adult;
+    var tourtheme = data.tourtheme;
+    var ticketcount = data.ticketcount;
+    var totalcost = data.totalcost;
+    response.send('ok');
+    
+    tourTicket[tourtheme] = {tourtheme, child, student, adult, ticketcount, totalcost}
+    var tourdata = JSON.stringify(tourTicket, null, 2)
+
+    //skriver til json filen med en callback function finished
+    fs.writeFile('tour.json', tourdata, finished)
+    function finished(err) {
+        console.log('all set.');
+        var reply = {
+           word: child,
+           status: "Succes."
+       }     
+       response.send(reply); 
+      }
+}
 
 function addWord(request, response) {
     //Data bliver her sat til request parametres
@@ -40,7 +71,8 @@ function addWord(request, response) {
     var participants = data.participants;
     var place = data.place;
     var ticket = data.ticket;
-    var description = data.description
+    var description = data.description;
+    var uniqueID = data.uniqueID;
     var reply;
     if(!duration) {
         reply = {
@@ -51,7 +83,7 @@ function addWord(request, response) {
         } else {
     //her laves et "key-value pair". Dette fungere ved, at der laves en array af word
     //hvor hver af ordene i listen bliver parret med deres score
-    words[title] = {title, duration, date, participants, place, ticket, description};
+    words[uniqueID] = {title, duration, date, participants, place, ticket, description, uniqueID}
     //Konverter teksten til noget json kan forstå og lav god formateringen igennem arguemnterne
     var data = JSON.stringify(words, null, 2)
     //skriver til json filen med en callback function finished
