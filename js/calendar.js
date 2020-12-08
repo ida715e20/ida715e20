@@ -77,7 +77,7 @@ function getTourData(){
   var maxP = document.getElementById('fmaxParticipants').value;
   var tourDuration = document.getElementById('fduration').value;
   var tourPlace = document.getElementById('fplace').value;
-  var tourDesc = document.getElementById('fDescrip').value; 
+  var tourDesc = document.getElementById('fDescription').value; 
   var uniqueID = getRandomInt(5000);
 
 
