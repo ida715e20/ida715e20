@@ -69,34 +69,74 @@
                     <label for="staticEmail2" class="sr-only"></label>
                      <p id="guideAvailable1"> </p>
                   </div>
-                  <div class="form-group mx-sm-3 mb-2">
-                    <label for="Pin" class="sr-only">Pin</label>
-                    <input type="password" class="form-control" id="inputPassword1" placeholder="Pin" style="width: 75px;">
-                  </div>
-                  <button type="submit" class="btn btn-primary mb-2" onclick="guideAccept()">Accept tour</button>
+                  <button type="submit" class="btn btn-primary mb-2" data-toggle="modal" data-target="#tourAccept1">Accept tour</button>
+                  <button type="submit" class="btn btn-primary mb-2" data-toggle="modal" data-target="#tourDecline1">Decline tour</button>
                 </form>
                 <form class="form-inline">
                   <div class="form-group mb-2">
                     <label for="staticEmail2" class="sr-only"></label>
                      <p id="guideAvailable2"> </p>
                   </div>
-                  <div class="form-group mx-sm-3 mb-2">
-                    <label for="Pin2" class="sr-only"></label>
-                    <input type="password" class="form-control" id="inputPassword2" placeholder="Pin" style="width: 75px;">
-                  </div>
-                  <button type="submit" class="btn btn-primary mb-2" onclick="guideAccept()">Accept tour</button>
+                  <button type="submit" class="btn btn-primary mb-2" data-toggle="modal" data-target="#tourAccept2">Accept tour</button>
+                  <button type="submit" class="btn btn-primary mb-2" data-toggle="modal" data-target="#tourDecline2">Decline tour</button>
                 </form>
                 <form class="form-inline">
                   <div class="form-group mb-2">
                     <label for="staticEmail2" class="sr-only"></label>
                      <p id="guideAvailable3"> </p>
                   </div>
-                  <div class="form-group mx-sm-3 mb-2">
-                    <label for="Pin3" class="sr-only">Pin</label>
-                    <input type="password" class="form-control" id="inputPassword3" placeholder="Pin" style="width: 75px;">
-                  </div>
-                  <button type="submit" class="btn btn-primary mb-2" onclick="guideAccept()">Accept tour</button>
+                  <button type="submit" class="btn btn-primary mb-2" data-toggle="modal" data-target="#tourAccept3">Accept tour</button>
+                  <button type="submit" class="btn btn-primary mb-2" data-toggle="modal" data-target="#tourDecline3">Decline tour</button>
                 </form>
+              
+
+                <!-- Modal accept -->
+                <div class="modal fade" id="tourAccept1" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="tourAccept1Label" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="tourAcceptLabel1">Accept</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        We have noted you have accepted the tour.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  
+                  
+                 
+                  <!-- Modal decline 1 -->
+                  <div class="modal fade" id="tourDecline1" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="tourDeclineLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="tourDeclineLabel1">Decline</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          We have noted you have declined the tour.
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+      
+                
+
 <!-- guides accepted
                 <label>Guides accepted:</label>
                 <ul class="list-group list-group-flush">
@@ -129,8 +169,7 @@
                 
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                  <button type="button" class="btn btn-primary">Yes</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
                 </div>
               </div>
             </div>
