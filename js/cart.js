@@ -1,5 +1,3 @@
-/*
-
 
 // Retrieving data:
 text = localStorage.getItem("cartJSON");
@@ -16,18 +14,21 @@ let a=document.getElementById("adultscount_id");
 if (a) a.innerHTML = myJSON.adults;
 
 let tc=document.getElementById("ticketscount_id");
-if (tc) tc.innerHTML = parseInt(myJSON.children) + parseInt(myJSON.students) + parseInt(myJSON.adults);
+if (tc) {tc.innerHTML = parseInt(myJSON.children) + parseInt(myJSON.students) + parseInt(myJSON.adults)};
 
 
 let th=document.getElementById("theme_id");
 if (th) th.innerHTML = myJSON.theme;
+
+let td=document.getElementById("time_id"); 
+if(td) td.innerHTML = myJSON.date;
 
 let childticket_price = 40
 let studentticket_price = 60
 let adultticket_price = 80
 
 let t=document.getElementById("totalcost_id");
-if (t) t.innerHTML = parseInt(myJSON.children * childticket_price) + parseInt(myJSON.students * studentticket_price) + parseInt(myJSON.adults * adultticket_price);
+if (t) {t.innerHTML = parseInt(myJSON.children * childticket_price) + parseInt(myJSON.students * studentticket_price) + parseInt(myJSON.adults * adultticket_price);}
 
 
 
@@ -38,15 +39,20 @@ function getdata(){
     let adult=document.getElementById('adultticket').value;
 
     let theme=document.getElementById('themetour').innerHTML;
+    let tourDate = document.getElementById('detailsTime').innerHTML; 
+
     
  
     // Storing data:
-    cart = {children: child, students: student, adults: adult, theme: theme};
+    cart = {children: child, students: student, adults: adult, theme: theme, date: tourDate};
     myJSON = JSON.stringify(cart);
     localStorage.setItem("cartJSON", myJSON);
 
 }
-*/
+
+
+
+
 
 
 
