@@ -2,7 +2,6 @@ var calendar, choseneventid ;
 
 initCalender();
 
-
 function initCalender() 
 {
   document.addEventListener('DOMContentLoaded', function() 
@@ -115,20 +114,15 @@ function getTourData(){
 
 }
 
-function removeEvent()
-{
+function removeEvent() {
   calendar.getEventById(choseneventid).remove();
 }
-
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-function setStatus(color){
-
-
-  calendar.getEventById(choseneventid).setProp('color', color);
-  
-  }
+function setStatus(color) {
+  calendar.getEventById(choseneventid).setProp("color", color);
+}
 

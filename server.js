@@ -1,7 +1,10 @@
 var fs = require ('fs');
+
+
 var data = fs.readFileSync('words.json');
 var words = JSON.parse(data);
 console.log(words);
+
 
 var tourData = fs.readFileSync('tour.json');
 var tourTicket = JSON.parse(tourData);
@@ -14,7 +17,6 @@ const path = require('path');
 const {response} = require('express');
 
 var express = require('express');
-const {json} = require('body-parser');
 
 var app = express();
 
@@ -26,7 +28,7 @@ function listening() {
 
 app.use('/', express.static(__dirname + '/'));
 
-app.use('/tourpage', express.static(__dirname + '/tourpage.html'));
+//app.use('/tourpage', express.static(__dirname + '/tourpage.html'));
 
 app.get('/website/add/:theme/:duration?/:date/:participants/:place/:ticket/:description/:uniqueID', addWord);
 
@@ -40,7 +42,7 @@ function addticket(request, response) {
     var tourtheme = data.tourtheme;
     var ticketcount = data.ticketcount;
     var totalcost = data.totalcost;
-    response.send('ok');
+    console.log('ok');
     
     tourTicket[tourtheme] = {tourtheme, child, student, adult, ticketcount, totalcost}
     var tourdata = JSON.stringify(tourTicket, null, 2)
@@ -101,16 +103,18 @@ function addWord(request, response) {
     }   
 }
 
+/*
 app.get('/website/all', sendAll);
 
 function sendAll(request, response) {
     response.send(words);
 }
-
+*/
 //Dette er en route der gør, at hvis en bruger gør til stien:
 // /search/{indsæt ord} så tjekker systemet om det ord,
 //er i listen/databasen over ord. Dette gøres i gennem 
 //if else længere nede og gennem response.send i bunden.
+/*
 app.get('/website/search/:word', searchWord);
 
 function searchWord(request, response) {
@@ -133,3 +137,4 @@ function searchWord(request, response) {
     }
     response.send(reply)
 }
+*/
