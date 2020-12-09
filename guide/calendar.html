@@ -45,13 +45,13 @@
             <div class="col-7"  id="calendar" >
             </div>
         </div>
-
+<!-- Modal  -->
         <div class="pad-top" style="padding-bottom: 0.25cm;">
           <div class="modal fade" id="assGuide" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title">Tour Info: </h5>
+                  <h5 class="modal-title" id="eventTitle"> </h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                   </button>
@@ -63,22 +63,67 @@
                 <label for="" id="guidePlace"></label><br>
                 <label for="" >Participants: </label>
                 <label for="" id= 'guidePart'></label> <br>
+                <label>Guides offered tour:</label>
                 <form class="form-inline">
-                  <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Guides</label>
-                  <select class="custom-select my-1 mr-sm-2" id="guideName">
-                    <option selected>Choose...</option>
-                    <option value="1" id="guide1">Guide 1</option>
-                    <option value="2" id="guide2">Guide 2</option>
-                    <option value="3" id="guide3">Guide 3</option>
-                  </select>
-                  <button type="submit" class="btn btn-primary my-1" onclick="setGuide();">Submit</button>
+                  <div class="form-group mb-2">
+                    <label for="staticEmail2" class="sr-only"></label>
+                     <p id="guideAvailable1"> </p>
+                  </div>
+                  <div class="form-group mx-sm-3 mb-2">
+                    <label for="Pin" class="sr-only">Pin</label>
+                    <input type="password" class="form-control" id="inputPassword1" placeholder="Pin" style="width: 75px;">
+                  </div>
+                  <button type="submit" class="btn btn-primary mb-2" onclick="guideAccept()">Accept tour</button>
                 </form>
-                <label>Available guides: </label>
+                <form class="form-inline">
+                  <div class="form-group mb-2">
+                    <label for="staticEmail2" class="sr-only"></label>
+                     <p id="guideAvailable2"> </p>
+                  </div>
+                  <div class="form-group mx-sm-3 mb-2">
+                    <label for="Pin2" class="sr-only"></label>
+                    <input type="password" class="form-control" id="inputPassword2" placeholder="Pin" style="width: 75px;">
+                  </div>
+                  <button type="submit" class="btn btn-primary mb-2" onclick="guideAccept()">Accept tour</button>
+                </form>
+                <form class="form-inline">
+                  <div class="form-group mb-2">
+                    <label for="staticEmail2" class="sr-only"></label>
+                     <p id="guideAvailable3"> </p>
+                  </div>
+                  <div class="form-group mx-sm-3 mb-2">
+                    <label for="Pin3" class="sr-only">Pin</label>
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="Pin" style="width: 75px;">
+                  </div>
+                  <button type="submit" class="btn btn-primary mb-2" onclick="guideAccept()">Accept tour</button>
+                </form>
+<!-- guides accepted
+                <label>Guides accepted:</label>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item" id="guideAccept1"></li>
+                  <li class="list-group-item" id="guideAccept2"></li>
+                  <li class="list-group-item" id="guideAccept3"></li>
+                </ul>-->
+                
+<!--            
                 <ul class="list-group list-group-flush" id="guideAvailable">
-                  <li class="list-group-item" id="availableGuide1"></li>
-                  <li class="list-group-item" id="availableFuide2"></li>
-                  <li class="list-group-item" id="availableGuide3"></li>
+                  <li class="list-group-item" id="guideAvailable1">
+                    <div class="col-auto my-1">
+                      <button type="submit" class="btn btn-primary">Accept tour</button>
+                    </div>
+                  </li>
+                  <li class="list-group-item" id="guideAvailable2">
+                    <div class="col-auto my-1">
+                      <button type="submit" class="btn btn-primary">Accept tour</button>
+                    </div>
+                  </li>  
+                  <li class="list-group-item" id="guideAvailable3">
+                    <div class="col-auto my-1">
+                      <button type="submit" class="btn btn-primary">Accept tour</button>
+                    </div>
+                  </li>
                 </ul>
+              -->
                 <!--<label for=""> Assign to this tour: </label>
                 <input type="text" id="guideAccept">-->
                 

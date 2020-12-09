@@ -9,7 +9,7 @@ for (let i = 1; i < localStorage.length + 1; i++)
 let g1 =document.getElementById("guideAvailable1");
 if (g1) g1.innerHTML = guideJSON.guide1;
 
-let g2 =document.getElementById("guideAvailable3");
+let g2 =document.getElementById("guideAvailable2");
 if (g2) g2.innerHTML = guideJSON.guide2;
 
 let g3 =document.getElementById("guideAvailable3");
@@ -29,3 +29,37 @@ guideJSON = JSON.stringify(guides);
 let numberguide = localStorage.length + 1;
 localStorage.setItem("guideJSON" + numberguide.toString(), guideJSON);
 }
+
+
+/*
+//retrieving data
+for (let i = 1; i < localStorage.length + 1; i++)
+{
+    guideaccept = localStorage.getItem("guideAcceptJSON" + i.toString());
+    guideAcceptJSON = JSON.parse(guideaccept);
+}
+
+let ga =document.getElementById("guideAccept1");
+if (ga) ga.innerHTML = guideAcceptJSON.guideA;
+
+let gb =document.getElementById("guideAccept2");
+if (gb) gb.innerHTML = guideAcceptJSON.guideB;
+
+let gc =document.getElementById("guideAccept3");
+if (gc) gc.innerHTML = guideAcceptJSON.guideC;
+
+
+function guideAccept(){
+    let guideAccept1 = document.getElementById('guideAvailable1').value;
+    let guideAccept2 = document.getElementById('guideAvailable2').value;
+    let guideAccept3 = document.getElementById('guideAvailable3').value;
+
+    // storing data
+
+    guidesAccepted = {guideA: guideAccept1, guideB: guideAccept2, guideC: guideAccept3}
+    guideAcceptJSON = JSON.stringify(guidesAccepted)
+    
+    let numberguide = localStorage.length + 1;
+    localStorage.setItem("guideAcceptJSON" + numberguide.toString(), guideAcceptJSON);
+}
+*/
