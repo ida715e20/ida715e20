@@ -1,14 +1,12 @@
 var fs = require ('fs');
-
-
-var data = fs.readFileSync('words.json');
-var words = JSON.parse(data);
-console.log(words);
-
-
 var tourData = fs.readFileSync('tour.json');
 var tourTicket = JSON.parse(tourData);
 
+/*
+var data = fs.readFileSync('words.json');
+var words = JSON.parse(data);
+console.log(words);
+*/
 
 console.log('Server is running');
 
@@ -30,9 +28,9 @@ app.use('/', express.static(__dirname + '/'));
 
 //app.use('/tourpage', express.static(__dirname + '/tourpage.html'));
 
-app.get('/website/add/:theme/:duration?/:date/:participants/:place/:ticket/:description/:uniqueID', addWord);
+//app.get('/website/add/:theme/:duration?/:date/:participants/:place/:ticket/:description/:uniqueID', addWord);//
 
-app.get('/website/addpurchase/:child/:student/:adult/:tourtheme/:ticketcount/:totalcost', addticket);
+app.get('/website/addpurchase/:child/:student/:adult/:tourtheme/:ticketcount/:totalcost/:uniqueID', addticket);
 
 function addticket(request, response) {
     var data = request.params;
@@ -42,9 +40,10 @@ function addticket(request, response) {
     var tourtheme = data.tourtheme;
     var ticketcount = data.ticketcount;
     var totalcost = data.totalcost;
+    var uniqueID = data.uniqueID;
     console.log('ok');
     
-    tourTicket[tourtheme] = {tourtheme, child, student, adult, ticketcount, totalcost}
+    tourTicket[uniqueID] = {tourtheme, child, student, adult, ticketcount, totalcost, uniqueID}
     var tourdata = JSON.stringify(tourTicket, null, 2)
 
     //skriver til json filen med en callback function finished
@@ -58,7 +57,7 @@ function addticket(request, response) {
        response.send(reply); 
       }
 }
-
+/*
 function addWord(request, response) {
     //Data bliver her sat til request parametres
     //Dette er det som brugeren skriver ind efter /search/
