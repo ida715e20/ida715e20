@@ -9,6 +9,10 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.css">
+
+        
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.min.js"></script>
+
      
         <!-- Henter den senest version af jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -61,15 +65,39 @@
                   </form>
                 </div>
                 <!--This code creates a box with 3 pre-defined ticket types, and allow the user to make more-->
+                <label for="fticketTypes">Ticket Types</label>                
+                  <div class="form-check" id="fticketTypes"> 
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="">
+                      <label class="form-check-label" for="defaultCheck1">
+                        Children: 40kr
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="">
+                      <label class="form-check-label" for="defaultCheck2">
+                        Students: 60kr
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="">
+                      <label class="form-check-label" for="defaultCheck2">
+                        Adult: 80kr
+                      </label>
+                    </div>
+                  </div>
+<!--               
                 <div class="pad-top">
                   <label for="fticketTypes">Ticket Types</label>
                   <select style='width: 300px;' multiple class="form-control" id="fticketTypes">
-                   <option>Adult: 80kr.</option>
-                    <option>Children: 40kr.</option>
+                    <option>Adults: 80kr. </option>
                     <option>Students: 60kr.</option>
+                    <option>Children: 40kr.</option>
                   </select>
                   <button type="button" class="btn btn-outline-primary">Add ticket type</button>
-                </div>
+                </div> -->
+                
+                
                 <!--This code creates a text field, where you can describe the tour-->
                 <div class="pad-top">
                   <label for="">Description</label>
@@ -77,12 +105,14 @@
                 </div>
                 <!--This code creates a text field, where you can confirm and publish the tour internally-->
                 <!-- Button trigger modal -->
-              <button type="button" onclick="getTourData();" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop" onclick="getTourData();">
                 Confirm
                 </button>
                 </div> 
+<!--
+         Modal for when confirming-->
 
-         <!-- Modal for when confirming -->
                 <div class="pad-top" style="padding-bottom: 0.25cm;">
                 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                   <div class="modal-dialog">
@@ -125,6 +155,24 @@
                 <label for="" >Place: </label>
                 <label for="" id="eventPlace"></label><br>
                 <label for="" >Participants: </label>
+
+                <label for="" id="eventPart"></label> <br>
+                <label for="" >Guide: </label>
+                <label for="" id="guideName"></label>
+                
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Choose Tour-Status: 
+                  </button>
+                  <div class="dropdown-menu" >
+                    <a class="dropdown-item active" >Private</a>
+                    <a class="dropdown-item" >Public</a>
+                    <a class="dropdown-item" >Pending</a>
+                    <a class="dropdown-item" >Completed</a>
+                  </div>
+                </div>  
+                </div>
+
                 <label for="" id= 'eventPart'></label> <br>
                 <ul class="list-group" >
                   <li class="list-group-item list-group-item-success" onclick="setStatus('green');">Publish</li>
@@ -135,6 +183,7 @@
           </div>
               
              
+
 
 
                 <div class="modal-footer">
@@ -164,6 +213,10 @@
 
 
           <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.js"></script>
+
+
+          <!--<script src="javaWords.js"></script>-->
+
           
           
     </body>

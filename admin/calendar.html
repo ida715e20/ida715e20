@@ -5,9 +5,11 @@
       <link rel="stylesheet" href="/MyStyle.css">
      <title> Calendar  </title>
     <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.css">
- 
+    
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.min.js"></script>
     <!-- Henter den senest version af jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    </header>
@@ -37,6 +39,67 @@
 
             <div class="col-7"  id="calendar" >
             </div>
+            <!-- Modal -->
+          <div class="modal fade" id="eventModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="eventTitle"> </h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body" >
+                <label for="">Description: </label>
+                <label for="" id="eventInfo"></label> <br>
+                <label for="" >Place: </label>
+                <label for="" id="eventPlace"></label><br>
+                <label for="" >Participants: </label>
+                <label for="" id="eventPart"></label> <br>
+                <label for="" >Choose guides from lists: </label>
+                
+           <!-- Vælg en guide til tur -->     
+                <select class="form-control form-control-sm" id="guide1">
+                  <option></option>
+                  <option>Guide 1</option>
+                  <option>Guide 2</option>
+                  <option>Guide 3</option>
+                </select>
+                <select class="form-control form-control-sm"id="guide2">
+                  <option></option>
+                  <option>Guide 1</option>
+                  <option>Guide 2</option>
+                  <option>Guide 3</option>
+                </select>
+                <select class="form-control form-control-sm"id="guide3">
+                  <option></option>
+                  <option>Guide 1</option>
+                  <option>Guide 2</option>
+                  <option>Guide 3</option>
+                </select>
+                
+             <!-- Vælg tour status -->   
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Choose Tour-Status: 
+                  </button>
+                  <div class="dropdown-menu" >
+                    <a class="dropdown-item active" >Private</a>
+                    <a class="dropdown-item" >Public</a>
+                    <a class="dropdown-item" >Pending</a>
+                    <a class="dropdown-item" >Completed</a>
+                  </div>
+                </div>  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" onclick="document.location='index.html'">Confirm</button>
+                  <button type="button" class="btn btn-dark" data-dismiss="modal" onclick="removeEvent();">Remove event</button>
+                  <button type="submit" class="btn btn-primary my-1" onclick="setGuide();">Set guides</button>
+                </div>
+              </div>
+            </div>
+          </div>
             
           
             <!-- backup 
@@ -56,14 +119,21 @@
         </div>
 
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.css">
-
         
-        <!-- Importing the fullcalendar and javascript file-->
+        
+        
+        
+       <!--Initialises jQuery-->
+       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+       <!--Initialises Popper.js-->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+       <!-- Bootstrap js-->
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+       
         <script src="/js/calendar.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.js"></script>
+        <script src="/js/guide.js"></script>
+
+         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.js"></script>
 
     
    </body>
