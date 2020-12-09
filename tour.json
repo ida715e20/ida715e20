@@ -1,91 +1,12 @@
 {
-  "620": {
-    "tourtheme": "undefined",
+  "32": {
+    "uniqueID": "32",
     "child": "2",
-    "student": "2",
-    "adult": "3",
-    "ticketcount": "7",
-    "totalcost": "440",
-    "uniqueID": "620"
-  },
-  "1325": {
-    "tourtheme": "undefined",
-    "child": "2",
-    "student": "1",
+    "student": "3",
     "adult": "2",
-    "ticketcount": "5",
-    "totalcost": "300",
-    "uniqueID": "1325"
-  },
-  "1818": {
-    "tourtheme": "undefined",
-    "child": "5",
-    "student": "5",
-    "adult": "5",
-    "ticketcount": "15",
-    "totalcost": "900",
-    "uniqueID": "1818"
-  },
-  "2240": {
-    "tourtheme": "undefined",
-    "child": "7",
-    "student": "7",
-    "adult": "7",
-    "ticketcount": "21",
-    "totalcost": "1260",
-    "uniqueID": "2240"
-  },
-  "2557": {
-    "tourtheme": "undefined",
-    "child": "4",
-    "student": "4",
-    "adult": "4",
-    "ticketcount": "12",
-    "totalcost": "720",
-    "uniqueID": "2557"
-  },
-  "3028": {
-    "tourtheme": "undefined",
-    "child": "2",
-    "student": "3",
-    "adult": "3",
-    "ticketcount": "8",
-    "totalcost": "500",
-    "uniqueID": "3028"
-  },
-  "4001": {
-    "tourtheme": "undefined",
-    "child": "1",
-    "student": "1",
-    "adult": "1",
-    "ticketcount": "3",
-    "totalcost": "180",
-    "uniqueID": "4001"
-  },
-  "4379": {
-    "tourtheme": "undefined",
-    "child": "6",
-    "student": "6",
-    "adult": "6",
-    "ticketcount": "18",
-    "totalcost": "1080",
-    "uniqueID": "4379"
-  },
-  "Aalborg in the middle ages": {
-    "tourtheme": "Aalborg in the middle ages",
-    "child": "3",
-    "student": "3",
-    "adult": "3",
-    "ticketcount": "9",
-    "totalcost": "540"
-  },
-  "undefined": {
-    "tourtheme": "undefined",
-    "child": "1",
-    "student": "2",
-    "adult": "1",
-    "ticketcount": "4",
-    "totalcost": "240",
-    "uniqueID": "216"
+    "ticketcount": "7",
+    "totalcost": "420",
+    "tourtheme": "undefined"
   }
-}
+}  
+ 

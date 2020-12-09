@@ -43,7 +43,7 @@ function addticket(request, response) {
     var uniqueID = data.uniqueID;
     console.log('ok');
     
-    tourTicket[uniqueID] = {tourtheme, child, student, adult, ticketcount, totalcost, uniqueID}
+    tourTicket[uniqueID] = {uniqueID, child, student, adult, ticketcount, totalcost, tourtheme}
     var tourdata = JSON.stringify(tourTicket, null, 2)
 
     //skriver til json filen med en callback function finished
