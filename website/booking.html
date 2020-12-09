@@ -9,7 +9,6 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.css">
-        <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.min.js"></script>
      
         <!-- Henter den senest version af jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -50,6 +49,7 @@
                 <div class="pad-top">
                   <form>
                     <label for="fmaxParticipants">Max number of participants</label><br>
+
                     <input style='width: 88px;' type="number" id="fmaxParticipants" name='Participants' min="1" max="30">
                   </form>
                 </div>
@@ -72,17 +72,17 @@
                 </div>
                 <!--This code creates a text field, where you can describe the tour-->
                 <div class="pad-top">
-                  <label for="fDescription">Description</label>
-                    <textarea id="fDescription" class="form-control" aria-label="With textarea" style="height: 3cm; width: 300px; resize: none;"></textarea>
+                  <label for="">Description</label>
+                    <textarea class="form-control" id="fDescription" aria-label="With textarea" style="height: 3cm; width: 300px; resize: none;"></textarea>
                 </div>
                 <!--This code creates a text field, where you can confirm and publish the tour internally-->
                 <!-- Button trigger modal -->
-              <button id="fconfirm" type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+              <button type="button" onclick="getTourData();" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
                 Confirm
                 </button>
                 </div> 
-<!--
-         Modal for when confirming
+
+         <!-- Modal for when confirming -->
                 <div class="pad-top" style="padding-bottom: 0.25cm;">
                 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                   <div class="modal-dialog">
@@ -98,13 +98,13 @@
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                        <button type="button" class="btn btn-primary" onclick="document.location='/admin/calendar.html'">Yes</button>
-                      </div>
+                        <button type="button" class="btn btn-primary" >Yes</button>
+                      </div> 
                     </div>
                   </div>
                 </div>
               </div>
--->
+
                <!--This is the calendar-->
                <div class="col" id="calendar"></div>
         
@@ -126,28 +126,27 @@
                 <label for="" id="eventPlace"></label><br>
                 <label for="" >Participants: </label>
                 <label for="" id= 'eventPart'></label> <br>
-                
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Choose Tour-Status: 
-                  </button>
-                  <div class="dropdown-menu" >
-                    <a class="dropdown-item active" >Private</a>
-                    <a class="dropdown-item" >Public</a>
-                    <a class="dropdown-item" >Pending</a>
-                    <a class="dropdown-item" >Completed</a>
-                  </div>
-                </div>  
-                </div>
+                <ul class="list-group" >
+                  <li class="list-group-item list-group-item-success" onclick="setStatus('green');">Publish</li>
+                  <li class="list-group-item list-group-item-warning" onclick="setStatus('yellow');">Pending</li>
+                  <li class="list-group-item list-group-item-danger" onclick="setStatus('red');">Completed</li>
+                  <li class="list-group-item list-group-item-primary" onclick="setStatus('blue');">Private</li>
+              </ul>
+          </div>
+              
+             
+
+
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  
+                  <button type="button" class="btn" data-dismiss="modal">Close</button>
                   <button type="button" class="btn btn-primary" onclick="document.location='index.html'">Confirm</button>
                   <button type="button" class="btn btn-dark" data-dismiss="modal" onclick="removeEvent();">Remove event</button>
                 </div>
               </div>
             </div>
           </div>
-          
+        </div>
       </div>
       </div>
 
@@ -159,12 +158,12 @@
         <!-- Bootstrap js-->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         
+
+
           <script src="/js/calendar.js"></script>
 
 
           <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.js"></script>
-
-          <script src="javaWords.js"></script>
           
           
     </body>
