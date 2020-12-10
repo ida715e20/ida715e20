@@ -1,6 +1,6 @@
 var calendar, choseneventid;
 
-let maxEvents = 2;
+let maxEvents = 31;
 
 initCalender();
 
