@@ -47,21 +47,20 @@ function initCalender()
 
     for (let i = 1; i < localStorage.length + 1; i++)
     {
-      tourtext = localStorage.getItem("tourJSON" + i.toString()); //håber der står tourjSON1, tourJSON2 osv
-      tourJSON = JSON.parse(tourtext);
+      tourtext = localStorage.getItem("tourinfo" + i.toString()); 
+      tourLS = JSON.parse(tourtext);
 
       calendar.addEvent({  
 
-        id: tourJSON.id,
-        title: tourJSON.title,
-        date: tourJSON.date,
-        start: tourJSON.start,
-        participants: tourJSON.participants,
-        description: tourJSON.description,
-        duration: tourJSON.duration,
-        place: tourJSON.place,
-        description: tourJSON.description,
-        tickets: tourJSON.tickets
+        id: tourLS.id,
+        title: tourLS.title,
+        date: tourLS.date,
+        start: tourLS.start,
+        participants: tourLS.participants,
+        description: tourLS.description,
+        duration: tourLS.duration,
+        place: tourLS.place,
+        tickets: tourLS.tickets
 
       });
     }
@@ -90,11 +89,11 @@ function getTourData(){
   // Storing data:
   tour = {title: tourTitle, date: tourDate, start: time, participants: maxP, duration: tourDuration, place: tourPlace, id: uniqueID, description: tourDescription, tickets: ticketTypes}; /*, guide: tourGuide};*/
 
-  tourJSON = JSON.stringify(tour);
+  tourLS = JSON.stringify(tour);
 
   let numberevents = localStorage.length + 1;
   
-  localStorage.setItem("tourJSON" + numberevents.toString(), tourJSON);
+  localStorage.setItem("tourinfo" + numberevents.toString(), tourLS);
         
   calendar.addEvent({  
     
@@ -103,12 +102,10 @@ function getTourData(){
     date: tourDate,
     start: time,
     participants: maxP,
-    description: tourDesc,
     duration: tourDuration,
     place: tourPlace,
     description: tourDescription,
     tickets: ticketTypes 
-    /*guide: tourGuide,*/
 
   });
 

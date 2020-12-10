@@ -23,8 +23,7 @@
         });
       </script>
       <div class="row">
-            <div class="col-3" style="padding-left: 2cm;">
-                <!--opretter en "next" knap-->                                   
+            <div class="col-3" style="padding-left: 2cm;">                                  
                 
                 <!-- Labels indicating the tours status  -->
                 <ul class="list-group" style="padding-top: 4cm;">
@@ -35,13 +34,14 @@
                     <li class="list-group-item list-group-item-primary">Private Tour</li>
                 </ul>
             </div>
-            <!-- Show calendar -->
+           
+          <!-- Show calendar -->
+          <div class="col-7"  id="calendar"></div>
+            
 
-            <div class="col-7"  id="calendar" >
-            </div>
-            <!-- Modal -->
+          <!-- Modal -->
           <div class="modal fade" id="eventModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="eventTitle"> </h5>
@@ -49,6 +49,7 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
+                <!-- tour info -->
                 <div class="modal-body" >
                 <label for="">Description: </label>
                 <label for="" id="eventInfo"></label> <br>
@@ -57,28 +58,29 @@
                 <label for="" >Participants: </label>
                 <label for="" id="eventPart"></label> <br>
                 <label for="" >Choose guides from lists: </label>
-                
+
            <!-- Vælg en guide til tur -->     
                 <select class="form-control form-control-sm" id="guide1">
                   <option></option>
                   <option>Guide 1</option>
                   <option>Guide 2</option>
                   <option>Guide 3</option>
-                </select>
+                </select><hr>
                 <select class="form-control form-control-sm"id="guide2">
                   <option></option>
                   <option>Guide 1</option>
                   <option>Guide 2</option>
                   <option>Guide 3</option>
-                </select>
+                </select><hr>
                 <select class="form-control form-control-sm"id="guide3">
                   <option></option>
                   <option>Guide 1</option>
                   <option>Guide 2</option>
                   <option>Guide 3</option>
-                </select>
-                
-             <!-- Vælg tour status -->   
+                </select><hr>
+                <button type="submit" class="btn btn-primary my-1" onclick="setGuide();">Set guides</button><hr>
+             
+                <!-- Vælg tour status -->   
                 <div class="dropdown">
                   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Choose Tour-Status: 
@@ -89,13 +91,20 @@
                     <a class="dropdown-item" >Pending</a>
                     <a class="dropdown-item" >Completed</a>
                   </div>
-                </div>  
+                </div>
+                <!-- tour color -->
+                <label for="" id= 'eventPart'></label> <br>
+                <ul class="list-group" >
+                  <li class="list-group-item list-group-item-success" onclick="setStatus('green');">Publish</li>
+                  <li class="list-group-item list-group-item-warning" onclick="setStatus('yellow');">Pending</li>
+                  <li class="list-group-item list-group-item-danger" onclick="setStatus('red');">Completed</li>
+                  <li class="list-group-item list-group-item-primary" onclick="setStatus('blue');">Private</li>
+                </ul> 
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   <button type="button" class="btn btn-primary" onclick="document.location='index.html'">Confirm</button>
                   <button type="button" class="btn btn-dark" data-dismiss="modal" onclick="removeEvent();">Remove event</button>
-                  <button type="submit" class="btn btn-primary my-1" onclick="setGuide();">Set guides</button>
                 </div>
               </div>
             </div>
