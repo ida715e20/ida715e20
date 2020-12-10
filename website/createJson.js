@@ -1,5 +1,5 @@
 function setup() {
-    loadJSON('words.json', gotData);
+    loadJSON('/words.json', gotData);
     console.log('running');
     
     function getRandomInt(max) {

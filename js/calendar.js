@@ -103,7 +103,7 @@ function getTourData(){
     date: tourDate,
     start: time,
     participants: maxP,
-    description: tourDesc,
+    description: tourDescription,
     duration: tourDuration,
     place: tourPlace,
     description: tourDescription,
