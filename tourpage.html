@@ -8,28 +8,32 @@
         <!--<link rel="stylesheet" href="MyStyle.css">-->
         <!-- Henter den senest version af jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <title>Tour page</title>
+        <title>Aalborg in the middle ages</title>
     </head> 
+
+
     <body>
     <!-- Opretter en tom <div> med et ID som udfyldes af JavaScript funktionen nedenunder -->
     <div id="guestNavbar"></div>
+
     <!-- $.get henter indholdet af filen hvor vores navigationsbar ligger i og replaceWith(data) erstatter vores tomme <div> med indholdet af denne -->
     <script>
       $.get("components/navigation/guestNavbar.html", function(data){
         $("#guestNavbar").replaceWith(data);
       });
     </script> 
-        <!-- Breadcrumbs -->
+
+    <!-- Breadcrumbs -->
           <nav aria-label="breadcrumb">
            <ol class="breadcrumb">
            <li class="breadcrumb-item"><a href="/"> Start page </a></li>
            <li class="breadcrumb-item active" aria-current="page"> Tour page</li>
            </ol>
         </nav>
- <!--Opretter kolonne 1 og indsætter billede-->       
+    <!--Opretter kolonne 1 og indsætter billede-->       
       <div class="container-fluid">  
         <div class="row">
-            <div class="col-md-5">
+            <div class="col">
                 <div class="card">
                     <img src="img/middleages.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -41,63 +45,71 @@
             </div>
             
 
-<!--kolonne 2 med kalender-->
-            <div class="col-md-5">
-                <h1> Click on a tour below:  </h1>
-               
-                <div id="middleagesCalendar">
-                </div>
-
-<!--indsætter ticket avalability-->
-                <div>
-                    <span class="badge badge-success">Tickets available</span>
-                    <span class="badge badge-danger" height="25px" width="50px">No tickets avalable</span>
-                </div>
-
-<!-- Ticket types  OBS de skal have default value 0 ellers virker ticket tælleren ikke-->
+<!--kolonne 2-->
             
-                    <div>
-                        <h4>Your tour:</h4>
-                    </div>
-            
-            <div class="col"> 
-                
+                <div class="col">
+
+<!--indsætter your tour-->
+            <div>
+                 <h4>Your tour:</h4>
+            </div>
+
+             <div>
+
                 <label for="" style="font-weight: bold;">Tour: </label> <label for="" id="detailsTitle" ></label> <br>
                 <label for="" style="font-weight: bold;">Time of tour: </label> <label for="" id="detailsTime" ></label> <br>
-                <label for="" style="font-weight: bold;">Place to meet: </label> <label for="" id="detailsPlace" ></label> <br>
-                <label for="" style="font-weight: bold;">Tickets left: </label> <label for="" id="ticketsLeft"></label>
-            </div>              
-                <div>
-                
-                <h4> Ticket types: </h4>
-                </div>
-                
-                <div class="row" "></div> 
-                <div class="form-row">
-                    <div class="col-md-3 mb-2">
-                        <label for="ticket01">Children (40 kr. per ticket)</label>
-                        <input type="number" class="form-control" id="childticket" style="width: 2cm" min="1" max="10">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="col-md-4 mb-2">
-                        <label for="ticket02">Students (60 kr. per ticket)</label>
-                        <input type="number" class="form-control" id="studentticket" style="width: 2cm" min="1" max="10"> 
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="col-md-3 mb-2">
-                        <label for="ticket03">Adults (80 kr. per ticket)</label>
-                        <input type="number" class="form-control" id="adultticket" style="width: 2cm" min="1" max="10">
-                    </div>
-                </div>
-                       
+                 <label for="" style="font-weight: bold;">Place to meet: </label> <label for="" id="detailsPlace" ></label> <br>
+                 <label for="" style="font-weight: bold;">Tickets left: </label> <label for="" id="ticketsLeft"></label>
+                 </div>              
+                 <div>     
 
-<!--opretter en "next" knap-->                                   
-                <div style="text-align: right;">
-                    <button type="button" class="btn btn-dark btn-lg" onclick="document.location='purchase-page.html';getdata()">Continue to purchase page</button>
-                </div>
-            </div>  
+<!-- Ticket types  OBS de skal have default value 0 ellers virker ticket tælleren ikke-->
+<div>
+    <h4> Ticket types </h4>
+</div>
+<div class="form-row">
+    <div class="col-md-3 mb-2" >
+        <label for="ticket01">Children (40 kr. per ticket)</label>
+        <input type="number" class="form-control" id="childticket" style="width: 2cm" min="1" max="10">
+    </div>
+</div>
+<div class="form-row">
+    <div class="col-md-4 mb-2">
+        <label for="ticket02">Students (60 kr. per ticket)</label>
+        <input type="number" class="form-control" id="studentticket" style="width: 2cm" min="1" max="10"> 
+    </div>
+</div>
+<div class="form-row">
+    <div class="col-md-3 mb-2">
+        <label for="ticket03">Adults (80 kr. per ticket)</label>
+        <input type="number" class="form-control" id="adultticket" style="width: 2cm" min="1" max="10">
+    </div>
+</div>
+     </div>
+
+
+      </div>
+
+<!--opretter kolonne 3 med kalender-->
+<div class="col">
+    <h1> Available dates: </h1>
+   <div id="middleagesCalendar">
+    </div>
+
+    
+<!--indsætter ticket avalability-->
+    <div>
+        <span class="badge badge-success">Tickets available</span>
+        <span class="badge badge-danger" height="25px" width="50px">No tickets avalable</span>
+    </div>
+
+    <!--opretter en "next" knap-->                                   
+<div style="text-align: right;">
+    <button type="button" class="btn btn-dark btn-lg" onclick="document.location='purchase-page.html';getdata()">Continue to purchase page</button>
+</div>
+</div>  
+        
+           
         </div>
       </div>
 
