@@ -1,8 +1,8 @@
 var calendar, choseneventid ;
 
-initCalender();
+initCalendar();
 
-function initCalender() 
+function initCalendar() 
 {
   document.addEventListener('DOMContentLoaded', function() 
   {
