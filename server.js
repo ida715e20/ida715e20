@@ -28,7 +28,27 @@ function listening() {
 
 app.use('/', express.static(__dirname + '/'));
 
-//app.use('/tourpage', express.static(__dirname + '/tourpage.html'));
+//Routing til gæste sider
+app.use('/tourpage', express.static(__dirname + '/tourpage.html'));
+app.use('/tourpage2', express.static(__dirname + '/tourpage2.html'));
+app.use('/tourpage3', express.static(__dirname + '/tourpage3.html'));
+app.use('/purchase', express.static(__dirname + '/purchase-page.html'));
+app.use('/private-tour', express.static(__dirname + '/private-city-tours.html'));
+app.use('/', express.static(__dirname + '/index.html'));
+
+//Routing til admin sider
+app.use('/admin/calendar', express.static(__dirname + '/admin/calendar.html'));
+app.use('/admin/home', express.static(__dirname + '/admin/home.html'));
+app.use('/admin/index', express.static(__dirname + '/admin/.html'));
+app.use('/admin/statistics', express.static(__dirname + '/admin/statistics.html'));
+app.use('/admin/booking', express.static(__dirname + '/website/booking.html'));
+
+//Routing til guide sider
+app.use('/guide/calendar', express.static(__dirname + '/guide/calendar.html'));
+app.use('/guide/home', express.static(__dirname + '/guide/home.html'));
+app.use('/guide/', express.static(__dirname + '/guide/index.html'));
+app.use('/guide/report', express.static(__dirname + '/guide/report.html'));
+
 
 app.get('/website/add/:theme/:duration?/:date/:participants/:place/:ticket/:description/:uniqueID', addWord);
 
