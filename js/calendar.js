@@ -1,8 +1,8 @@
 var calendar, choseneventid ;
 
-initCalender();
+initCalendar();
 
-function initCalender() 
+function initCalendar() 
 {
   document.addEventListener('DOMContentLoaded', function() 
   {
@@ -103,7 +103,7 @@ function getTourData(){
     date: tourDate,
     start: time,
     participants: maxP,
-    description: tourDesc,
+    description: tourDescription,
     duration: tourDuration,
     place: tourPlace,
     description: tourDescription,
