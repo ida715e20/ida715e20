@@ -1,4 +1,3 @@
-
 // retrieving data //
 for (let i = 1; i < localStorage.length + 1; i++)
 {
