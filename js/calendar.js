@@ -20,6 +20,11 @@ function initCalender()
         $('#eventInfo').html(event.event.extendedProps.description);
         $('#eventPart').html(event.event.extendedProps.participants);
         $('#eventPlace').html(event.event.extendedProps.place);
+        var time = event.event.start.getHours() + " : "+ event.event.start.getMinutes(); 
+        var date = event.event.start.toDateString(); 
+        $('#eventStart').html(date + " " + time);
+        // $('#eventEnd').html();
+
 
         $('#eventModal').modal('show');
         choseneventid = event.event.id; 
@@ -77,18 +82,18 @@ function getTourData(){
 
   var tourTitle = document.getElementById('fticketTheme').value;
   var tourDate =  document.getElementById('fdate').value;
-  var time = new Date(tourDate + 'T00:00:00');
+  var tourTime = document.getElementById('ftime').value;
   var maxP = document.getElementById('fmaxParticipants').value;
   var tourDuration = document.getElementById('fduration').value;
   var tourPlace = document.getElementById('fplace').value;
-
+  
   var tourDescription = document.getElementById('fDescription').value;
   var ticketTypes = document.getElementById('fticketTypes').value;
   /*var tourGuide = document.getElementById('guideAccepts').value;*/
   var uniqueID = getRandomInt(5000)
 
   // Storing data:
-  tour = {title: tourTitle, date: tourDate, start: time, participants: maxP, duration: tourDuration, place: tourPlace, id: uniqueID, description: tourDescription, tickets: ticketTypes}; /*, guide: tourGuide};*/
+  tour = {title: tourTitle, date: tourDate, start: tourTime, participants: maxP, duration: tourDuration, place: tourPlace, id: uniqueID, description: tourDescription, tickets: ticketTypes}; /*, guide: tourGuide};*/
 
   tourJSON = JSON.stringify(tour);
 
@@ -101,7 +106,7 @@ function getTourData(){
     id: uniqueID, 
     title: tourTitle,
     date: tourDate,
-    start: time,
+    start: tourTime,
     participants: maxP,
     description: tourDescription,
     duration: tourDuration,

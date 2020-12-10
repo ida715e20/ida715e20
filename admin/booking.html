@@ -42,12 +42,15 @@
                   <button type="button" class="btn btn-outline-primary">Add tour type</button>
                 <!--This code creates a form that takes numbers as input. The box is used for inputting the duration a city walk will take in minutes-->
                 <div class="pad-top">
-                  <label for="duration">Duration (in minutes)  </label><br>
-                  <input style="width: 88px;" type="number" id="fduration" name='duration'>
+               
                 </div>
                <div class="pad-top">
-                <label for="date"> Date </label>
+                <label for="date"> Date:  </label>
                   <input id='fdate'style="width: 150px;" type="date"><br>
+                  <label for=""> Time: </label>
+                  <input id='ftime'style="width: 150px;" type="time"><br>
+                  <label for="duration">Duration (in minutes)  </label><br>
+                  <input style="width: 88px;" type="number" id="fduration" name='duration'>
                </div>
                 <!--This code creates a form that takes numbers as input. The box is used for inputting the maximum number of participants for a given city tour-->
                 <div class="pad-top">
@@ -64,38 +67,8 @@
                     <input style='width: 300px;' type="text" id="fplace" name='fplace'>
                   </form>
                 </div>
-                <!--This code creates a box with 3 pre-defined ticket types, and allow the user to make more-->
-                <label for="fticketTypes">Ticket Types</label>                
-                  <div class="form-check" id="fticketTypes"> 
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="">
-                      <label class="form-check-label" for="defaultCheck1">
-                        Children: 40kr
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="">
-                      <label class="form-check-label" for="defaultCheck2">
-                        Students: 60kr
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="">
-                      <label class="form-check-label" for="defaultCheck2">
-                        Adult: 80kr
-                      </label>
-                    </div>
-                  </div>
-<!--               
-                <div class="pad-top">
-                  <label for="fticketTypes">Ticket Types</label>
-                  <select style='width: 300px;' multiple class="form-control" id="fticketTypes">
-                    <option>Adults: 80kr. </option>
-                    <option>Students: 60kr.</option>
-                    <option>Children: 40kr.</option>
-                  </select>
-                  <button type="button" class="btn btn-outline-primary">Add ticket type</button>
-                </div> -->
+           
+
                 
                 
                 <!--This code creates a text field, where you can describe the tour-->
@@ -110,8 +83,7 @@
                 Confirm
                 </button>
                 </div> 
-<!--
-         Modal for when confirming-->
+<!-- Modal for when confirming-->
 
                 <div class="pad-top" style="padding-bottom: 0.25cm;">
                 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -152,45 +124,26 @@
                 <div class="modal-body" >
                 <label for="">Description: </label>
                 <label for="" id="eventInfo"></label> <br>
+                <label for="">Start: </label> 
+                <label for="" id="eventStart"></label> <br>
+                <label for=""> End: </label>
+                <label for="" id="eventEnd"></label> <br>
                 <label for="" >Place: </label>
                 <label for="" id="eventPlace"></label><br>
                 <label for="" >Participants: </label>
-
                 <label for="" id="eventPart"></label> <br>
-                <label for="" >Guide: </label>
-                <label for="" id="guideName"></label>
                 
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Choose Tour-Status: 
-                  </button>
-                  <div class="dropdown-menu" >
-                    <a class="dropdown-item active" >Private</a>
-                    <a class="dropdown-item" >Public</a>
-                    <a class="dropdown-item" >Pending</a>
-                    <a class="dropdown-item" >Completed</a>
-                  </div>
-                </div>  
+               
                 </div>
-
-                <label for="" id= 'eventPart'></label> <br>
-                <ul class="list-group" >
-                  <li class="list-group-item list-group-item-success" onclick="setStatus('green');">Publish</li>
-                  <li class="list-group-item list-group-item-warning" onclick="setStatus('yellow');">Pending</li>
-                  <li class="list-group-item list-group-item-danger" onclick="setStatus('red');">Completed</li>
-                  <li class="list-group-item list-group-item-primary" onclick="setStatus('blue');">Private</li>
-              </ul>
-          </div>
-              
              
 
 
 
-                <div class="modal-footer">
+                <div class="modal-footer" style="margin: auto">
                   
-                  <button type="button" class="btn" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" onclick="document.location='index.html'">Confirm</button>
-                  <button type="button" class="btn btn-dark" data-dismiss="modal" onclick="removeEvent();">Remove event</button>
+                  <button type="button"  class="btn btn-primary" data-dismiss="modal">Close</button>
+                  
+                  
                 </div>
               </div>
             </div>
