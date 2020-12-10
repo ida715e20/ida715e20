@@ -114,12 +114,15 @@ function getTourData(){
       place: tourPlace,
       description: tourDescription,
       tickets: ticketTypes 
-  
+      
     });
+    // hvis vi opretter et event får vi denne besked
+    document.getElementById("eventText").innerHTML = "You have succesfully created a new event!"
   }
+  // hvis vi ikke kan oprette et event fordi vi har nået max antal, får vi denne besked
   else
   {
-    console.log("get a life");
+    document.getElementById("eventText").innerHTML = "You have reached the limit for new events!"
   }
 
 }
