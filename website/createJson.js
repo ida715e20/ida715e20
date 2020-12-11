@@ -1,5 +1,3 @@
-
-
 function setup() {
     loadJSON('/words.json', gotData);
     console.log('running');
@@ -33,7 +31,7 @@ function setup() {
     }
   }
  
-  function setup() {
+  function setupTicket() {
     loadJSON('tour.json')
 
       var button = select('#fpurchase');
