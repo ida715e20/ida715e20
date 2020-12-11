@@ -1,6 +1,6 @@
 var calendar, choseneventid;
 
-let maxEvents = 31;
+let maxEvents = 30;
 
 initCalender();
 
@@ -77,7 +77,7 @@ function initCalender()
 
 function getTourData(){
 
-  // så længe størrelsen på vores lager < 31
+  // så længe størrelsen på vores lager < 30
   if (localStorage.length < maxEvents)
   {
     var tourTitle = document.getElementById('fticketTheme').value;
@@ -88,7 +88,6 @@ function getTourData(){
     var tourPlace = document.getElementById('fplace').value;
     var tourDescription = document.getElementById('fDescription').value;
     var ticketTypes = document.getElementById('fticketTypes').value;
-    /*var tourGuide = document.getElementById('guideAccepts').value;*/
     var uniqueID = getRandomInt(maxEvents)
     // kører indtil eventet får et unikt id
     while (localStorage.getItem("tourinfo" + uniqueID.toString()) != null)
