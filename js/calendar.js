@@ -138,7 +138,10 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-function setStatus(color) {
+function setStatus() {
+
+  var idNr = document.getElementById("tourColor"); 
+  var color = idNr.options[idNr.selectedIndex].value;
   calendar.getEventById(choseneventid).setProp("color", color);
 }
 
