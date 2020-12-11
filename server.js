@@ -1,6 +1,7 @@
 var fs = require ('fs');
 var tourData = fs.readFileSync('tour.json');
 var tourTicket = JSON.parse(tourData);
+console.log("tour")
 
 /*
 var data = fs.readFileSync('words.json');
@@ -25,7 +26,7 @@ function listening() {
 }
 
 app.use('/', express.static(__dirname + '/'));
-
+/*
 //Routing til gæste sider
 app.use('/AalborgInMiddleAge', express.static(__dirname + '/tourpage.html'));
 app.use('/WitchesAndGhosts', express.static(__dirname + '/tourpage2.html'));
@@ -49,7 +50,7 @@ app.use('/guide/report', express.static(__dirname + '/guide/report.html'));
 
 
 //app.get('/website/add/:theme/:duration?/:date/:participants/:place/:ticket/:description/:uniqueID', addWord);//
-
+*/
 app.get('/website/addpurchase/:child/:student/:adult/:tourtheme/:ticketcount/:totalcost/:uniqueID', addticket);
 
 function addticket(request, response) {
