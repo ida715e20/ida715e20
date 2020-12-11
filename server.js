@@ -27,9 +27,9 @@ function listening() {
 app.use('/', express.static(__dirname + '/'));
 
 //Routing til gæste sider
-app.use('/tourpage', express.static(__dirname + '/tourpage.html'));
-app.use('/tourpage2', express.static(__dirname + '/tourpage2.html'));
-app.use('/tourpage3', express.static(__dirname + '/tourpage3.html'));
+app.use('/AalborgInMiddleAge', express.static(__dirname + '/tourpage.html'));
+app.use('/WitchesAndGhosts', express.static(__dirname + '/tourpage2.html'));
+app.use('/AalborgDuringOccupation', express.static(__dirname + '/tourpage3.html'));
 app.use('/purchase', express.static(__dirname + '/purchase-page.html'));
 app.use('/private-tour', express.static(__dirname + '/private-city-tours.html'));
 app.use('/', express.static(__dirname + '/index.html'));
