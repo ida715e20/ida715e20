@@ -1,7 +1,10 @@
+
+
 function setup() {
     loadJSON('/words.json', gotData);
     console.log('running');
-    
+
+
     function getRandomInt(max) {
       return Math.floor(Math.random() * Math.floor(max));
     }
@@ -46,10 +49,13 @@ function setup() {
       var studentticket_price = 60
       var adultticket_price = 80
       var totalcost = parseInt(child * childticket_price) + parseInt(student * studentticket_price) + parseInt(adult * adultticket_price);
-     
+      var uniqueID = getRandomInt(5000);
       console.log(tourtheme);
 
-      loadJSON('website/addpurchase/' +  child + '/' + student + '/' + adult + '/' + tourtheme + '/' + ticketcount + '/' + totalcost), finished;
+      loadJSON('website/addpurchase/' +  child + '/' + student + '/' + adult + '/' + tourtheme + '/' + ticketcount + '/' + totalcost + '/' + uniqueID), finished;
+
+     
+    
       
       function finished(data) {
         console.log(data)

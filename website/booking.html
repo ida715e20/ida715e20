@@ -10,7 +10,6 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.css">
 
-        
         <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.min.js"></script>
 
      
@@ -123,12 +122,10 @@
                         <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
-                      <div class="modal-body">
-                        Are you sure you wish to confirm?
+                      <div class="modal-body" id="eventText">
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                        <button type="button" class="btn btn-primary" >Yes</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
                       </div> 
                     </div>
                   </div>
@@ -141,7 +138,7 @@
 
           <!-- Modal -->
           <div class="modal fade" id="eventModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="eventTitle"> </h5>
@@ -149,17 +146,17 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body" >
+              <!-- tour info  -->  
+                <div class="modal-body">
                 <label for="">Description: </label>
                 <label for="" id="eventInfo"></label> <br>
                 <label for="" >Place: </label>
                 <label for="" id="eventPlace"></label><br>
                 <label for="" >Participants: </label>
-
                 <label for="" id="eventPart"></label> <br>
                 <label for="" >Guide: </label>
                 <label for="" id="guideName"></label>
-                
+              <!-- tour status -->  
                 <div class="dropdown">
                   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Choose Tour-Status: 
@@ -172,32 +169,28 @@
                   </div>
                 </div>  
                 </div>
-
+               <!-- tour color-->
                 <label for="" id= 'eventPart'></label> <br>
                 <ul class="list-group" >
                   <li class="list-group-item list-group-item-success" onclick="setStatus('green');">Publish</li>
                   <li class="list-group-item list-group-item-warning" onclick="setStatus('yellow');">Pending</li>
                   <li class="list-group-item list-group-item-danger" onclick="setStatus('red');">Completed</li>
                   <li class="list-group-item list-group-item-primary" onclick="setStatus('blue');">Private</li>
-              </ul>
-          </div>
-              
-             
-
-
-
-                <div class="modal-footer">
-                  
-                  <button type="button" class="btn" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" onclick="document.location='index.html'">Confirm</button>
-                  <button type="button" class="btn btn-dark" data-dismiss="modal" onclick="removeEvent();">Remove event</button>
-                </div>
+                </ul>
+              <!-- buttons for closing, confirming or removing event-->
+              <div class="modal-footer">        
+                <button type="button" class="btn" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="document.location='index.html'">Confirm</button>
+                <button type="button" class="btn btn-dark" data-dismiss="modal" onclick="removeEvent();">Remove event</button>
               </div>
-            </div>
           </div>
+     
         </div>
       </div>
-      </div>
+    </div>
+  </div>
+
+      
 
           
         <!--Initialises jQuery-->
