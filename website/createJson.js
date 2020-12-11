@@ -10,10 +10,8 @@ function setup()
   var button = select('#fpurchase');
   button.mousePressed(tourData); 
   
-  console.log("etellernadet")
   function tourData()
   {
-    console.log("anders")
     var child = select('#childticket').value();
     var student = select('#studentticket').value();
     var adult = select('#adultticket').value();
