@@ -25,7 +25,7 @@ function initCalendar()
 
         $('#eventModal').modal('show');
         choseneventid = event.event.id; 
-        //chosenevent får eventets id der clickes på
+        //chosenevent får id'et for det event, der clicket på
         console.log(choseneventid);
        
         $('#guideInfo').html(event.event.extendedProps.description);
@@ -84,7 +84,6 @@ function getTourData(){
     var tourDuration = document.getElementById('fduration').value;
     var tourPlace = document.getElementById('fplace').value;
     var tourDescription = document.getElementById('fDescription').value;
-    var ticketTypes = document.getElementById('fticketTypes').value;
     var uniqueID = getRandomInt(maxEvents)
     // kører indtil eventet får et unikt id
     while (localStorage.getItem("tourinfo" + uniqueID.toString()) != null)
@@ -94,7 +93,7 @@ function getTourData(){
   
 
     // Storing data:
-    tour = {title: tourTitle, date: tourDate, start: time, participants: maxP, duration: tourDuration, place: tourPlace, id: uniqueID, description: tourDescription, tickets: ticketTypes}; /*, guide: tourGuide};*/
+    tour = {title: tourTitle, date: tourDate, start: time, participants: maxP, duration: tourDuration, place: tourPlace, id: uniqueID, description: tourDescription}; /*, guide: tourGuide};*/
   
     tourLS = JSON.stringify(tour);
   
@@ -110,11 +109,11 @@ function getTourData(){
       duration: tourDuration,
       place: tourPlace,
       description: tourDescription,
-      tickets: ticketTypes 
+      
       
     });
-    // hvis vi opretter et event får vi denne besked
-    document.getElementById("eventText").innerHTML = "You have succesfully created a new event!"
+    /* hvis vi opretter et event får vi denne besked
+    document.getElementById("eventText").innerHTML = "You have succesfully created a new event!"*/
   }
   // hvis vi ikke kan oprette et event fordi vi har nået max antal, får vi denne besked
   else
@@ -138,7 +137,9 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-function setStatus(color) {
+function setStatus() {
+
+  var idNr = document.getElementById("tourColor"); 
+  var color = idNr.options[idNr.selectedIndex].value;
   calendar.getEventById(choseneventid).setProp("color", color);
 }
-
