@@ -72,9 +72,6 @@ function initCalender()
 }
 
 
-
-
-
 function getTourData(){
 
   // så længe størrelsen på vores lager < 30
