@@ -1,6 +1,6 @@
  
 
-var witchCalendar, middleagesCalendar, occupationCalendar,
+var middleagesCalendar,
 tour1 = [{ 
   id: "821",
   title: "Aalborg in the Middleages",
@@ -14,7 +14,7 @@ tour1 = [{
   id: "999",
   title: "Aalborg in the Middleages",
   start: "2020-12-24T19:30:00",
-  color: 'green',
+  backgroundColor: 'green',
   participants: 30,
   place: "Algade 19 at The Museum of the Graybrothers convent"
 
@@ -23,8 +23,7 @@ tour1 = [{
 
 
 tour1Calendar();
-tour2Calendar(); 
-tour3Calendar();
+
 
 
 function tour1Calendar() 
@@ -65,73 +64,6 @@ function tour1Calendar()
 
 
 
-function tour2Calendar() 
-{
-  document.addEventListener('DOMContentLoaded', function() 
-  {
-    var calendarEl = document.getElementById('witchCalendar'); 
-    witchCalendar = new FullCalendar.Calendar(calendarEl, 
-    { 
-      
-      firstDay: 1,  
-      events: [ {
 
-        id: "821",
-        title: "witches, ghosts and blood dripping stories",
-        start: "2020-12-30T11:30:00",
-        color: 'green'
-
-      },
-      {
-
-        id: "999",
-        title: "witches, ghosts and blood dripping stories",
-        start: "2020-12-01T19:30:00",
-        color: 'green' 
-
-      }
-      ] ,    
-          
-    });
-
-    witchCalendar.render();
-  });
-
-}
-
-
-function tour3Calendar() 
-{
-  document.addEventListener('DOMContentLoaded', function() 
-  {
-    var calendarEl = document.getElementById('occupationCalendar'); 
-    occupationCalendar = new FullCalendar.Calendar(calendarEl, 
-    { 
-      
-      firstDay: 1,  
-      events: [{
-
-        id: "821",
-        title: "Aalborg during the occupation",
-        start: "2020-12-30T11:30:00",
-        color: 'green'
- 
-      },
-      {
-
-        id: "999",
-        title: "Aalborg during the occupation",
-        start: "2020-12-01T19:30:00",
-        color: 'green'
-
-      }
-      ] ,    
-          
-    });
-
-    occupationCalendar.render();
-  });
-
-}
 
 
