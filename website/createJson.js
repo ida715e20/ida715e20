@@ -1,7 +1,11 @@
-/*
+
 function setup() {
-    loadJSON('words.json', gotData);
+    loadJSON('/words.json', gotData);
     console.log('running');
+
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * Math.floor(max));
+    }
 
     var button = select('#fconfirm');
     button.mousePressed(submitWord);
@@ -26,13 +30,9 @@ function setup() {
       }
     }
   }
- */
+ 
   function setup() {
     loadJSON('tour.json')
-
-      function getRandomInt(max) {
-      return Math.floor(Math.random() * Math.floor(max));
-      }
       
       var button = select('#fpurchase');
       button.mousePressed(tourData);
