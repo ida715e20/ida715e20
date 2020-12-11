@@ -1,7 +1,9 @@
 
+
 function setup() {
     loadJSON('/words.json', gotData);
     console.log('running');
+
 
     function getRandomInt(max) {
       return Math.floor(Math.random() * Math.floor(max));
@@ -33,7 +35,7 @@ function setup() {
  
   function setup() {
     loadJSON('tour.json')
-      
+
       var button = select('#fpurchase');
       button.mousePressed(tourData);
 
@@ -51,6 +53,9 @@ function setup() {
       console.log(tourtheme);
 
       loadJSON('website/addpurchase/' +  child + '/' + student + '/' + adult + '/' + tourtheme + '/' + ticketcount + '/' + totalcost + '/' + uniqueID), finished;
+
+     
+    
       
       function finished(data) {
         console.log(data)

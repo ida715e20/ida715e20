@@ -2,9 +2,9 @@ var calendar, choseneventid;
 
 let maxEvents = 30;
 
-initCalender();
+initCalendar();
 
-function initCalender() 
+function initCalendar() 
 {
   document.addEventListener('DOMContentLoaded', function() 
   {
@@ -92,6 +92,7 @@ function getTourData(){
       uniqueID = getRandomInt(maxEvents)
     }
   
+
     // Storing data:
     tour = {title: tourTitle, date: tourDate, start: time, participants: maxP, duration: tourDuration, place: tourPlace, id: uniqueID, description: tourDescription, tickets: ticketTypes}; /*, guide: tourGuide};*/
   
@@ -120,6 +121,8 @@ function getTourData(){
   {
     document.getElementById("eventText").innerHTML = "You have reached the limit for new events!"
   }
+
+
 
 }
 
