@@ -62,7 +62,7 @@ function initCalendar()
           description: tourLS.description,
           duration: tourLS.duration,
           place: tourLS.place,
-          tickets: tourLS.tickets
+         
   
         });
       }
@@ -84,7 +84,7 @@ function getTourData(){
     var tourDuration = document.getElementById('fduration').value;
     var tourPlace = document.getElementById('fplace').value;
     var tourDescription = document.getElementById('fDescription').value;
-    var ticketTypes = document.getElementById('fticketTypes').value;
+   
     var uniqueID = getRandomInt(maxEvents)
     // kører indtil eventet får et unikt id
     while (localStorage.getItem("tourinfo" + uniqueID.toString()) != null)
@@ -94,7 +94,7 @@ function getTourData(){
   
 
     // Storing data:
-    tour = {title: tourTitle, date: tourDate, start: time, participants: maxP, duration: tourDuration, place: tourPlace, id: uniqueID, description: tourDescription, tickets: ticketTypes}; /*, guide: tourGuide};*/
+    tour = {title: tourTitle, date: tourDate, start: time, participants: maxP, duration: tourDuration, place: tourPlace, id: uniqueID, description: tourDescription}; /*, guide: tourGuide};*/
   
     tourLS = JSON.stringify(tour);
   
@@ -110,7 +110,7 @@ function getTourData(){
       duration: tourDuration,
       place: tourPlace,
       description: tourDescription,
-      tickets: ticketTypes 
+     
       
     });
     // hvis vi opretter et event får vi denne besked
