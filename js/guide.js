@@ -1,7 +1,7 @@
-// retrieving data //
+// retrieving data for guide accept //
 for (let i = 1; i < localStorage.length + 1; i++)
 {
-    guidetext = localStorage.getItem("guide" + i.toString());
+    guidetext = localStorage.getItem("guideAccept" + i.toString());
     guideLS = JSON.parse(guidetext);
 }
 
@@ -23,13 +23,35 @@ let tourGuide2 = document.getElementById('guide2').value;
 let tourGuide3 = document.getElementById('guide3').value;
 */
 // storing data
-guides = {guide1: tourGuide1}  /*, guide2: tourGuide2, guide3: tourGuide3};*/
+guides = {guide1: tourGuide1} /*guide2: tourGuide2, guide3: tourGuide3}*/
 guideLS = JSON.stringify(guides);
 
 let numberguide = localStorage.length + 1;
-localStorage.setItem("guide" + numberguide.toString(), guideLS);
+localStorage.setItem("guideAccept" + numberguide.toString(), guideLS);
 }
 
+
+
+// retrieving data for setGuide //
+for (let i = 1; i < localStorage.length + 1; i++)
+{
+    sguidetext = localStorage.getItem("selectGuide" + i.toString());
+    sguideLS = JSON.parse(sguidetext);
+}
+
+let sg1 =document.getElementById("selectedGuide");
+if (sg1) sg1.innerHTML = sguideLS.sguide;
+
+
+function setGuide(){
+ let selectguide = document.getElementById("selectGuide").value;
+
+selectGuide = {sguide: selectguide}
+sguideLS = JSON.stringify(selectGuide)
+
+let numbersGuide = localStorage.length + 1;
+localStorage.setItem("selectGuide" + numbersGuide.toString(), sguideLS);
+}
 
 /*
 //retrieving data

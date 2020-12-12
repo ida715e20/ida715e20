@@ -49,6 +49,7 @@
                   <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
+                <!-- tour info -->
                 <div class="modal-body">
                 <label for="">Description: </label>
                 <label for="" id="guideInfo"></label> <br>
@@ -56,16 +57,19 @@
                 <label for="" id="guidePlace"></label><br>
                 <label for="" >Participants: </label>
                 <label for="" id= 'guidePart'></label> <br>
-
+                <!-- guides choose their name on the list-->
+                <label> Choose your name on list </label>
                 <select class="form-control form-control-sm" id="guide1">
                   <option></option>
                   <option>Guide 1</option>
                   <option>Guide 2</option>
                   <option>Guide 3</option>
-                </select><hr>
-                
-                  <button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-dismiss="modal" href="#tourAccept" style="margin-left :10px" onclick="guideAccept();">Accept tour</button>
-                  <button type="button" class="btn btn-danger mb-2" data-toggle="modal" data-dismiss="modal" href="#tourDecline" style="position:absolute; right:20px;">Decline tour</button>
+                </select><br>
+                <!-- Guide selected for the tour-->
+                <button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-dismiss="modal" href="#tourAccept" style="margin-left :10px">Accept tour</button>
+                <button type="button" class="btn btn-danger mb-2" data-toggle="modal" data-dismiss="modal" href="#tourDecline" style="position:absolute; right:20px;">Decline tour</button><hr>
+                <label> Guide, selected for the tour </label>
+                <p id="selectedGuide"> </p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
@@ -111,7 +115,7 @@
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="guideAccept();">Confirm</button>
                       </div>
                     </div>
                   </div>
