@@ -101,6 +101,14 @@
             </div>  
         </div>
       </div>
+<!-- Opretter en tom <div> med et ID som udfyldes af JavaScript funktionen nedenunder -->
+<div id="footer"></div>
+<!-- $.get henter indholdet af filen hvor vores navigationsbar ligger i og replaceWith(data) erstatter vores tomme <div> med indholdet af denne -->
+<script>
+    $.get("components/navigation/footer.html", function(data){
+        $("#footer").replaceWith(data);
+    });
+</script> 
       
 <!-- Importing the fullcalendar and javascript file-->
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.js"></script>
