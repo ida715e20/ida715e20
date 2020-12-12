@@ -1,3 +1,4 @@
+/*
 // retrieving data for guide accept //
 for (let i = 1; i < localStorage.length + 1; i++)
 {
@@ -7,30 +8,32 @@ for (let i = 1; i < localStorage.length + 1; i++)
 
 let g1 =document.getElementById("guideAvailable");
 if (g1) g1.innerHTML = guideLS.guide1;
-/*
+
 let g2 =document.getElementById("guideAvailable2");
 if (g2) g2.innerHTML = guideLS.guide2;
 
 let g3 =document.getElementById("guideAvailable3");
 if (g3) g3.innerHTML = guideLS.guide3;
-*/
+
 
 function guideAccept(){
 
 let tourGuide1 = document.getElementById('guide1').value;
-/*
+
 let tourGuide2 = document.getElementById('guide2').value;
 let tourGuide3 = document.getElementById('guide3').value;
-*/
+
 // storing data
-guides = {guide1: tourGuide1} /*guide2: tourGuide2, guide3: tourGuide3}*/
+guides = {guide1: tourGuide1} /*guide2: tourGuide2, guide3: tourGuide3}
 guideLS = JSON.stringify(guides);
 
 let numberguide = localStorage.length + 1;
 localStorage.setItem("guideAccept" + numberguide.toString(), guideLS);
 }
+*/
 
 
+/*
 
 // retrieving data for setGuide //
 for (let i = 1; i < localStorage.length + 1; i++)
