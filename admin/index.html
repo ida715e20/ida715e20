@@ -22,14 +22,14 @@
   
 </head>
   <body>
-      <!-- Opretter en tom <div> med et ID som udfyldes af JavaScript funktionen nedenunder -->
-        <div id="guestNavbar"></div>
-        <!-- $.get henter indholdet af filen hvor vores navigationsbar ligger i og replaceWith(data) erstatter vores tomme <div> med indholdet af denne -->
-        <script>
-          $.get("/components/navigation/guestNavbar.html", function(data){
-            $("#guestNavbar").replaceWith(data);
-          });
-        </script>
+  <!-- Opretter en tom <div> med et ID som udfyldes af JavaScript funktionen nedenunder -->
+    <div id="adminNavbar"></div>
+    <!-- $.get henter indholdet af filen hvor vores navigationsbar ligger i og replaceWith(data) erstatter vores tomme <div> med indholdet af denne -->
+    <script>
+      $.get("/components/navigation/adminNavbar.html", function(data){
+        $("#adminNavbar").replaceWith(data);
+      });
+    </script>
     <div class="container-fluid col-10">  
       
       <h1 class="display-1" style="text-align: center; padding-bottom: 1cm;"> City Tours in Aalborg </h1>
@@ -59,7 +59,7 @@
                 </div>
               </div>
               <div class="carousel-item">
-                <img class="d-block w-100" src="\img\occupation aalborg.png" width="400" height="600" alt="Aalborg during the occupation">
+                <img class="d-block w-100" src="\img\occupation aalborg.jpg" width="400" height="600" alt="Aalborg during the occupation">
                 <div class="carousel-caption d-none d-md-block"><h3>Aalborg during the occupation</h3>
                   <p>Some catching text about the tour</p>
                   <a href="/tourpage.html" class="btn btn-primary">Read more</a>
