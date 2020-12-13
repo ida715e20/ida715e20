@@ -12,19 +12,29 @@ function setup()
   
   function tourData()
   {
-    var child = select('#childticket').value();
-    var student = select('#studentticket').value();
-    var adult = select('#adultticket').value();
-    var tourtheme = document.getElementById('themetour').innerHTML;
-    var ticketcount = parseInt(child) + parseInt(student) + parseInt(adult);
-    var childticket_price = 40
-    var studentticket_price = 60
-    var adultticket_price = 80
-    var totalcost = parseInt(child * childticket_price) + parseInt(student * studentticket_price) + parseInt(adult * adultticket_price);
-    var uniqueID = getRandomInt(5000);
-    console.log(tourtheme);
+    
+    if (localStorage.getItem("cart") != null)
+    {
+      var existing = localStorage.getItem("cart");
+      existing = JSON.parse(existing);
+      console.log(existing['children']);
 
-    loadJSON('/website/addpurchase/' +  child + '/' + student + '/' + adult + '/' + tourtheme + '/' + ticketcount + '/' + totalcost + '/' + uniqueID), finished;
+      var child = existing['children'];
+      var student = existing['students'];
+      var adult = existing['adults'];
+      var tourtheme = existing['theme'];
+     // var tourDate = existing['date'];//
+      var ticketcount = parseInt(child) + parseInt(student) + parseInt(adult);
+      var childticket_price = 40
+      var studentticket_price = 60
+      var adultticket_price = 80
+      var totalcost = parseInt(child * childticket_price) + parseInt(student * studentticket_price) + parseInt(adult * adultticket_price);
+      var uniqueID = getRandomInt(5000);
+      console.log(tourtheme);
+  
+      loadJSON('/website/addpurchase/' +  child + '/' + student + '/' + adult + '/' + tourtheme + '/' + ticketcount + '/' + totalcost + '/' + uniqueID), finished;
+    }
+    
   }
 }
 function finished(data) 
@@ -38,4 +48,3 @@ function gotData(data)
   var keys = Object.keys(data);
   console.log(keys);
 }
-
