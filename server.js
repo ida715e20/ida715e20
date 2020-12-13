@@ -26,7 +26,7 @@ function listening() {
 }
 
 app.use('/', express.static(__dirname + '/'));
-/*
+
 //Routing til gæste sider
 app.use('/AalborgInMiddleAge', express.static(__dirname + '/tourpage.html'));
 app.use('/WitchesAndGhosts', express.static(__dirname + '/tourpage2.html'));
@@ -50,7 +50,7 @@ app.use('/guide/report', express.static(__dirname + '/guide/report.html'));
 
 
 //app.get('/website/add/:theme/:duration?/:date/:participants/:place/:ticket/:description/:uniqueID', addWord);//
-*/
+
 app.get('/website/addpurchase/:child/:student/:adult/:tourtheme/:ticketcount/:totalcost/:uniqueID', addticket);
 
 function addticket(request, response) {
@@ -78,7 +78,7 @@ function addticket(request, response) {
        response.send(reply); 
       }
 }
-/*
+
 function addWord(request, response) {
     //Data bliver her sat til request parametres
     //Dette er det som brugeren skriver ind efter /search/
@@ -123,18 +123,18 @@ function addWord(request, response) {
     }   
 }
 
-/*
+
 app.get('/website/all', sendAll);
 
 function sendAll(request, response) {
     response.send(words);
 }
-*/
+
 //Dette er en route der gør, at hvis en bruger gør til stien:
 // /search/{indsæt ord} så tjekker systemet om det ord,
 //er i listen/databasen over ord. Dette gøres i gennem 
 //if else længere nede og gennem response.send i bunden.
-/*
+
 app.get('/website/search/:word', searchWord);
 
 function searchWord(request, response) {
@@ -157,4 +157,4 @@ function searchWord(request, response) {
     }
     response.send(reply)
 }
-*/
+
