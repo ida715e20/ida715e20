@@ -31,7 +31,6 @@ let t=document.getElementById("totalcost_id");
 if (t) {t.innerHTML = parseInt(localS.children * childticket_price) + parseInt(localS.students * studentticket_price) + parseInt(localS.adults * adultticket_price);}
 
 
-
 function getdata(){
     
     let child=document.getElementById('childticket').value;

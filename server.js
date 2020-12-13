@@ -26,6 +26,7 @@ function listening() {
 }
 
 app.use('/', express.static(__dirname + '/'));
+
 /*
 //Routing til gæste sider
 app.use('/AalborgInMiddleAge', express.static(__dirname + '/tourpage.html'));
