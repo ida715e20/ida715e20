@@ -25,7 +25,7 @@ function initCalendar()
 
         $('#eventModal').modal('show');
         choseneventid = event.event.id; 
-        //chosenevent får eventets id der clickes på
+        //chosenevent får id'et for det event, der clickes på
         console.log(choseneventid);
        
         $('#guideInfo').html(event.event.extendedProps.description);
@@ -34,6 +34,30 @@ function initCalendar()
         /*$('#guideAccept').html(event.event.extendedProps.guide);*/
         $('#assGuide').modal('show');
       
+        let g =document.getElementById("guideAvailable");
+        if (g)
+        {
+          let guideSelect = localStorage.getItem("tourinfo" + choseneventid.toString());
+          let tourLS = JSON.parse(guideSelect);
+          g.innerHTML = tourLS['guide']
+        }
+
+        let sg =document.getElementById("selectedGuide")
+        if (sg)
+        {
+          let guideSelect = localStorage.getItem("tourinfo" + choseneventid.toString());
+          let tourLS = JSON.parse(guideSelect);
+          if (tourLS['admin'] == true)
+          {
+            sg.innerHTML = tourLS['guide'];
+          }
+          else
+          {
+            sg.innerHTML = "";
+          }
+        }
+        
+
     }
          
 
@@ -84,8 +108,9 @@ function getTourData(){
     var tourDuration = document.getElementById('fduration').value;
     var tourPlace = document.getElementById('fplace').value;
     var tourDescription = document.getElementById('fDescription').value;
-   
     var uniqueID = getRandomInt(maxEvents)
+    var tourGuide = "nobody";
+    var adminGuide = false;
     // kører indtil eventet får et unikt id
     while (localStorage.getItem("tourinfo" + uniqueID.toString()) != null)
     {
@@ -94,7 +119,20 @@ function getTourData(){
   
 
     // Storing data:
-    tour = {title: tourTitle, date: tourDate, start: time, participants: maxP, duration: tourDuration, place: tourPlace, id: uniqueID, description: tourDescription}; /*, guide: tourGuide};*/
+
+    tour = {
+      title: tourTitle, 
+      date: tourDate, 
+      start: time, 
+      participants: maxP, 
+      duration: tourDuration, 
+      place: tourPlace, 
+      id: uniqueID, 
+      description: tourDescription, 
+      guide: tourGuide, 
+      admin: adminGuide
+    };
+
   
     tourLS = JSON.stringify(tour);
   
@@ -110,11 +148,13 @@ function getTourData(){
       duration: tourDuration,
       place: tourPlace,
       description: tourDescription,
-     
+      guide: tourGuide,
+      admin: adminGuide
+
       
     });
-    // hvis vi opretter et event får vi denne besked
-    document.getElementById("eventText").innerHTML = "You have succesfully created a new event!"
+    /* hvis vi opretter et event får vi denne besked
+    document.getElementById("eventText").innerHTML = "You have succesfully created a new event!"*/
   }
   // hvis vi ikke kan oprette et event fordi vi har nået max antal, får vi denne besked
   else
@@ -125,6 +165,43 @@ function getTourData(){
 
 
 }
+
+function guideAccept(){
+  
+  let tourGuide = document.getElementById('guide1').value;
+  console.log(tourGuide + " " + choseneventid);
+  let eventname = "tourinfo" + choseneventid.toString();
+  if (localStorage.getItem(eventname) != null)
+  {   
+    var existing = localStorage.getItem(eventname);
+    existing = JSON.parse(existing);
+    
+    existing['guide'] = tourGuide;
+    localStorage.setItem(eventname, JSON.stringify(existing));
+
+  }
+}
+
+
+function setGuide()
+{
+  let selectguide = document.getElementById("selectGuide").value;
+ 
+  console.log("admin chose " + selectguide);
+
+  let eventname = "tourinfo" + choseneventid.toString();
+  if (localStorage.getItem(eventname) != null)
+  {
+    
+    var existing = localStorage.getItem(eventname);
+    existing = JSON.parse(existing);
+    
+    existing['guide'] = selectguide;
+    existing['admin'] = true;
+    localStorage.setItem(eventname, JSON.stringify(existing));
+  }
+}
+
 
 function removeEvent() {
   //makes event invisible
@@ -144,4 +221,3 @@ function setStatus() {
   var color = idNr.options[idNr.selectedIndex].value;
   calendar.getEventById(choseneventid).setProp("color", color);
 }
-

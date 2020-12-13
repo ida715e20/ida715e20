@@ -24,12 +24,14 @@
       </script>
       
       <div class="row">
+
             <div class="col-3" style="padding-left: 2cm; padding-top: 2cm">                                  
               <!-- <ul class="list-group" style="padding-top: 2cm;"> -->
                 <li class="list-group-item list-group-item-dark">Change tour information by clicking on event:</li>
        
                 <!-- Labels indicating the tours status  -->
                 <ul class="list-group" style="padding-top: 2cm;">
+
                     <li class="list-group-item">Overview of Tour status: </li>
                     <li class="list-group-item list-group-item-success">Tour Published</li>
                     <li class="list-group-item list-group-item-warning">Tour Pending</li>
@@ -41,7 +43,6 @@
           <!-- Show calendar -->
           <div class="col-7"  id="calendar"></div>
             
-
           <!-- Modal -->
           <div class="modal fade" id="eventModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
@@ -53,16 +54,20 @@
                   </button>
                 </div>
                 <!-- tour info -->
-                <div class="modal-body" >
-                <label for="">Description: </label>
-                <label for="" id="eventInfo"></label> <br>
-                <label for="" >Place: </label>
-                <label for="" id="eventPlace"></label><br>
-                <label for="" >Participants: </label>
-                <label for="" id="eventPart"></label> <br>
-                <label for="" >Choose guides from lists: </label>
-
-           <!-- Vælg en guide til tur -->     
+                <div class="modal-body">
+                  <div class="container-fluid">
+                    <div class ="row">
+                      <div class="col-md-4">
+                      <label for="">Description: </label>
+                      <label for="" id="eventInfo"></label> <br>
+                      <label for="" >Place: </label>
+                      <label for="" id="eventPlace"></label><br>
+                      <label for="" >Participants: </label>
+                      <label for="" id="eventPart"></label> <br>
+                    <!-- <label for="" >Choose guides from lists: </label>-->
+                      
+<!--
+            Vælg en guide til tur      
                 <select class="form-control form-control-sm" id="guide1">
                   <option></option>
                   <option>Guide 1</option>
@@ -81,36 +86,67 @@
                   <option>Guide 2</option>
                   <option>Guide 3</option>
                 </select><hr>
-                <button type="submit" class="btn btn-primary my-1" onclick="setGuide();">Set guides</button><hr>
-             
+                
+ -->            
+
                 <!-- Vælg tour status -->   
                 <div class="dropdown">
-                  
-                  <label for="" style="font-style: italic;">Choose a status for the tour: </label>
-                  <select class="form-control form-control-sm" id="tourColor">
+
+                  <label for="" style="font-style: italic;">Choose a status for the tour: </label><br>
+                  <select class="form-control mb-2" id="tourColor" style="width: 150px;">
+
                     <option value="green">Publish</option>
                     <option selected value="yellow">Pending</option>
                     <option value="red">Completed</option>
                     <option value="blue">Private</option>
                   </select>
+
+
                 </div>
-                <!-- tour color -->
+               
                 
                
+
                 </div>
+              </div>
+
+                <div class="col-md-4 ml-auto">
+                  <!-- Guides accepted tour -->
+                  <label>Guides accepted tour:</label>
+                      <form class="form-inline">
+                        <div class="form-group mb-2">
+                          <label for="staticEmail2" class="sr-only"></label>
+                          <p id="guideAvailable"> </p>
+                        </div><br>
+              
+
+              <!-- Choose guide-->
+              <label> Select guide for the tour </label>
+              <select class="form-control" id= "selectGuide" style="width: 150px;">
+                <option>Guide 1</option>
+                <option>Guide 2</option>
+                <option>Guide 3</option>
+              </select><br>
+            </div>
+          </div>
+        </div>
+    </div>
+                
                 <div class="modal-footer">
                   <div style="position:absolute; left:20px;">
                   <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="removeEvent();">Remove event</button>
                   </div>
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal" href="#savingModal">Save Changes</button>
-                  
+
                 </div>
               </div>
             </div>
           </div>
+
           <!-- Modal for saving changes -->
           <div class="modal fade" id="savingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -124,12 +160,14 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" href="#eventModal">Close</button>
-                  <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="setStatus()">Save changes</button>
+
+                  <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="setStatus(); setGuide();"> Save changes</button>
+
                 </div>
               </div>
             </div>
           </div>
-            
+
 
         </div>
 
@@ -149,7 +187,6 @@
        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
        
         <script src="/js/calendar.js"></script>
-        <script src="/js/guide.js"></script>
 
          <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.js"></script>
 

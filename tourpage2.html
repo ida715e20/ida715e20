@@ -54,6 +54,17 @@
                     <span class="badge badge-danger" height="25px" width="50px">No tickets avalable</span>
                 </div>
 
+                <div>
+                    <h4>Your tour:</h4>
+                </div>
+        
+                <div class="col"> 
+                    <label for="" style="font-weight: bold;">Tour: </label> <label for="" id="detailsTitle" ></label> <br>
+                    <label for="" style="font-weight: bold;">Time of tour: </label> <label for="" id="detailsTime" ></label> <br>
+                    <label for="" style="font-weight: bold;">Place to meet: </label> <label for="" id="detailsPlace" ></label> <br>
+                    <label for="" style="font-weight: bold;">Tickets left: </label> <label for="" id="ticketsLeft"></label>
+                </div>             
+
 <!-- Ticket types  OBS de skal have default value 0 ellers virker ticket tælleren ikke-->
                 <div>
                     <h4> Ticket types </h4>
@@ -80,11 +91,12 @@
                 
 <!--opretter en "next" knap-->                                   
                 <div style="text-align: right;">
-                    <button id="fpurchase" type="button" class="btn btn-dark btn-lg" onclick="document.location='purchase-page.html';getdata();">Continue to purchase page</button>
+                    <button id="fpurchase" type="button" class="btn btn-dark btn-lg" onclick="document.location='purchase-page.html'; getdata();">Continue to purchase page</button>
                 </div>
             </div>  
         </div>
       </div>
+
 <!-- Opretter en tom <div> med et ID som udfyldes af JavaScript funktionen nedenunder -->
     <div id="footer"></div>
 
@@ -94,6 +106,7 @@
             $("#footer").replaceWith(data);
         });
     </script> 
+
 <!-- Importing the fullcalendar and javascript file-->
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.js"></script>
 <script src="js/calendar.js"></script>

@@ -37,18 +37,16 @@ function getdata(){
     let child=document.getElementById('childticket').value;
     let student=document.getElementById('studentticket').value;
     let adult=document.getElementById('adultticket').value;
-
     let theme=document.getElementById('themetour').innerHTML;
     let tourDate = document.getElementById('detailsTime').innerHTML; 
-
-    
  
     // Storing data:
     cart = {children: child, students: student, adults: adult, theme: theme, date: tourDate};
     localS = JSON.stringify(cart);
     localStorage.setItem("cart", localS);
-
+    console.log(child)
 }
+
 
 
 

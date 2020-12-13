@@ -49,6 +49,7 @@
                   <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
+                <!-- tour info -->
                 <div class="modal-body">
                 <label for="">Description: </label>
                 <label for="" id="guideInfo"></label> <br>
@@ -56,49 +57,65 @@
                 <label for="" id="guidePlace"></label><br>
                 <label for="" >Participants: </label>
                 <label for="" id= 'guidePart'></label> <br>
-                <label>Guides offered tour:</label>
-                <form class="form-inline">
-                  <div class="form-group mb-2">
-                    <label for="staticEmail2" class="sr-only"></label>
-                     <p id="guideAvailable1"> </p>
-                  </div>
-                  <button type="submit" class="btn btn-primary mb-2" data-toggle="modal" data-target="#tourAccept1" style="margin-left :10px">Accept tour</button>
-                  <button type="submit" class="btn btn-primary mb-2" data-toggle="modal" data-target="#tourDecline1" style="margin-left :10px">Decline tour</button>
+                <!-- guides choose their name on the list-->
+                <label> Choose your name on list </label>
+                <select class="form-control form-control-sm" id="guide1">
+                  <option></option>
+                  <option>Guide 1</option>
+                  <option>Guide 2</option>
+                  <option>Guide 3</option>
+                </select><br>
+                <!-- Guide selected for the tour-->
+                <button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-dismiss="modal" href="#tourAccept" style="margin-left :10px">Accept tour</button>
+                <button type="button" class="btn btn-danger mb-2" data-toggle="modal" data-dismiss="modal" href="#tourDecline" style="position:absolute; right:20px;">Decline tour</button><hr>
+                <label> Guide, selected for the tour </label>
+                <p id="selectedGuide"> </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!--           
                 </form>
                 <form class="form-inline">
                   <div class="form-group mb-2">
                     <label for="staticEmail2" class="sr-only"></label>
-                     <p id="guideAvailable2"> </p>
+                     <p id="guideAvailable"> </p>
                   </div>
-                  <button type="submit" class="btn btn-primary mb-2" data-toggle="modal" data-target="#tourAccept2" style="margin-left :10px">Accept tour</button>
-                  <button type="submit" class="btn btn-primary mb-2" data-toggle="modal" data-target="#tourDecline2" style="margin-left :10px">Decline tour</button>
+                  <button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-dismiss="modal" href="#tourAccept" style="margin-left :10px">Accept tour</button>
+                  <button type="button" class="btn btn-danger mb-2" data-toggle="modal" data-dismiss="modal" href="#tourDecline" style="position:absolute; right:20px;">Decline tour</button>
                 </form>
                 <form class="form-inline">
                   <div class="form-group mb-2">
                     <label for="staticEmail2" class="sr-only"></label>
-                     <p id="guideAvailable3"> </p>
+                     <p id="guideAvailable"> </p>
                   </div>
-                  <button type="submit" class="btn btn-primary mb-2" data-toggle="modal" data-target="#tourAccept3" style="margin-left :10px">Accept tour</button>
-                  <button type="submit" class="btn btn-primary mb-2" data-toggle="modal" data-target="#tourDecline3" style="margin-left :10px">Decline tour</button>
+                  <button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-dismiss="modal" href="#tourAccept" style="margin-left :10px">Accept tour</button>
+                  <button type="button" class="btn btn-danger mb-2" data-toggle="modal" data-dismiss="modal" href="#tourDecline" style="position:absolute; right:20px;">Decline tour</button>
                 </form>
+
+        -->      
               
 
                 <!-- Modal accept -->
-                <div class="modal fade" id="tourAccept1" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="tourAccept1Label" aria-hidden="true">
-                  <div class="modal-dialog">
+                <div class="modal fade" id="tourAccept" role="dialog" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="tourAcceptLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="tourAcceptLabel1">Accept</h5>
+                        <h5 class="modal-title" id="tourAcceptLabel">Accept</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
                       <div class="modal-body">
-                        We have noted you have accepted the tour.
+                        Are you sure you want to accept the tour?
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="guideAccept();">Confirm</button>
                       </div>
                     </div>
                   </div>
@@ -106,18 +123,18 @@
                   
                   
                  
-                  <!-- Modal decline 1 -->
-                  <div class="modal fade" id="tourDecline1" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="tourDeclineLabel" aria-hidden="true">
-                    <div class="modal-dialog">
+                  <!-- Modal decline -->
+                  <div class="modal fade" id="tourDecline" role="dialog" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="tourDeclineLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="dialog">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title" id="tourDeclineLabel1">Decline</h5>
+                          <h5 class="modal-title" id="tourDeclineLabel">Decline</h5>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
                         <div class="modal-body">
-                          We have noted you have declined the tour.
+                          Are you sure you want to decline the tour?
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -160,14 +177,7 @@
                 <!--<label for=""> Assign to this tour: </label>
                 <input type="text" id="guideAccept">-->
                 
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+                
     
     <!--Initialises jQuery-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -176,7 +186,6 @@
     <!-- Bootstrap js-->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     
-    <script src="/js/guide.js"></script>
     <script src="/js/calendar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.js"></script>
       

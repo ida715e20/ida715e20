@@ -34,14 +34,15 @@
                 <div class="card">
                     <img src="img/middleages.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h2 class="card-title" id='themetour'>Aalborg in the Middle Ages</h2>
+                        <span>
+                        <h2 class="card-title" id="themetour"> Aalborg in the Middle Ages </h2>
+                        </span>
                         <p class="text-justify">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
                         <p class="text-justify">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
                     </div>
                 </div>
             </div>
             
-
 <!--kolonne 2 med kalender-->
             <div class="col-md-5">
                 <h1> Click on a tour below:  </h1>
@@ -93,14 +94,14 @@
                     </div>
                 </div>
                        
-
 <!--opretter en "next" knap-->                                   
                 <div style="text-align: right;">
-                    <button type="button" class="btn btn-dark btn-lg" id="fpurchase" onclick="document.location='purchase-page.html'; getdata()" >Continue to purchase page</button>
+                    <button id="fpurchase" type="button" class="btn btn-dark btn-lg" onclick="document.location='purchase-page.html'; getdata();">Continue to purchase page</button>
                 </div>
             </div>  
         </div>
       </div>
+
 <!-- Opretter en tom <div> med et ID som udfyldes af JavaScript funktionen nedenunder -->
 <div id="footer"></div>
 <!-- $.get henter indholdet af filen hvor vores navigationsbar ligger i og replaceWith(data) erstatter vores tomme <div> med indholdet af denne -->
@@ -110,6 +111,7 @@
     });
 </script> 
       
+
 <!-- Importing the fullcalendar and javascript file-->
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.js"></script>
 <script src="js/guestCalender.js"></script>
