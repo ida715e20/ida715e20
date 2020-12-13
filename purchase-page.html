@@ -22,7 +22,7 @@
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/">Start page</a></li>
-          <li class="breadcrumb-item"><a href="##" onClick="history.go(-1); return false;">Go back</a></li>
+          <li class="breadcrumb-item"><a href="##" onClick="history.go(-1); return false;">Tour page</a></li>
           <li class="breadcrumb-item active" aria-current="page"> Purchase page</li>
         </ol>
       </nav>
@@ -223,6 +223,17 @@
   
 </div>
           
+
+
+
+    <!-- Opretter en tom <div> med et ID som udfyldes af JavaScript funktionen nedenunder -->
+      <div id="footer"></div>
+      <!-- $.get henter indholdet af filen hvor vores navigationsbar ligger i og replaceWith(data) erstatter vores tomme <div> med indholdet af denne -->
+      <script>
+        $.get("components/navigation/footer.html", function(data){
+          $("#footer").replaceWith(data);
+        });
+      </script> 
 
        <!--Initialises jQuery-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -86,7 +86,7 @@ function initCalendar()
           description: tourLS.description,
           duration: tourLS.duration,
           place: tourLS.place,
-          tickets: tourLS.tickets
+         
   
         });
       }
@@ -119,6 +119,7 @@ function getTourData(){
   
 
     // Storing data:
+
     tour = {
       title: tourTitle, 
       date: tourDate, 
@@ -131,6 +132,7 @@ function getTourData(){
       guide: tourGuide, 
       admin: adminGuide
     };
+
   
     tourLS = JSON.stringify(tour);
   
@@ -148,6 +150,7 @@ function getTourData(){
       description: tourDescription,
       guide: tourGuide,
       admin: adminGuide
+
       
     });
     /* hvis vi opretter et event får vi denne besked

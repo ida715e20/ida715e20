@@ -11,6 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
+    
     <!-- Opretter en tom <div> med et ID som udfyldes af JavaScript funktionen nedenunder -->
     <div id="guestNavbar"></div>
     <!-- $.get henter indholdet af filen hvor vores navigationsbar ligger i og replaceWith(data) erstatter vores tomme <div> med indholdet af denne -->
@@ -19,6 +20,7 @@
         $("#guestNavbar").replaceWith(data);
       });
     </script> 
+      
       <div class="container">
       <div class="py-5 text-center">
         <h2>Request private city walk</h2>
@@ -86,7 +88,7 @@
             <div class="mb-3">
               Insert datepicker
               </div>
- <!-- opretter send request knap, der ryger videre til en modal box -->             
+          <!-- opretter send request knap, der ryger videre til en modal box -->             
           <div>
             <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#staticBackdrop">
             Send request
@@ -114,11 +116,15 @@
             </div>
           </div>
         </div>
- <!-- gamle knap        
-            <div class="mb-3">
-            <button class="btn btn-primary btn-lg btn-block" type="submit" onclick="document.location='index.html'">Send request</button>
-          </form>
-        </div> -->
+      </div>
+    <!-- Opretter en tom <div> med et ID som udfyldes af JavaScript funktionen nedenunder -->
+    <div id="footer"></div>
+    <!-- $.get henter indholdet af filen hvor vores navigationsbar ligger i og replaceWith(data) erstatter vores tomme <div> med indholdet af denne -->
+    <script>
+      $.get("components/navigation/footer.html", function(data){
+        $("#footer").replaceWith(data);
+      });
+    </script> 
       
     <!--Initialises jQuery-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

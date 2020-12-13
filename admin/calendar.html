@@ -22,12 +22,16 @@
           $("#adminNavbar").replaceWith(data);
         });
       </script>
+      
       <div class="row">
-            <div class="col-3" style="padding-left: 2cm;">                                  
-              <li class="list-group-item list-group-item-dark">Change tour information by clicking on event:</li>  
-                
-              <!-- Labels indicating the tours status  -->
-                <ul class="list-group" style="padding-top: 4cm;">
+
+            <div class="col-3" style="padding-left: 2cm; padding-top: 2cm">                                  
+              <!-- <ul class="list-group" style="padding-top: 2cm;"> -->
+                <li class="list-group-item list-group-item-dark">Change tour information by clicking on event:</li>
+       
+                <!-- Labels indicating the tours status  -->
+                <ul class="list-group" style="padding-top: 2cm;">
+
                     <li class="list-group-item">Overview of Tour status: </li>
                     <li class="list-group-item list-group-item-success">Tour Published</li>
                     <li class="list-group-item list-group-item-warning">Tour Pending</li>
@@ -87,13 +91,22 @@
 
                 <!-- Vælg tour status -->   
                 <div class="dropdown">
+
                   <label for="" style="font-style: italic;">Choose a status for the tour: </label><br>
                   <select class="form-control mb-2" id="tourColor" style="width: 150px;">
+
                     <option value="green">Publish</option>
                     <option selected value="yellow">Pending</option>
                     <option value="red">Completed</option>
                     <option value="blue">Private</option>
                   </select>
+
+
+                </div>
+               
+                
+               
+
                 </div>
               </div>
 
@@ -125,13 +138,15 @@
                   </div>
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal" href="#savingModal">Save Changes</button>
+
                 </div>
               </div>
             </div>
           </div>
-            
-           <!-- Modal for saving changes -->
-           <div class="modal fade" id="savingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+
+          <!-- Modal for saving changes -->
+          <div class="modal fade" id="savingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -145,15 +160,19 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" href="#eventModal">Close</button>
+
                   <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="setStatus(); setGuide();"> Save changes</button>
+
                 </div>
               </div>
             </div>
           </div>
 
-           
 
         </div>
+
+
+
 
 
         
