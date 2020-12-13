@@ -168,7 +168,7 @@ function getTourData(){
 
 function guideAccept(){
   
-  let tourGuide = document.getElementById('guide1').value;
+  let tourGuide = document.getElementById('guideResponse').value;
   console.log(tourGuide + " " + choseneventid);
   let eventname = "tourinfo" + choseneventid.toString();
   if (localStorage.getItem(eventname) != null)
