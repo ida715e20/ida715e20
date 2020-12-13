@@ -22,6 +22,8 @@ function initCalendar()
         $('#eventInfo').html(event.event.extendedProps.description);
         $('#eventPart').html(event.event.extendedProps.participants);
         $('#eventPlace').html(event.event.extendedProps.place);
+        var d = event.event.start.toDateString();
+        $('#eventStart').html(d);
 
         $('#eventModal').modal('show');
         choseneventid = event.event.id; 
