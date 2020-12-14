@@ -19,7 +19,7 @@ var express = require('express');
 
 var app = express();
 
-var server = app.listen(3001, listening);
+var server = app.listen(3002, listening);
 
 function listening() {
     console.log("listening...");
@@ -27,7 +27,7 @@ function listening() {
 
 app.use('/', express.static(__dirname + '/'));
 
-/*
+
 //Routing til gæste sider
 app.use('/AalborgInMiddleAge', express.static(__dirname + '/tourpage.html'));
 app.use('/WitchesAndGhosts', express.static(__dirname + '/tourpage2.html'));
@@ -39,19 +39,17 @@ app.use('/', express.static(__dirname + '/index.html'));
 //Routing til admin sider
 app.use('/admin/calendar', express.static(__dirname + '/admin/calendar.html'));
 app.use('/admin/home', express.static(__dirname + '/admin/home.html'));
-app.use('/admin/index', express.static(__dirname + '/admin/.html'));
+app.use('/login/', express.static(__dirname + '/admin.html'));
 app.use('/admin/statistics', express.static(__dirname + '/admin/statistics.html'));
 app.use('/admin/booking', express.static(__dirname + '/website/booking.html'));
 
 //Routing til guide sider
 app.use('/guide/calendar', express.static(__dirname + '/guide/calendar.html'));
 app.use('/guide/home', express.static(__dirname + '/guide/home.html'));
-app.use('/guide/', express.static(__dirname + '/guide/index.html'));
 app.use('/guide/report', express.static(__dirname + '/guide/report.html'));
 
 
 //app.get('/website/add/:theme/:duration?/:date/:participants/:place/:ticket/:description/:uniqueID', addWord);//
-*/
 app.get('/website/addpurchase/:child/:student/:adult/:tourtheme/:ticketcount/:totalcost/:uniqueID', addticket);
 
 function addticket(request, response) {
