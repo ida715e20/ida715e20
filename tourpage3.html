@@ -39,62 +39,57 @@
                     </div>
                 </div>
             </div>
-            
-
-<!--kolonne 2 med kalender-->
+            <!--kolonne 2 med kalender-->
             <div class="col-md-5">
                 <h1> Available dates </h1>
                 <div id="occupationCalendar">
                 </div>
 
-<!--indsætter ticket avalability-->
+                <!--indsætter ticket avalability-->
+                <br>
                 <div>
                     <span class="badge badge-success">Tickets available</span>
                     <span class="badge badge-danger" height="25px" width="50px">No tickets avalable</span>
                 </div>
-
+                <hr>
                 <div class="col"> 
                     <label for="" style="font-weight: bold;">Tour: </label> <label for="" id="detailsTitle" ></label> <br>
                     <label for="" style="font-weight: bold;">Time of tour: </label> <label for="" id="detailsTime" ></label> <br>
                     <label for="" style="font-weight: bold;">Place to meet: </label> <label for="" id="detailsPlace" ></label> <br>
                     <label for="" style="font-weight: bold;">Tickets left: </label> <label for="" id="ticketsLeft"></label>
                 </div> 
-
-<!-- Ticket types  OBS de skal have default value 0 ellers virker ticket tælleren ikke-->
+                <hr>
+                <!-- Ticket types  OBS de skal have default value 0 ellers virker ticket tælleren ikke-->
                 <div>
-                    <h4> Ticket types </h4>
+                    <h4>Ticket types </h4>
                 </div>
                 <div class="form-row">
-                    <div class="col-md-3 mb-2">
+                    <div class="col mb-2">
                         <label for="ticket01">Children (40 kr. per ticket)</label>
-                        <input type="number" class="form-control" id="childticket" style="width: 2cm" min="1" max="10">
+                        <input type="number" class="form-control" id="childticket" value="0" style="width: 2cm" min="1" max="10">
                     </div>
-                </div>
-                <div class="form-row">
-                    <div class="col-md-4 mb-2">
+                    <div class="col mb-2">
                         <label for="ticket02">Students (60 kr. per ticket)</label>
-                        <input type="number" class="form-control" id="studentticket" style="width: 2cm" min="1" max="10"> 
+                        <input type="number" class="form-control" id="studentticket" value="0" style="width: 2cm" min="1" max="10"> 
                     </div>
-                </div>
-                <div class="form-row">
-                    <div class="col-md-3 mb-2">
+                    <div class="col mb-2">
                         <label for="ticket03">Adults (80 kr. per ticket)</label>
-                        <input type="number" class="form-control" id="adultticket" style="width: 2cm" min="1" max="10">
+                        <input type="number" class="form-control" id="adultticket" value="0" style="width: 2cm" min="1" max="10">
                     </div>
-                </div>
-                       
-
-<!--opretter en "next" knap-->                                   
+                </div>       
+                <hr>
+                <!--opretter en "next" knap-->
+                <br>                                
                 <div style="text-align: right;">
                     <button id="fpurchase" type="button" class="btn btn-dark btn-lg" onclick="document.location='purchase-page.html';getdata();">Continue to purchase page</button>
                 </div>
             </div>  
         </div>
       </div>
-<!-- Opretter en tom <div> med et ID som udfyldes af JavaScript funktionen nedenunder -->
+    <!-- Opretter en tom <div> med et ID som udfyldes af JavaScript funktionen nedenunder -->
     <div id="footer"></div>
     
-<!-- $.get henter indholdet af filen hvor vores navigationsbar ligger i og replaceWith(data) erstatter vores tomme <div> med indholdet af denne -->
+    <!-- $.get henter indholdet af filen hvor vores navigationsbar ligger i og replaceWith(data) erstatter vores tomme <div> med indholdet af denne -->
     <script>
         $.get("components/navigation/footer.html", function(data){
             $("#footer").replaceWith(data);
