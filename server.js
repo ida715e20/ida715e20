@@ -35,11 +35,11 @@ app.use('/AalborgDuringOccupation', express.static(__dirname + '/tourpage3.html'
 app.use('/purchase', express.static(__dirname + '/purchase-page.html'));
 app.use('/private-tour', express.static(__dirname + '/private-city-tours.html'));
 app.use('/', express.static(__dirname + '/index.html'));
+app.use('/login/', express.static(__dirname + '/admin/index.html'));
 
 //Routing til admin sider
 app.use('/admin/calendar', express.static(__dirname + '/admin/calendar.html'));
 app.use('/admin/home', express.static(__dirname + '/admin/home.html'));
-app.use('/login/', express.static(__dirname + '/admin.html'));
 app.use('/admin/statistics', express.static(__dirname + '/admin/statistics.html'));
 app.use('/admin/booking', express.static(__dirname + '/website/booking.html'));
 
