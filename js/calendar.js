@@ -68,7 +68,7 @@ function initCalendar()
     calendar.render();
     console.log(console.log(calendar.getEvents())); 
     
-
+// retrieving data for new tour
     for (let i = 0; i < maxEvents; i++)
     {
       let eventname = "tourinfo" + i.toString();
@@ -139,7 +139,7 @@ function getTourData(){
     tourLS = JSON.stringify(tour);
   
     localStorage.setItem("tourinfo" + uniqueID.toString(), tourLS);
-          
+         
     calendar.addEvent({  
       
       id: uniqueID, 
@@ -153,7 +153,6 @@ function getTourData(){
       guide: tourGuide,
       admin: adminGuide
 
-      
     });
     /* hvis vi opretter et event får vi denne besked
     document.getElementById("eventText").innerHTML = "You have succesfully created a new event!"*/
