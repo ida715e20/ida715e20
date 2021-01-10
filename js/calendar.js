@@ -72,8 +72,8 @@ function initCalendar()
     for (let i = 0; i < maxEvents; i++)
     {
       let eventname = "tourinfo" + i.toString();
-
-      if (localStorage.getItem(eventname) != null)
+//findes der et event i local storage der hedder tourinfo1 osv. hvis den findes bliver den created
+      if (localStorage.getItem(eventname) != null) 
       {
         tourtext = localStorage.getItem(eventname); 
         tourLS = JSON.parse(tourtext);
