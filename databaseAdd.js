@@ -9,10 +9,14 @@ function setup() {
       var firstname = select('#validationCustom01').value();
       //var word = select('#fword').value();
       var lastname = select('#validationCustom02').value();
-      //var email = select('#validationCustom03').value();
-      console.log(firstname, lastname);
+      var email = select('#validationCustom03').value();
+      var address = select('#validationCustom04').value();
+      var city = select('#validationCustom05').value();
+      var zip = select('#validationCustom06').value();
+      var countryCode = select('#validationCustom07').value();
+      console.log(firstname, lastname, email, address, city, zip, countryCode);
 
-      loadJSON('add/' + firstname + '/' + lastname), finished;
+      loadJSON('add/' + firstname + '/' + lastname + '/' + email + '/' + address + '/' + city + '/' + zip + '/' + countryCode), finished;
       // loadJSON('add/' + word + '/' + score), finished;
       //'/' + word +
       //+ '/' + email

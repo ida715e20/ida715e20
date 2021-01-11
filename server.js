@@ -63,8 +63,9 @@ app.get('/purchase-page', (req, res) =>  {
 ///:lastName/:email/:address/:city/:zip/:countryCode/:phoneNumber
 //:name/
 ///:eMail
-
-app.get('add/:firstName/:lastName', addWord);
+//addpurchase/:child/:student/:adult/:tourtheme/:ticketcount/:totalcost/:uniqueID'
+///:address
+app.get('/add/:firstName/:lastName/:email/:address/:city/:zip/:countryCode', addWord);
 
 function addWord(request, response) {
     console.log("hallo");
@@ -76,19 +77,22 @@ function addWord(request, response) {
     //her finder den ordet, altså gaming inde i data var
     var firstName = data.firstName;
     //var word = data.word;
-    var lastName = data.lastName;
-    //var eMail = data.eMail;
+    var lastName = data.lastName;  
+    var email = data.email;
+    var address = data.address; 
+    var city = data.city;
+    var zip = data.zip;
+    var countryCode = data.countryCode;
     //her tager den nummeret 5 Number() gør, at den ikke tager den som string i data
     // var lastName = data.lastName;
     // var email = data.email;
-    // var address = data.address;
     // var city = data.city;
     // var zip = data.zip;
     // var countryCode = data.countryCode;
     // var phoneNumber = data.phoneNumber;
 
     var reply;
-    if(!score) {
+    if(!data) {
         reply = {
             msg: "Score is required."
          }
@@ -102,9 +106,9 @@ function addWord(request, response) {
     //words[word] = score;
     //lastname, email, address, city, zip, countrycode, phonenumber
     //word,
-    var sql = "INSERT INTO guest (firstname, lastname) VALUES (?,?)";
+    var sql = "INSERT INTO guest (firstname, lastname, email, address, city, zip, countryCode) VALUES (? ,? , ?, ?, ?, ?, ?)";
     
-    db.query(sql,[firstName, lastName], function (err, result) {
+    db.query(sql,[firstName, lastName, email, address, city, zip, countryCode], function (err, result) {
       
         //lastName, email, address, city, zip, countryCode, phoneNumber
       if (err) throw err;
@@ -125,8 +129,8 @@ function addWord(request, response) {
     }   
 }
 
-
-app.get('/add/:word/:score', addTest);
+/*
+app.get('/data/:word/:score/:firstname', addTest);
 
 function addTest(request, response) {
     //Data bliver her sat til request parametres
@@ -134,10 +138,12 @@ function addTest(request, response) {
     //altså hvis brugeren skriver /search/gaming/5
     //så er gaming/5 vores request.params og dette bliver data sat til.
     var data = request.params;
+    console.log("forkert funktion"); 
     //her finder den ordet, altså gaming inde i data var
     var word = data.word;
     //her tager den nummeret 5 Number() gør, at den ikke tager den som string i data
     var score = data.score;
+    var firstname = data.firstname
     var reply;
     if(!score) {
         reply = {
@@ -150,9 +156,9 @@ function addTest(request, response) {
     //hvor hver af ordene i listen bliver parret med deres score
     //words[word] = score;
     //Konverter teksten til noget json kan forstå og lav god formateringen igennem arguemnterne
-    var sql = "INSERT INTO guest (firstname, lastname) VALUES (?, ?)";
+    var sql = "INSERT INTO guest (firstname, lastname, address) VALUES (?, ?, ?)";
     
-    db.query(sql,[word, score], function (err, result) {
+    db.query(sql,[word, score, firstname], function (err, result) {
       
         //lastName, email, address, city, zip, countryCode, phoneNumber
       if (err) throw err;
@@ -161,7 +167,7 @@ function addTest(request, response) {
   });
     }   
 }
-
+*/
 //Database: 
 
 // app.get("./purchase-page",(req, res) => {
