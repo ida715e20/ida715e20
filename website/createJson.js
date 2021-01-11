@@ -31,7 +31,7 @@ function setup()
       var totalcost = parseInt(child * childticket_price) + parseInt(student * studentticket_price) + parseInt(adult * adultticket_price);
       var uniqueID = getRandomInt(5000);
       console.log(tourtheme);
-  
+      //variablerne + parametrene sendes til adressen /website/addpurchase/'
       loadJSON('/website/addpurchase/' +  child + '/' + student + '/' + adult + '/' + tourtheme + '/' + ticketcount + '/' + totalcost + '/' + uniqueID), finished;
     }
     

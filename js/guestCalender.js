@@ -4,7 +4,7 @@ var witchCalendar, middleagesCalendar, occupationCalendar,
 tour1 = [{ 
   id: "821",
   title: "Aalborg in the Middleages",
-  start: "2020-12-06T11:30:00",
+  start: "2021-01-06T11:30:00",
   color: 'green',
   participants: 30, 
   place: "Aalborg Historiske Museum",
@@ -13,10 +13,20 @@ tour1 = [{
 { 
   id: "999",
   title: "Aalborg in the Middleages",
-  start: "2020-12-24T19:30:00",
+  start: "2021-01-24T19:30:00",
   color: 'green',
   participants: 30,
   place: "Algade 19 at The Museum of the Graybrothers convent"
+
+},
+
+{
+  id: "778",
+  title: "Witches, ghosts and blood dripping stories",
+  start: "2021-01-27T19:30:00",
+  color: 'red',
+  participants: 0,
+  place: "Aalborg Historiske Museum",
 
 }]
 ; 
