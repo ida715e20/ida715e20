@@ -1,54 +1,44 @@
-var mysql = require('mysql');
 
-var con = mysql.createConnection({
+
+var mysql      = require('mysql')
+var express = require('express')
+
+var app = express(); 
+
+var db = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
-  database: "bookingsystem"
+  database: "bookingsystem",
+  
 });
 
-con.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-  
-  var sql = "INSERT INTO guest(name, address) VALUES ('Maria', 'smilevej')";
 
-  con.query(sql, function (err, result) {
+
+
+//Connecting to database
+db.connect(function(err) {
+
     if (err) throw err;
-    console.log("Table created");
+    console.log("Connected!");
+
   });
-  
+
+
+  app.get('/db', (req, res) =>  {
+
+    var na = document.getElementById("validationCustom01").value();
+    var ad = document.getElementById("validationCustom04").value();
+
+    var sql = "INSERT INTO guest (name, address) VALUES (?,?) "; 
+    db.query(sql,[na, ad], function (err, result) {
+      
+      if (err) throw err;
+      console.log("1 record inserted" + result);
+
+
+
+  });
+
 });
 
-
-
-// var mysql = require('mysql');
-// var express = require('express'); 
-
-// var con = mysql.createConnection({
-//   host: "localhost",
-//   user: "root",
-//   password: ""
-// });
-
-// con.connect(function(err) {
-//   if (err) throw err;
-//   console.log("Connected!");
-// });
-
-// const app = express(); 
-
-// app.get("/createdb",(req, res) =>{
-//     let sql ='CREATE DATABASE nhmBooking'
-//     db.query(sql, (err)=>{
-//         if(err){
-//             throw err
-//         }
-//         res.send('Database created'); 
-//     });
-// });
-
-// app.listen('3000', () =>{
-//     console.log('server er startet')
-
-// }); 

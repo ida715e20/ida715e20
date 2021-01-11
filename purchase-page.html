@@ -7,7 +7,7 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
       <!-- Henter den senest version af jQuery -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.min.js"></script>
+      <script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.min.js"></script>
       <title>Purchase Page | Nordjyllands Historiske Museum</title>
     </head>
     <body>
@@ -42,15 +42,17 @@
 <!-- kolonne 1 med informationer-->
           <div class="col-7">
             <div class="form-row">
+              <!--<form action="/server.js" method="POST"> -->
               <div class="form-group col-md-6 mb-3">
                 <label for="validationCustom01">First name</label>
-                <input type="text" class="form-control" id="validationCustom01" value="" required>
+                <input type="text"  class="form-control" id="validationCustom01" value="" required>
               </div>
             <div class=" form-group col-md-6 mb-3">
               <label for="validationCustom02">Last name</label>
               <input type="text" class="form-control" id="validationCustom02" value="" required>
             </div>
           </div>
+          <input id="fword">Word</input></br>
           <div>
             <div class="form-group">
               <label for="validationCustom03">E-mail</label>
@@ -120,11 +122,11 @@
           </div>
 <!-- Opretter checkout knap-->
           <div>
-            <button type="button" id="fpurchase" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#staticBackdrop">
+            <button type="button" id="fpurchase" class="btn btn-primary btn-lg btn-block" data-toggle="modal"  data-target="#staticBackdrop">
             Continue to checkout
             </button>
           </div>
-
+          
           <!-- Modal -->
           <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -140,7 +142,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" onclick="document.location='index.html'">Confirm</button>
+                  <button type="button" class="btn btn-primary" onclick="document.location='index.html';">Confirm</button>
                 </div>
               </div>
             </div>
@@ -243,8 +245,12 @@
     <!---->
      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script></body>
      <script src="js/cart.js"></script>
+     <script src="/server.js"></script>
      <script src="js/guestCalender.js"></script>
      <script src="/website/createJson.js"></script>
+     <script language="javascript" type="text/javascript" src="databaseAdd.js"></script>
+
+
     </body>
     
     </html>
