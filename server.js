@@ -61,8 +61,10 @@ app.get('/purchase-page', (req, res) =>  {
 }
 */
 ///:lastName/:email/:address/:city/:zip/:countryCode/:phoneNumber
+//:name/
+///:eMail
 
-app.get('add/:firstName/:word', addWord);
+app.get('add/:firstName/:lastName', addWord);
 
 function addWord(request, response) {
     console.log("hallo");
@@ -73,7 +75,9 @@ function addWord(request, response) {
     var data = request.params;
     //her finder den ordet, altså gaming inde i data var
     var firstName = data.firstName;
-    var word = data.word;
+    //var word = data.word;
+    var lastName = data.lastName;
+    //var eMail = data.eMail;
     //her tager den nummeret 5 Number() gør, at den ikke tager den som string i data
     // var lastName = data.lastName;
     // var email = data.email;
@@ -97,9 +101,10 @@ function addWord(request, response) {
     //hvor hver af ordene i listen bliver parret med deres score
     //words[word] = score;
     //lastname, email, address, city, zip, countrycode, phonenumber
+    //word,
     var sql = "INSERT INTO guest (firstname, lastname) VALUES (?,?)";
     
-    db.query(sql,[firstName, word], function (err, result) {
+    db.query(sql,[firstName, lastName], function (err, result) {
       
         //lastName, email, address, city, zip, countryCode, phoneNumber
       if (err) throw err;

@@ -7,11 +7,15 @@ function setup() {
 
     function submitData() {
       var firstname = select('#validationCustom01').value();
-      var word = select('#fword').value();
-      console.log(firstname);
+      //var word = select('#fword').value();
+      var lastname = select('#validationCustom02').value();
+      //var email = select('#validationCustom03').value();
+      console.log(firstname, lastname);
 
-      loadJSON('add/' + firstname + '/' + word), finished;
+      loadJSON('add/' + firstname + '/' + lastname), finished;
       // loadJSON('add/' + word + '/' + score), finished;
+      //'/' + word +
+      //+ '/' + email
 
       function finished(data) {
         console.log(data)
