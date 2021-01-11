@@ -14,9 +14,23 @@ function setup() {
       var city = select('#validationCustom05').value();
       var zip = select('#validationCustom06').value();
       var countryCode = select('#validationCustom07').value();
-      console.log(firstname, lastname, email, address, city, zip, countryCode);
+      var phoneNumber = select('#validationCustom08').value();
+      
+      var existing = localStorage.getItem("cart");
+      existing = JSON.parse(existing);
+      console.log(existing['children']);
 
-      loadJSON('add/' + firstname + '/' + lastname + '/' + email + '/' + address + '/' + city + '/' + zip + '/' + countryCode), finished;
+      var child = existing['children'];
+      var student = existing['students'];
+      var adult = existing['adults'];
+      var tourtheme = existing['theme'];
+     // var tourDate = existing['date'];//
+      var ticketCount = parseInt(child) + parseInt(student) + parseInt(adult);
+
+      console.log(firstname, lastname, email, address, city, zip, countryCode, phoneNumber, ticketCount);
+
+      loadJSON('add/' + firstname + '/' + lastname + '/' + email + '/' + address + '/' + city
+       + '/' + zip + '/' + countryCode + '/' + phoneNumber + '/' + ticketCount + '/' + tourtheme), finished;
       // loadJSON('add/' + word + '/' + score), finished;
       //'/' + word +
       //+ '/' + email

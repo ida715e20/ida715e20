@@ -65,7 +65,7 @@ app.get('/purchase-page', (req, res) =>  {
 ///:eMail
 //addpurchase/:child/:student/:adult/:tourtheme/:ticketcount/:totalcost/:uniqueID'
 ///:address
-app.get('/add/:firstName/:lastName/:email/:address/:city/:zip/:countryCode', addWord);
+app.get('/add/:firstName/:lastName/:email/:address/:city/:zip/:countryCode/:phoneNumber/:ticketCount/:tourtheme', addWord);
 
 function addWord(request, response) {
     console.log("hallo");
@@ -83,6 +83,9 @@ function addWord(request, response) {
     var city = data.city;
     var zip = data.zip;
     var countryCode = data.countryCode;
+    var phoneNumber = data.phoneNumber
+    var ticketCount = data.ticketCount
+    var tourtheme = data.tourtheme
     //her tager den nummeret 5 Number() gør, at den ikke tager den som string i data
     // var lastName = data.lastName;
     // var email = data.email;
@@ -106,9 +109,9 @@ function addWord(request, response) {
     //words[word] = score;
     //lastname, email, address, city, zip, countrycode, phonenumber
     //word,
-    var sql = "INSERT INTO guest (firstname, lastname, email, address, city, zip, countryCode) VALUES (? ,? , ?, ?, ?, ?, ?)";
+    var sql = "INSERT INTO guest (firstname, lastname, email, address, city, zip, countrycode, phonenumber, tickets, tour) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     
-    db.query(sql,[firstName, lastName, email, address, city, zip, countryCode], function (err, result) {
+    db.query(sql,[firstName, lastName, email, address, city, zip, countryCode, phoneNumber, ticketCount, tourtheme], function (err, result) {
       
         //lastName, email, address, city, zip, countryCode, phoneNumber
       if (err) throw err;
