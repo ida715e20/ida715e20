@@ -106,7 +106,7 @@ function getTourData(){
   {
     var tourTitle = document.getElementById('fticketTheme').value;
     var tourDate =  document.getElementById('fdate').value;
-    var time = new Date(tourDate + 'T00:00:00');
+    var time = new Date(tourDate + 'T12:00:00');
     var maxP = document.getElementById('fmaxParticipants').value;
     var tourDuration = document.getElementById('fduration').value;
     var tourPlace = document.getElementById('fplace').value;
