@@ -14,6 +14,8 @@ function initCalendar()
       
       firstDay: 1,  
       events: [],
+    
+      
       
       eventClick: function(event,){
 
@@ -23,7 +25,7 @@ function initCalendar()
         $('#eventPart').html(event.event.extendedProps.participants);
         $('#eventPlace').html(event.event.extendedProps.place);
         var d = event.event.start.toDateString();
-        $('#eventStart').html(d);
+        $('#eventStart').html(event.event.start);
 
         $('#eventModal').modal('show');
         choseneventid = event.event.id; 
@@ -89,6 +91,7 @@ function initCalendar()
           duration: tourLS.duration,
           place: tourLS.place,
          
+         
   
         });
       }
@@ -105,7 +108,14 @@ function getTourData(){
   {
     var tourTitle = document.getElementById('fticketTheme').value;
     var tourDate =  document.getElementById('fdate').value;
-    var time = new Date(tourDate + 'T00:00:00');
+    
+   
+
+    var time = new Date(tourDate);
+    
+    
+    console.log(time); 
+  
     var maxP = document.getElementById('fmaxParticipants').value;
     var tourDuration = document.getElementById('fduration').value;
     var tourPlace = document.getElementById('fplace').value;
@@ -113,6 +123,8 @@ function getTourData(){
     var uniqueID = getRandomInt(maxEvents)
     var tourGuide = "nobody";
     var adminGuide = false;
+    
+    
     // kører indtil eventet får et unikt id
     while (localStorage.getItem("tourinfo" + uniqueID.toString()) != null)
     {
@@ -133,6 +145,7 @@ function getTourData(){
       description: tourDescription, 
       guide: tourGuide, 
       admin: adminGuide
+      , 
     };
 
   
@@ -151,7 +164,8 @@ function getTourData(){
       place: tourPlace,
       description: tourDescription,
       guide: tourGuide,
-      admin: adminGuide
+      admin: adminGuide,
+      
 
       
     });

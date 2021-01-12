@@ -68,15 +68,9 @@ app.get('/purchase-page', (req, res) =>  {
 app.get('/add/:firstName/:lastName/:email/:address/:city/:zip/:countryCode/:phoneNumber/:ticketCount/:tourtheme', addWord);
 
 function addWord(request, response) {
-    console.log("hallo");
-    //Data bliver her sat til request parametres
-    //Dette er det som brugeren skriver ind efter /search/
-    //altså hvis brugeren skriver /search/gaming/5
-    //så er gaming/5 vores request.params og dette bliver data sat til.
+  
     var data = request.params;
-    //her finder den ordet, altså gaming inde i data var
     var firstName = data.firstName;
-    //var word = data.word;
     var lastName = data.lastName;  
     var email = data.email;
     var address = data.address; 
@@ -86,29 +80,8 @@ function addWord(request, response) {
     var phoneNumber = data.phoneNumber
     var ticketCount = data.ticketCount
     var tourtheme = data.tourtheme
-    //her tager den nummeret 5 Number() gør, at den ikke tager den som string i data
-    // var lastName = data.lastName;
-    // var email = data.email;
-    // var city = data.city;
-    // var zip = data.zip;
-    // var countryCode = data.countryCode;
-    // var phoneNumber = data.phoneNumber;
+ 
 
-    var reply;
-    if(!data) {
-        reply = {
-            msg: "Score is required."
-         }
-         response.send(reply); 
-
-        } else {
-    console.log("okay");
-   
-    //her laves et "key-value pair". Dette fungere ved, at der laves en array af word
-    //hvor hver af ordene i listen bliver parret med deres score
-    //words[word] = score;
-    //lastname, email, address, city, zip, countrycode, phonenumber
-    //word,
     var sql = "INSERT INTO guest (firstname, lastname, email, address, city, zip, countrycode, phonenumber, tickets, tour) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     
     db.query(sql,[firstName, lastName, email, address, city, zip, countryCode, phoneNumber, ticketCount, tourtheme], function (err, result) {
@@ -130,7 +103,7 @@ function addWord(request, response) {
        }
        */
     }   
-}
+
 
 /*
 app.get('/data/:word/:score/:firstname', addTest);

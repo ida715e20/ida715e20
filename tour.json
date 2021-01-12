@@ -170,6 +170,15 @@
     "totalcost": "420",
     "tourtheme": " Aalborg in the Middle Ages "
   },
+  "2568": {
+    "uniqueID": "2568",
+    "child": "0",
+    "student": "0",
+    "adult": "0",
+    "ticketcount": "0",
+    "totalcost": "0",
+    "tourtheme": "Witches, ghosts and blood dripping stories"
+  },
   "2955": {
     "uniqueID": "2955",
     "child": "0",
@@ -196,6 +205,15 @@
     "ticketcount": "0",
     "totalcost": "0",
     "tourtheme": "Witches, ghosts and blood dripping stories"
+  },
+  "3879": {
+    "uniqueID": "3879",
+    "child": "33",
+    "student": "0",
+    "adult": "0",
+    "ticketcount": "33",
+    "totalcost": "1320",
+    "tourtheme": " Aalborg in the Middle Ages "
   },
   "3962": {
     "uniqueID": "3962",
