@@ -3,7 +3,8 @@
 text = localStorage.getItem("cart");
 localS = JSON.parse(text);
 
-
+//forklares på side 58 i opgaven
+//childrencount_id får altid kun den information i variablen children osv.
 let c=document.getElementById("childrencount_id");
 if (c) c.innerHTML = localS.children;
 
@@ -39,7 +40,7 @@ function getdata(){
     let theme=document.getElementById('themetour').innerHTML;
     let tourDate = document.getElementById('detailsTime').innerHTML; 
  
-    // Storing data:
+    // Storing data i LS:
     cart = {children: child, students: student, adults: adult, theme: theme, date: tourDate};
     localS = JSON.stringify(cart);
     localStorage.setItem("cart", localS);

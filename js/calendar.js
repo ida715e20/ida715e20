@@ -11,10 +11,10 @@ function initCalendar()
     var calendarEl = document.getElementById('calendar'); 
     calendar = new FullCalendar.Calendar(calendarEl, 
     { 
-      
+  //ugen starter mandag, hvis der er angivet 1. hvis der ikke er angivet noget starter ugen søndag    
       firstDay: 1,  
       events: [],
-      
+  //Ved et click på event popper et modul vindue op    
       eventClick: function(event,){
 
         // admin Modal 
@@ -30,12 +30,14 @@ function initCalendar()
         //chosenevent får id'et for det event, der clickes på
         console.log(choseneventid);
        
+        // guide Modal
         $('#guideInfo').html(event.event.extendedProps.description);
         $('#guidePart').html(event.event.extendedProps.participants);
         $('#guidePlace').html(event.event.extendedProps.place);
         /*$('#guideAccept').html(event.event.extendedProps.guide);*/
         $('#assGuide').modal('show');
       
+        // retrieving data fra ls ved eventclick
         let g =document.getElementById("guideAvailable");
         if (g)
         {
@@ -43,7 +45,8 @@ function initCalendar()
           let tourLS = JSON.parse(guideSelect);
           g.innerHTML = tourLS['guide']
         }
-
+        //overrider indholdet af guideAvailable, når der vælges en selectedGuide
+        //sker kun når admin == true, for at forhindre det sker på alle events
         let sg =document.getElementById("selectedGuide")
         if (sg)
         {
@@ -57,9 +60,7 @@ function initCalendar()
           {
             sg.innerHTML = "";
           }
-        }
-        
-
+        }       
     }
          
 
@@ -68,18 +69,18 @@ function initCalendar()
     calendar.render();
     console.log(console.log(calendar.getEvents())); 
     
-
+// retrieving data for new tour
     for (let i = 0; i < maxEvents; i++)
     {
       let eventname = "tourinfo" + i.toString();
-
-      if (localStorage.getItem(eventname) != null)
+//findes der et event i local storage der hedder tourinfo1 osv. hvis den findes bliver den created
+      if (localStorage.getItem(eventname) != null) 
       {
         tourtext = localStorage.getItem(eventname); 
         tourLS = JSON.parse(tourtext);
-  
+//events bliver tilføjet til admin og guide calendar  
         calendar.addEvent({  
-  
+//Turdata fra ls bliver indlæst i kalenderen
           id: tourLS.id,
           title: tourLS.title,
           date: tourLS.date,
@@ -89,7 +90,6 @@ function initCalendar()
           duration: tourLS.duration,
           place: tourLS.place,
          
-  
         });
       }
     }
@@ -101,6 +101,7 @@ function initCalendar()
 function getTourData(){
 
   // så længe størrelsen på vores lager < 30
+  // Kun for at sætte en øvre grænse, kunne være et hvilket som helst tal
   if (localStorage.length < maxEvents)
   {
     var tourTitle = document.getElementById('fticketTheme').value;
@@ -114,14 +115,15 @@ function getTourData(){
     var tourGuide = "nobody";
     var adminGuide = false;
     // kører indtil eventet får et unikt id
+    //hvis eventet eksisterer med det genererede id så laves der et nyt id
     while (localStorage.getItem("tourinfo" + uniqueID.toString()) != null)
     {
-      uniqueID = getRandomInt(maxEvents)
+      uniqueID = getRandomInt(maxEvents) //getRandomInt function står til sidst i koden
     }
   
 
-    // Storing data:
-
+    // Storing data i LS:
+    //information om tur i et array
     tour = {
       title: tourTitle, 
       date: tourDate, 
@@ -139,9 +141,10 @@ function getTourData(){
     tourLS = JSON.stringify(tour);
   
     localStorage.setItem("tourinfo" + uniqueID.toString(), tourLS);
-          
+    
+    //Nye event indlæses med det samme i kalenderen    
     calendar.addEvent({  
-      
+     
       id: uniqueID, 
       title: tourTitle,
       date: tourDate,
@@ -153,10 +156,7 @@ function getTourData(){
       guide: tourGuide,
       admin: adminGuide
 
-      
     });
-    /* hvis vi opretter et event får vi denne besked
-    document.getElementById("eventText").innerHTML = "You have succesfully created a new event!"*/
   }
   // hvis vi ikke kan oprette et event fordi vi har nået max antal, får vi denne besked
   else
@@ -169,7 +169,8 @@ function getTourData(){
 }
 
 function guideAccept(){
-  
+//hvis et event findes i LS, tilskrives navnet på den guide der accepterer turen
+//se s.53 i opgaven  
   let tourGuide = document.getElementById('guideResponse').value;
   console.log(tourGuide + " " + choseneventid);
   let eventname = "tourinfo" + choseneventid.toString();
@@ -186,6 +187,9 @@ function guideAccept(){
 
 
 function setGuide()
+//samme logik som ved guideAccept
+//admin ændres fra false til true
+//admins valg af guide overrider navnet på den guide, der har accepteret turen
 {
   let selectguide = document.getElementById("selectGuide").value;
  
@@ -212,9 +216,10 @@ function removeEvent() {
   console.log("removing event with id " + choseneventid);
   localStorage.removeItem("tourinfo" + choseneventid);
 }
-
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
+//maxEvent hentes fra linje 114 og 121
+//Math.floor returnerer en integer så man får et helt tal
+function getRandomInt(maxEvents) {
+  return Math.floor(Math.random() * Math.floor(maxEvents));
 }
 
 function setStatus() {

@@ -1,3 +1,4 @@
+//fs gør at man kan læse og skrive til filer
 var fs = require ('fs');
 var tourData = fs.readFileSync('tour.json');
 var tourTicket = JSON.parse(tourData);
@@ -9,7 +10,7 @@ var words = JSON.parse(data);
 console.log(words);
 */
 
-console.log('Server is running');
+
 
 const path = require('path');
 
@@ -20,11 +21,12 @@ var express = require('express');
 var app = express();
 
 var server = app.listen(3002, listening);
+console.log('Server is running');
 
 function listening() {
     console.log("listening...");
 }
-
+//dirname bestemmer, hvor websiten tager udgangspunkt fra
 app.use('/', express.static(__dirname + '/'));
 
 
@@ -53,6 +55,7 @@ app.use('/guide/report', express.static(__dirname + '/guide/report.html'));
 app.get('/website/addpurchase/:child/:student/:adult/:tourtheme/:ticketcount/:totalcost/:uniqueID', addticket);
 
 function addticket(request, response) {
+    //request.params er alt det der står i adressen
     var data = request.params;
     var child = data.child;
     var student = data.student;
